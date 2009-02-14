@@ -1,0 +1,111 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+Io                  0x50              ../../core/makingthings/io.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00100000         0x00040000
+ram              0x00200000         0x0000fa24
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ../../core/startup/Cstartup_SAM7.o
+LOAD main.o
+LOAD ../../core/makingthings/io.o
+LOAD ../../core/makingthings/led.o
+LOAD /tmp/ccjRAN4L.o
+LOAD /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a
+LOAD /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a
+LOAD /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a
+                0x0020fffc                __stack_end__ = 0x20fffc
+                0x00000000                . = 0x0
+
+startup         0x00100000       0x44
+ *(.startup)
+ .startup       0x00100000       0x44 /tmp/ccjRAN4L.o
+
+prog            0x00100044     0x19ec
+ *(.text)
+ .text          0x00100044       0xf8 ../../core/startup/Cstartup_SAM7.o
+                0x00100044                AT91F_LowLevelInit
+ .text          0x0010013c       0xd4 main.o
+                0x001001f4                kill
+                0x0010013c                main
+                0x001001e8                swi_handler
+ .text          0x00100210     0x1534 ../../core/makingthings/io.o
+                0x001013cc                Io_GetPortA
+                0x001013ec                Io_SetPortB
+                0x00101390                Io_SetPortA
+                0x00101448                Io_SetPortAMask
+                0x00101514                Io_GetValueBits
+                0x0010131c                Io_SetPioBits
+                0x00100854                Io_SetDirection
+                0x001011ec                Io_SetValueBits
+                0x001008a8                Io_GetDirection
+                0x00100c90                Io_SetPeripheralB
+                0x00100fa4                Io_GetPullup
+                0x001015a0                Io_GetPullupBits
+                0x0010162c                Io_GetPioBits
+                0x0010043c                Io_StartBits
+                0x00100a78                Io_SetValue
+                0x001012a8                Io_SetDirectionBits
+                0x001007d0                Io_GetActive
+                0x00101484                Io_SetPortBMask
+                0x00100d70                Io_GetPio
+                0x001006d4                Io_StopBits
+                0x001014a8                Io_GetPortBMask
+                0x00101178                Io_SetPullupBits
+                0x00100210                Io_Start
+                0x00100d1c                Io_SetPio
+                0x00100b34                Io_GetValue
+                0x00100c04                Io_SetPeripheralA
+                0x001016b8                Io_GetDirectionBits
+                0x0010034c                Io_Stop
+                0x00101428                Io_GetPortB
+                0x00100f50                Io_SetPullup
+                0x0010146c                Io_GetPortAMask
+ .text          0x00101744      0x21c ../../core/makingthings/led.o
+                0x001017b0                Led_SetState
+                0x00101830                Led_GetState
+                0x00101744                Led_SetActive
+                0x00101784                Led_GetActive
+ .text          0x00101960       0xd0 /tmp/ccjRAN4L.o
+                0x00101960                start
+                0x00101a10                endless_loop
+ *(.rodata)
+ *(.rodata*)
+ *(.glue_7)
+ *(.glue_7t)
+                0x00101a30                __end_of_text__ = .
+
+.data           0x00200000        0x0 load address 0x00101a30
+                0x00200000                __data_beg__ = .
+                0x00101a30                __data_beg_src__ = __end_of_text__
+ *(.data)
+                0x00200000                __data_end__ = .
+
+.bss            0x00200000       0x54
+                0x00200000                __bss_beg__ = .
+ *(.bss)
+ .bss           0x00200000        0x4 ../../core/makingthings/led.o
+ COMMON         0x00200004       0x50 ../../core/makingthings/io.o
+                                  0x0 (size before relaxing)
+                0x00200004                Io
+                0x00200054                . = ALIGN (0x4)
+                0x00200054                . = ALIGN (0x4)
+                0x00200054                _end = .
+                0x00200054                _bss_end__ = .
+                0x00200054                __bss_end__ = .
+                0x00200054                __end__ = .
+                0x00200054                PROVIDE (end, .)
+OUTPUT(output/tiny.elf elf32-littlearm)
+
+.comment        0x00000000       0x48
+ .comment       0x00000000       0x12 ../../core/startup/Cstartup_SAM7.o
+ .comment       0x00000012       0x12 main.o
+ .comment       0x00000024       0x12 ../../core/makingthings/io.o
+ .comment       0x00000036       0x12 ../../core/makingthings/led.o
