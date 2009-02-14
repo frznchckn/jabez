@@ -1,0 +1,2205 @@
+Archive member included because of file (symbol)
+
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o)
+                              ../../core/lwip/src/core/ipv4/inet.o (__udivsi3)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_divsi3.o)
+                              ../../core/makingthings/serial.o (__divsi3)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_umodsi3.o)
+                              ../../core/lwip/src/core/ipv4/inet.o (__umodsi3)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_modsi3.o)
+                              ../../core/makingthings/serial.o (__modsi3)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_dvmd_tls.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o) (__div0)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_call_via_rX.o)
+                              ../../core/lwip/src/api/tcpip.o (_call_via_r2)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_truncdfsf2.o)
+                              ../../core/makingthings/osc.o (__truncdfsf2)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubsf3.o)
+                              ../../core/makingthings/osc.o (__floatsisf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixsfsi.o)
+                              ../../core/makingthings/osc.o (__fixsfsi)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+                              ../../core/makingthings/system.o (_ctype_)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                              ../../core/freertos/queue.o (memcpy)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+                              ../../core/freertos/tasks.o (memset)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+                              ../../core/makingthings/analogin.o (snprintf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+                              ../../core/freertos/tasks.o (sprintf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+                              ../../core/makingthings/network.o (sscanf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+                              ../../core/freertos/tasks.o (strcat)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+                              ../../core/makingthings/osc.o (strchr)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+                              ../../core/makingthings/rtos.o (strcmp)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+                              ../../core/makingthings/system.o (strcpy)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+                              ../../core/makingthings/system.o (strlen)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+                              ../../core/freertos/tasks.o (strncpy)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o) (_vfprintf_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o) (__svfscanf_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+                              ../../core/makingthings/debugosc.o (vsnprintf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (_wcrtomb_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (_wcsrtombs_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o) (_wctomb_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (__swsetup)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (_dtoa_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (fflush)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (__sinit)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (fread)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o) (_free_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (__sfvwrite)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o) (_fwalk)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o) (_impure_ptr)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (iswspace)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o) (__lc_ctype)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o) (__smakebuf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (free)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o) (__malloc_current_mallinfo)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (_mbrtowc_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o) (_mbtowc_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (memchr)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o) (memmove)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o) (__malloc_lock)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o) (__mprec_bigtens)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o) (_realloc_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (__srefill)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (isinf)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o) (isnan)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o) (__sread)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (_strtod_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (_strtol_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (_strtoul_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o) (isatty)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o) (ungetc)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o) (_calloc_r)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o) (__errno)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o) (__infinity)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubdf3.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o) (__subdf3)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_muldivdf3.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o) (__muldf3)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_cmpdf2.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o) (__gtdf2)
+/usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+                              /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o) (__fixdfsi)
+
+Allocating common symbols
+Common symbol       size              file
+
+netif_list          0x4               ../../core/lwip/src/core/netif.o
+jitter              0x4               ../../core/makingthings/fasttimer_isr.o
+tcp_active_pcbs     0x4               ../../core/lwip/src/core/tcp.o
+udp_pcbs            0x4               ../../core/lwip/src/core/udp.o
+tcp_ticks           0x4               ../../core/lwip/src/core/tcp.o
+tcp_listen_pcbs     0x4               ../../core/lwip/src/core/tcp.o
+timeReference       0x4               ../../core/makingthings/fasttimer_isr.o
+xUSBInterruptQueue  0x4               ../../core/makingthings/USB-CDC.o
+xTxCDC              0x4               ../../core/makingthings/USB-CDC.o
+xRxCDC              0x4               ../../core/makingthings/USB-CDC.o
+Io                  0x50              ../../core/makingthings/io.o
+tcp_tmp_pcb         0x4               ../../core/lwip/src/core/tcp.o
+Timer               0x2c              ../../core/makingthings/timer.o
+Osc                 0x4               ../../core/makingthings/osc.o
+tcp_input_pcb       0x4               ../../core/lwip/src/core/tcp_in.o
+te                  0x4               ../../core/makingthings/fasttimer_isr.o
+Serial              0x60              ../../core/makingthings/serial.o
+DebugData           0x4               ../../core/makingthings/debugosc.o
+System              0x4               ../../core/makingthings/system.o
+tcp_bound_pcbs      0x4               ../../core/lwip/src/core/tcp.o
+FastTimer           0x38              ../../core/makingthings/fasttimer.o
+AnalogIn            0x4               ../../core/makingthings/analogin.o
+Network             0x4               ../../core/makingthings/network.o
+Can                 0xc               ../../core/makingthings/can.o
+Spi                 0xc               ../../core/makingthings/spi.o
+Pwm                 0x18              ../../core/makingthings/pwm.o
+Network_DnsSemaphore
+                    0x4               ../../core/makingthings/network.o
+toggle              0x4               ../../core/makingthings/main.o
+tcp_tw_pcbs         0x4               ../../core/lwip/src/core/tcp.o
+lwip_stats          0x14c             ../../core/lwip/src/core/stats.o
+netif_default       0x4               ../../core/lwip/src/core/netif.o
+OscBusy             0x4               ../../core/makingthings/osc.o
+Usb_Running         0x4               ../../core/makingthings/usb.o
+Network_Valid       0x4               ../../core/makingthings/network.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00100000         0x00040000
+ram              0x00200000         0x0000fa24
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/portISR.o
+LOAD ../../core/makingthings/SAM7_EMAC_ISR.o
+LOAD ../../core/makingthings/USBIsr.o
+LOAD ../../core/startup/Cstartup_SAM7.o
+LOAD ../../core/makingthings/analogin_isr.o
+LOAD ../../core/makingthings/fasttimer_isr.o
+LOAD ../../core/makingthings/serial_isr.o
+LOAD ../../core/makingthings/timer_isr.o
+LOAD ../../core/makingthings/can_isr.o
+LOAD make.o
+LOAD ../../core/freertos/tasks.o
+LOAD ../../core/freertos/queue.o
+LOAD ../../core/freertos/list.o
+LOAD ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/port.o
+LOAD ../../core/startup/extras.o
+LOAD ../../core/freertos/portable/MemMang/heap_2.o
+LOAD ../../core/makingthings/main.o
+LOAD ../../core/makingthings/eeprom.o
+LOAD ../../core/makingthings/analogin.o
+LOAD ../../core/makingthings/serial.o
+LOAD ../../core/makingthings/pwm.o
+LOAD ../../core/makingthings/spi.o
+LOAD ../../core/makingthings/USB-CDC.o
+LOAD ../../core/makingthings/rtos.o
+LOAD ../../core/makingthings/usb.o
+LOAD ../../core/makingthings/network.o
+LOAD ../../core/makingthings/system.o
+LOAD ../../core/makingthings/io.o
+LOAD ../../core/makingthings/led.o
+LOAD ../../core/makingthings/timer.o
+LOAD ../../core/makingthings/fasttimer.o
+LOAD ../../core/makingthings/debugosc.o
+LOAD ../../core/makingthings/can.o
+LOAD ../../core/lwip/src/core/tcp_out.o
+LOAD ../../core/lwip/src/core/ipv4/inet.o
+LOAD ../../core/lwip/src/core/mem.o
+LOAD ../../core/lwip/src/core/memp.o
+LOAD ../../core/lwip/src/core/netif.o
+LOAD ../../core/lwip/src/core/pbuf.o
+LOAD ../../core/lwip/src/core/raw.o
+LOAD ../../core/lwip/src/core/stats.o
+LOAD ../../core/lwip/src/core/sys.o
+LOAD ../../core/lwip/src/core/tcp.o
+LOAD ../../core/lwip/src/core/tcp_in.o
+LOAD ../../core/lwip/src/core/init.o
+LOAD ../../core/lwip/src/core/ipv4/ip.o
+LOAD ../../core/lwip/src/core/ipv4/ip_addr.o
+LOAD ../../core/lwip/src/core/ipv4/icmp.o
+LOAD ../../core/lwip/src/core/ipv4/inet_chksum.o
+LOAD ../../core/lwip/src/core/dhcp.o
+LOAD ../../core/lwip/src/core/dns.o
+LOAD ../../core/lwip/src/api/tcpip.o
+LOAD ../../core/lwip/src/api/api_msg.o
+LOAD ../../core/lwip/src/api/err.o
+LOAD ../../core/lwip/src/api/netbuf.o
+LOAD ../../core/lwip/src/api/api_lib.o
+LOAD ../../core/lwip/src/netif/etharp.o
+LOAD ../../core/lwip/contrib/port/FreeRTOS/AT91SAM7X/sys_arch.o
+LOAD ../../core/lwip/src/netif/ethernetif.o
+LOAD ../../core/makingthings/SAM7_EMAC.o
+LOAD ../../core/lwip/src/core/udp.o
+LOAD ../../core/lwip/src/core/ipv4/ip_frag.o
+LOAD ../../core/makingthings/osc.o
+LOAD ../../core/makingthings/osc_patternmatch.o
+LOAD /tmp/cczrhmtu.o
+LOAD /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a
+LOAD /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a
+LOAD /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a
+                0x0020fffc                __stack_end__ = 0x20fffc
+                0x00000000                . = 0x0
+
+startup         0x00100000       0x44
+ *(.startup)
+ .startup       0x00100000       0x44 /tmp/cczrhmtu.o
+
+prog            0x00100044    0x1f6f4
+ *(.text)
+ .text          0x00100044      0x264 ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/portISR.o
+                0x00100134                vPreemptiveTick
+                0x0010025c                vPortExitCritical
+                0x00100200                vPortDisableInterruptsFromThumb
+                0x00100090                swi_handler
+                0x00100044                vPortISRStartFirstTask
+                0x001001f0                vPortDisableAllInterrupts
+                0x00100218                vPortEnableInterruptsFromThumb
+                0x00100230                vPortEnterCritical
+ .text          0x001002a8      0x194 ../../core/makingthings/SAM7_EMAC_ISR.o
+                0x00100384                vEMACISR_Wrapper
+                0x00100424                vPassEMACSemaphore
+                0x001002a8                vEMACISR_Handler
+ .text          0x0010043c      0x27c ../../core/makingthings/USBIsr.o
+                0x0010043c                vUSB_ISR_Handler
+                0x00100610                vUSB_ISR_Wrapper
+ .text          0x001006b8       0x94 ../../core/startup/Cstartup_SAM7.o
+                0x001006b8                AT91F_LowLevelInit
+ .text          0x0010074c      0x138 ../../core/makingthings/analogin_isr.o
+                0x001007dc                AnalogInIsr_Wrapper
+                0x0010074c                AnalogInIsr_Handler
+ .text          0x00100884      0x214 ../../core/makingthings/fasttimer_isr.o
+                0x00100884                DisableFIQFromThumb
+                0x001008a0                EnableFIQFromThumb
+                0x001008bc                FastTimer_Isr
+ .text          0x00100a98      0x198 ../../core/makingthings/serial_isr.o
+                0x00100b88                SerialIsr_Wrapper
+                0x00100a98                SerialIsr_Handler
+ .text          0x00100c30      0x1e8 ../../core/makingthings/timer_isr.o
+                0x00100c30                Timer_Isr
+ .text          0x00100e18       0xbc ../../core/makingthings/can_isr.o
+                0x00100e18                CanIsr_Handler
+                0x00100e2c                CanIsr_Wrapper
+ .text          0x00100ed4       0xc4 make.o
+                0x00100ed4                Run
+                0x00100f70                BlinkTask
+ .text          0x00100f98      0xd9c ../../core/freertos/tasks.o
+                0x00101044                uxTaskPriorityGet
+                0x00101014                TaskGetTimeouts
+                0x00101ca0                xTaskGetPriority
+                0x00101cc8                xTaskGetName
+                0x00101068                vTaskPrioritySet
+                0x00101284                vTaskEndScheduler
+                0x00101734                vTaskPlaceOnEventList
+                0x00101d0c                GetDelayedTaskList
+                0x00101d18                GetOverflowDelayedTaskList
+                0x00101210                xTaskResumeFromISR
+                0x00101cfc                GetReadyTaskByPriority
+                0x00101cb4                xTaskGetIDNumber
+                0x00101634                ulTaskEndTrace
+                0x001015c0                xTaskGetTickCount
+                0x00101798                xTaskRemoveFromEventList
+                0x001015f8                vTaskStartTrace
+                0x00100f98                vTaskDelete
+                0x00101cd8                xTaskGetStackAllocated
+                0x00101844                xTaskCheckForTimeOut
+                0x00101d24                GetListOfTasksWaitingTermination
+                0x00101028                vTaskSuspendAll
+                0x00101c74                usVoidTaskCheckFreeStackSpace
+                0x001011b0                vTaskResume
+                0x00101660                vTaskSwitchContext
+                0x00101114                vTaskSuspend
+                0x001015dc                uxTaskGetNumberOfTasks
+                0x0010129c                vTaskIncrementTick
+                0x00101d2c                GetSuspendedTaskList
+                0x00101ba8                vTaskList
+                0x00101544                vTaskDelayUntil
+                0x00101c84                xTaskGetCurrentTaskHandle
+                0x00101afc                usTaskCheckFreeStackSpace
+                0x00101350                xTaskResumeAll
+                0x00101ab4                vTaskStartScheduler
+                0x00101cf0                xTaskGetTopUsedPriority
+                0x00101890                vTaskMissedYield
+                0x00101920                xTaskCreate
+                0x001014ec                vTaskDelay
+                0x0010182c                vTaskSetTimeOutState
+ .text          0x00101d34      0x43c ../../core/freertos/queue.o
+                0x00101e90                xQueueGenericSendFromISR
+                0x00101d34                xQueueCreate
+                0x00101db0                vQueueDelete
+                0x00102060                xQueueGenericSend
+                0x00101df0                xQueueReceiveFromISR
+                0x00101f4c                xQueueGenericReceive
+                0x00101d98                uxQueueMessagesWaiting
+ .text          0x00102170       0x9c ../../core/freertos/list.o
+                0x00102190                vListInsertEnd
+                0x001021e4                vListRemove
+                0x00102188                vListInitialiseItem
+                0x00102170                vListInitialise
+                0x001021ac                vListInsert
+ .text          0x0010220c       0xf4 ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/port.o
+                0x001022b0                xPortStartScheduler
+                0x001022fc                vPortEndScheduler
+                0x0010220c                pxPortInitialiseStack
+ .text          0x00102300       0x34 ../../core/startup/extras.o
+                0x0010230c                _lseek_r
+                0x0010232c                _fstat_r
+                0x00102300                _sbrk_r
+                0x00102324                _read_r
+                0x00102304                _open_r
+                0x0010231c                _close_r
+                0x00102314                _write_r
+ .text          0x00102334      0x134 ../../core/freertos/portable/MemMang/heap_2.o
+                0x001023f4                vPortFree
+                0x00102334                pvPortMalloc
+                0x00102430                PortFreeMemory
+ .text          0x00102468       0xd4 ../../core/makingthings/main.o
+                0x00102468                MakeStarterTask
+                0x00102478                main
+                0x00102524                vApplicationIdleHook
+ .text          0x0010253c      0x1f8 ../../core/makingthings/eeprom.o
+                0x00102684                Eeprom_Write
+                0x0010253c                Eeprom_GetActive
+                0x001025f4                Eeprom_Read
+                0x00102720                Eeprom_SetActive
+ .text          0x00102734      0x56c ../../core/makingthings/analogin.o
+                0x00102a00                AnalogIn_GetValueWait
+                0x00102734                AnalogIn_GetActive
+                0x00102a78                AnalogIn_GetValue
+                0x001028b8                AnalogIn_GetValueMulti
+                0x00102b80                AnalogInOsc_ReceiveMessage
+                0x00102bec                AnalogInOsc_PropertyGet
+                0x00102760                AnalogIn_AutoSendInit
+                0x00102980                AnalogIn_SetActive
+                0x00102b0c                AnalogIn_GetAutoSend
+                0x00102c20                AnalogInOsc_Async
+                0x00102b2c                AnalogIn_SetAutoSend
+                0x00102b74                AnalogInOsc_GetName
+                0x00102bc8                AnalogInOsc_PropertySet
+ .text          0x00102ca0      0x8a4 ../../core/makingthings/serial.o
+                0x001032fc                Serial_Read
+                0x00103498                SerialOsc_IntPropertyGet
+                0x00102ffc                Serial_ClearErrors
+                0x00102f9c                Serial_GetStopBits
+                0x00102e40                Serial_SetParity
+                0x00102ca0                Serial_GetActive
+                0x00103024                Serial_GetErrors
+                0x001034f4                SerialOsc_BlobPropertyGet
+                0x00102f0c                Serial_GetBaud
+                0x00102fcc                Serial_GetHardwareHandshake
+                0x00102dbc                Serial_SetBaud
+                0x001030c4                Serial_SetActive
+                0x00102df8                Serial_SetBits
+                0x00102ed0                Serial_SetHardwareHandshake
+                0x00103444                SerialOsc_IntPropertySet
+                0x00102cbc                Serial_GetReadable
+                0x00102e88                Serial_SetStopBits
+                0x0010329c                Serial_SetChar
+                0x001033c0                SerialOsc_GetName
+                0x00103084                Serial_StartBreak
+                0x001033cc                SerialOsc_ReceiveMessage
+                0x00103220                Serial_GetChar
+                0x0010327c                Serial_Flush
+                0x0010352c                SerialOsc_BlobPropertySet
+                0x0010335c                Serial_Write
+                0x001030a4                Serial_StopBreak
+                0x00102f3c                Serial_GetBits
+                0x00102f6c                Serial_GetParity
+ .text          0x00103544      0x2f4 ../../core/makingthings/pwm.o
+                0x00103758                Pwm_GetDividerB
+                0x0010358c                Pwm_GetChannelIo
+                0x0010371c                Pwm_SetDividerB
+                0x00103570                Pwm_Get
+                0x001035b8                Pwm_Start
+                0x001037ac                Pwm_GetClockSource
+                0x00103544                Pwm_Set
+                0x001037cc                Pwm_SetWaveformProperties
+                0x001036d0                Pwm_SetDividerA
+                0x00103818                Pwm_GetWaveformProperties
+                0x00103708                Pwm_GetDividerA
+                0x00103658                Pwm_Stop
+                0x00103764                Pwm_SetClockSource
+ .text          0x00103838      0x308 ../../core/makingthings/spi.o
+                0x00103970                Spi_Lock
+                0x00103ad4                Spi_Stop
+                0x00103838                Spi_Configure
+                0x0010398c                Spi_Unlock
+                0x001039d0                Spi_Start
+                0x001038a4                Spi_ReadWriteBlock
+ .text          0x00103b40      0x714 ../../core/makingthings/USB-CDC.o
+                0x00103cbc                vUSBCDCTask
+ .text          0x00104254      0x5d4 ../../core/makingthings/rtos.o
+                0x00104344                MallocWait
+                0x00104808                getTaskByName
+                0x00104430                iterateForNextTask
+                0x00104394                QueueReceive
+                0x0010432c                TaskGetTickCount
+                0x00104338                Malloc
+                0x001043dc                SemaphoreCreate
+                0x001043ac                QueueDelete
+                0x00104644                iterateByName
+                0x001045e8                iterateByID
+                0x00104370                QueueCreate
+                0x00104400                SemaphoreTake
+                0x001043c4                QueueSendToBackFromISR
+                0x001043b8                QueueSendToFrontFromISR
+                0x00104388                QueueSendToBack
+                0x001042b0                TaskGetRemainingStack
+                0x001047e8                getTaskByID
+                0x00104254                Sleep
+                0x00104410                SemaphoreGive
+                0x00104260                TaskYield
+                0x001042c8                TaskGetPriority
+                0x00104364                Free
+                0x001043a0                QueueMessagesWaiting
+                0x00104420                SemaphoreGiveFromISR
+                0x001042fc                TaskGetCurrent
+                0x001042ec                TaskGetStackAllocated
+                0x001042a4                TaskExitCritical
+                0x00104298                TaskEnterCritical
+                0x00104320                TaskSetPriority
+                0x0010428c                TaskDelete
+                0x00104264                TaskCreate
+                0x00104314                GetNumberOfTasks
+                0x001042d4                TaskGetIDNumber
+                0x001042e0                TaskGetName
+                0x001046ac                findTask
+                0x001044d4                TaskGetNext_internal
+                0x001043d0                QueueReceiveFromISR
+                0x0010437c                QueueSendToFront
+                0x00104308                TaskGetTopPriorityUsed
+                0x001045cc                TaskGetNext
+ .text          0x00104828      0x3bc ../../core/makingthings/usb.o
+                0x00104828                Usb_SetActive
+                0x00104b8c                UsbOsc_ReceiveMessage
+                0x001048a0                Usb_GetActive
+                0x00104b80                UsbOsc_GetName
+                0x00104984                Usb_Write
+                0x00104bbc                UsbOsc_PropertySet
+                0x00104bd0                UsbOsc_PropertyGet
+                0x00104a80                Usb_SlipReceive
+                0x00104a04                Usb_SlipSend
+                0x001048b8                Usb_Read
+ .text          0x00104be4     0x1120 ../../core/makingthings/network.o
+                0x00105624                Network_SetActive
+                0x0010527c                Network_SetMask
+                0x00105364                NetworkOsc_GetTcpOutAddress
+                0x001057b0                NetworkOsc_SetTcpAutoConnect
+                0x00104d24                SocketClose
+                0x00105304                Network_SetPending
+                0x00104d6c                DatagramSocketSend
+                0x00105534                Network_Init
+                0x0010545c                Network_DhcpStop
+                0x001053d4                NetworkOsc_SetUdpSendPort
+                0x0010532c                NetworkOsc_SetTcpOutAddress
+                0x00104d60                ServerSocketClose
+                0x00104f3c                Network_GetActive
+                0x0010539c                NetworkOsc_GetTcpOutPort
+                0x00105370                NetworkOsc_SetTcpOutPort
+                0x001057f8                NetworkOsc_GetTcpRequested
+                0x001053a8                NetworkOsc_SetUdpListenPort
+                0x00104e68                Network_GetValid
+                0x001050a0                Network_DnsGetHostByName
+                0x00105814                NetworkOsc_ReceiveMessage
+                0x00105724                ServerSocket
+                0x00105870                NetworkOsc_Poll
+                0x00104f30                Network_GetPending
+                0x00105874                NetworkOsc_PropertySet
+                0x00104d4c                ServerSocketAccept
+                0x00105ac4                NetworkOsc_PropertyGet
+                0x00105808                NetworkOsc_GetName
+                0x00104be4                SocketBytesAvailable
+                0x00104dd4                DatagramSocketReceive
+                0x00105238                Network_SetGateway
+                0x00104f00                NetworkOsc_GetUdpSendPort
+                0x00104c08                SocketRead
+                0x001052c0                Network_SetAddress
+                0x001056e8                DatagramSocket
+                0x00104cd4                SocketReadLine
+                0x00104ed0                NetworkOsc_GetUdpListenPort
+                0x00105400                Network_DhcpStart
+                0x0010501c                Network_GetGateway
+                0x001054e0                Network_AddressConvert
+                0x00104f5c                Network_GetAddress
+                0x00104e54                DatagramSocketClose
+                0x0010520c                Network_SetDefaults
+                0x0010507c                Network_GetDhcpEnabled
+                0x00104d08                SocketWrite
+                0x00105470                Network_SetDhcpEnabled
+                0x00105758                Socket
+                0x0010515c                Network_SetValid
+                0x00104fbc                Network_GetMask
+                0x00105510                NetworkOsc_GetTcpAutoConnect
+ .text          0x00105d04      0x8c4 ../../core/makingthings/system.o
+                0x00105f08                System_SetName
+                0x00105dcc                System_GetAutoSendInterval
+                0x00105d24                System_GetAsyncDestination
+                0x001060fc                System_SetAutoSendInterval
+                0x001060c0                System_SetAsyncDestination
+                0x00105d74                System_SetActive
+                0x001062d8                SystemOsc_PropertyGet
+                0x00106000                System_StackAudit
+                0x00106148                SystemOsc_ReceiveMessage
+                0x00105fdc                kill
+                0x00105d04                System_GetActive
+                0x00105e6c                System_SetSamba
+                0x00106190                SystemOsc_PropertySet
+                0x0010618c                SystemOsc_Poll
+                0x0010613c                SystemOsc_GetName
+                0x00105fec                System_SetReset
+                0x00105d18                System_GetFreeMemory
+                0x00105e20                System_GetSerialNumber
+                0x00105e48                System_SetSerialNumber
+                0x0010605c                StackAuditTask
+                0x00105f58                System_GetName
+ .text          0x001065c8      0x8e8 ../../core/makingthings/io.o
+                0x00106c00                Io_GetPortA
+                0x00106c14                Io_SetPortB
+                0x00106be4                Io_SetPortA
+                0x00106c44                Io_SetPortAMask
+                0x00106d04                IoOsc_GetName
+                0x00106c74                Io_GetValueBits
+                0x00106bcc                Io_SetPioBits
+                0x001068a8                Io_SetDirection
+                0x00106b70                Io_SetValueBits
+                0x00106908                Io_GetDirection
+                0x001069f4                Io_SetPeripheralB
+                0x00106b0c                Io_GetPullup
+                0x00106c98                Io_GetPullupBits
+                0x00106cbc                Io_GetPioBits
+                0x001066c0                Io_StartBits
+                0x00106948                Io_SetValue
+                0x00106de8                IoOsc_IndexIntPropertyGet
+                0x00106ba4                Io_SetDirectionBits
+                0x00106884                Io_GetActive
+                0x00106e34                IoOsc_IntPropertySet
+                0x00106c5c                Io_SetPortBMask
+                0x00106a78                Io_GetPio
+                0x001067f8                Io_StopBits
+                0x00106c68                Io_GetPortBMask
+                0x00106b48                Io_SetPullupBits
+                0x001065ec                Io_Start
+                0x00106a24                Io_SetPio
+                0x00106990                Io_GetValue
+                0x001069c4                Io_SetPeripheralA
+                0x00106ce0                Io_GetDirectionBits
+                0x00106670                Io_Stop
+                0x00106c30                Io_GetPortB
+                0x00106ab8                Io_SetPullup
+                0x00106d84                IoOsc_IndexIntPropertySet
+                0x00106e70                IoOsc_IntPropertyGet
+                0x00106d10                IoOsc_ReceiveMessage
+                0x00106c50                Io_GetPortAMask
+ .text          0x00106eb0      0x194 ../../core/makingthings/led.o
+                0x00106f3c                Led_SetState
+                0x00106f0c                Led_GetState
+                0x00106f6c                Led_SetActive
+                0x00106eb0                Led_GetActive
+                0x00106fc0                LedOsc_ReceiveMessage
+                0x00107004                LedOsc_PropertySet
+                0x00106fb4                LedOsc_GetName
+                0x00107024                LedOsc_PropertyGet
+ .text          0x00107044      0x1e4 ../../core/makingthings/timer.o
+                0x00107124                Timer_Set
+                0x001070d4                Timer_GetActive
+                0x001071bc                Timer_Cancel
+                0x00107044                Timer_SetActive
+                0x001070ec                Timer_InitializeEntry
+ .text          0x00107228      0x1f4 ../../core/makingthings/fasttimer.o
+                0x00107228                FastTimer_SetActive
+                0x001072c0                FastTimer_GetActive
+                0x001073b0                FastTimer_Cancel
+                0x00107318                FastTimer_Set
+                0x001072d8                FastTimer_InitializeEntry
+                0x001072f4                FastTimer_SetTime
+ .text          0x0010741c      0x28c ../../core/makingthings/debugosc.o
+                0x001075fc                DebugOsc_ReceiveMessage
+                0x001075f0                DebugOsc_GetName
+                0x0010741c                Debug_SetActive
+                0x0010762c                DebugOsc_PropertySet
+                0x001074b8                Debug_SetUsb
+                0x00107498                Debug_GetLevel
+                0x0010745c                Debug_GetActive
+                0x00107528                Debug_GetUdp
+                0x00107668                DebugOsc_PropertyGet
+                0x00107500                Debug_SetUdp
+                0x00107548                Debug
+                0x00107470                Debug_SetLevel
+                0x001074e0                Debug_GetUsb
+ .text          0x001076a8      0x1e8 ../../core/makingthings/can.o
+                0x001076d0                Can_GetActive
+                0x00107868                CanOsc_PropertySet
+                0x00107824                CanOsc_ReceiveMessage
+                0x0010787c                CanOsc_PropertyGet
+                0x00107818                CanOsc_GetName
+                0x00107764                Can_GetMessage
+                0x001077c0                Can_SendMessage
+                0x00107804                Can_SetActive
+ .text          0x00107890      0xdb0 ../../core/lwip/src/core/tcp_out.o
+                0x00108240                tcp_rst
+                0x00107d40                tcp_send_ctrl
+                0x00108408                tcp_keepalive
+                0x00108364                tcp_rexmit_rto
+                0x00107cf8                tcp_write
+                0x001083b8                tcp_rexmit
+                0x00107d64                tcp_output
+                0x00108510                tcp_zero_window_probe
+                0x00107890                tcp_enqueue
+ .text          0x00108640      0x26c ../../core/lwip/src/core/ipv4/inet.o
+                0x001087b4                inet_addr
+                0x001088a0                ntohl
+                0x00108640                htonl
+                0x00108660                inet_aton
+                0x0010888c                ntohs
+                0x001087d0                inet_ntoa
+                0x0010887c                htons
+ .text          0x001088ac      0x404 ../../core/lwip/src/core/mem.o
+                0x0010890c                mem_free
+                0x001088ac                mem_init
+                0x00108b0c                mem_malloc
+                0x001089e4                mem_realloc
+                0x00108c84                mem_calloc
+ .text          0x00108cb0      0x13c ../../core/lwip/src/core/memp.o
+                0x00108db4                memp_free
+                0x00108d4c                memp_malloc
+                0x00108cb0                memp_init
+ .text          0x00108dec      0x368 ../../core/lwip/src/core/netif.o
+                0x00108dec                netif_set_netmask
+                0x001090a4                netif_add
+                0x00108ef0                netif_set_ipaddr
+                0x00109100                netif_set_up
+                0x00108e4c                netif_set_default
+                0x00109130                netif_set_down
+                0x00109080                netif_set_addr
+                0x00109148                netif_is_up
+                0x00108e1c                netif_set_gw
+                0x00108e58                netif_remove
+                0x00108ea0                netif_find
+ .text          0x00109154      0x460 ../../core/lwip/src/core/pbuf.o
+                0x00109234                pbuf_realloc
+                0x001091d0                pbuf_free
+                0x001093fc                pbuf_cat
+                0x001093e0                pbuf_ref
+                0x00109520                pbuf_copy_partial
+                0x00109474                pbuf_copy
+                0x00109298                pbuf_alloc
+                0x001093c4                pbuf_clen
+                0x00109154                pbuf_header
+                0x00109430                pbuf_chain
+                0x00109444                pbuf_dechain
+ .text          0x001095b4      0x250 ../../core/lwip/src/core/raw.o
+                0x00109654                raw_bind
+                0x00109774                raw_send
+                0x001096c4                raw_sendto
+                0x001095b4                raw_input
+                0x00109688                raw_connect
+                0x001097c4                raw_new
+                0x00109788                raw_remove
+                0x001096bc                raw_recv
+ .text          0x00109804      0x21c ../../core/lwip/src/core/sys.o
+                0x00109a00                sys_msleep
+                0x001098dc                sys_timeout
+                0x00109804                sys_mbox_fetch
+                0x001099ac                sys_sem_wait_timeout
+                0x00109874                sys_sem_wait
+                0x00109944                sys_untimeout
+ .text          0x00109a20      0xca8 ../../core/lwip/src/core/tcp.o
+                0x00109d74                tcp_next_iss
+                0x0010a564                tcp_err
+                0x0010a554                tcp_recv
+                0x0010a420                tcp_alloc
+                0x0010a550                tcp_arg
+                0x00109efc                tcp_close
+                0x00109d14                tcp_recved
+                0x00109e4c                tcp_pcb_purge
+                0x0010a544                tcp_new
+                0x00109e28                tcp_segs_free
+                0x00109a90                tcp_bind
+                0x00109fb8                tcp_abort
+                0x00109e00                tcp_seg_free
+                0x0010a5b0                tcp_connect
+                0x0010a57c                tcp_eff_send_mss
+                0x0010a55c                tcp_sent
+                0x0010a3ac                tcp_tmr
+                0x0010a3cc                tcp_setprio
+                0x0010a0a8                tcp_slowtmr
+                0x0010a56c                tcp_accept
+                0x00109c48                tcp_listen_with_backlog
+                0x00109e98                tcp_pcb_remove
+                0x00109d8c                tcp_fasttmr
+                0x0010a3d0                tcp_seg_copy
+                0x0010a570                tcp_poll
+ .text          0x0010a6c8     0x173c ../../core/lwip/src/core/tcp_in.o
+                0x0010b1ac                tcp_input
+ .text          0x0010be04       0x18 ../../core/lwip/src/core/init.o
+                0x0010be04                lwip_init
+ .text          0x0010be1c      0x550 ../../core/lwip/src/core/ipv4/ip.o
+                0x0010c148                ip_output_if
+                0x0010c318                ip_output
+                0x0010be1c                ip_route
+                0x0010beb8                ip_input
+ .text          0x0010c36c       0x80 ../../core/lwip/src/core/ipv4/ip_addr.o
+                0x0010c36c                ip_addr_isbroadcast
+ .text          0x0010c3ec      0x44c ../../core/lwip/src/core/ipv4/icmp.o
+                0x0010c3ec                icmp_input
+                0x0010c770                icmp_time_exceeded
+                0x0010c6a8                icmp_dest_unreach
+ .text          0x0010c838      0x32c ../../core/lwip/src/core/ipv4/inet_chksum.o
+                0x0010cad0                inet_chksum
+                0x0010c894                inet_chksum_pseudo
+                0x0010cb00                inet_chksum_pbuf
+                0x0010c99c                inet_chksum_pseudo_partial
+ .text          0x0010cb64     0x10dc ../../core/lwip/src/core/dhcp.o
+                0x0010d578                dhcp_start
+                0x0010d0f0                dhcp_release
+                0x0010cf54                dhcp_stop
+                0x0010d28c                dhcp_arp_reply
+                0x0010db38                dhcp_fine_tmr
+                0x0010d1d0                dhcp_renew
+                0x0010d37c                dhcp_inform
+                0x0010dbd8                dhcp_coarse_tmr
+ .text          0x0010dc40      0x698 ../../core/lwip/src/core/dns.o
+                0x0010e150                dns_gethostbyname
+                0x0010dc40                dns_setserver
+                0x0010dcdc                dns_getserver
+                0x0010df44                dns_tmr
+                0x0010dc88                dns_init
+ .text          0x0010e2d8      0x384 ../../core/lwip/src/api/tcpip.o
+                0x0010e610                tcpip_init
+                0x0010e594                tcpip_timeout
+                0x0010e5d8                tcpip_apimsg
+                0x0010e4dc                tcpip_input
+                0x0010e314                tcp_timer_needed
+                0x0010e52c                tcpip_callback_with_block
+ .text          0x0010e65c      0xa6c ../../core/lwip/src/api/api_msg.o
+                0x0010eba0                do_bind
+                0x0010e9a4                netconn_free
+                0x0010eb24                do_delconn
+                0x0010f03c                do_close
+                0x0010e948                netconn_alloc
+                0x0010ef54                do_write
+                0x0010ef90                do_getaddr
+                0x0010eca8                do_disconnect
+                0x0010ecd0                do_listen
+                0x0010ede4                do_recv
+                0x0010f098                do_gethostbyname
+                0x0010e890                do_newconn
+                0x0010ec3c                do_connect
+                0x0010ed74                do_send
+ .text          0x0010f0c8      0x16c ../../core/lwip/src/api/netbuf.o
+                0x0010f0e4                netbuf_delete
+                0x0010f10c                netbuf_alloc
+                0x0010f0c8                netbuf_new
+                0x0010f1d0                netbuf_data
+                0x0010f140                netbuf_free
+                0x0010f200                netbuf_next
+                0x0010f228                netbuf_first
+                0x0010f1a8                netbuf_chain
+                0x0010f160                netbuf_ref
+ .text          0x0010f234      0x3dc ../../core/lwip/src/api/api_lib.o
+                0x0010f548                netconn_write
+                0x0010f58c                netconn_close
+                0x0010f364                netconn_disconnect
+                0x0010f2b0                netconn_type
+                0x0010f3bc                netconn_accept
+                0x0010f2c0                netconn_getaddr
+                0x0010f330                netconn_connect
+                0x0010f528                netconn_sendto
+                0x0010f390                netconn_listen_with_backlog
+                0x0010f284                netconn_delete
+                0x0010f4fc                netconn_send
+                0x0010f234                netconn_new_with_proto_and_callback
+                0x0010f5b8                netconn_gethostbyname
+                0x0010f2fc                netconn_bind
+                0x0010f3f4                netconn_recv
+ .text          0x0010f610      0xabc ../../core/lwip/src/netif/etharp.o
+                0x0010fc6c                etharp_request
+                0x0010f634                etharp_tmr
+                0x0010fac4                etharp_arp_input
+                0x00110064                ethernet_input
+                0x0010fa1c                etharp_find_addr
+                0x0010fd6c                etharp_query
+                0x0010ff04                etharp_output
+                0x0010fa60                etharp_ip_input
+ .text          0x001100cc      0x2f4 ../../core/lwip/contrib/port/FreeRTOS/AT91SAM7X/sys_arch.o
+                0x0011015c                sys_mbox_trypost
+                0x00110338                sys_arch_timeouts
+                0x00110334                sys_init
+                0x00110308                sys_sem_signal
+                0x00110194                sys_arch_mbox_fetch
+                0x0011022c                sys_sem_new
+                0x00110104                sys_mbox_free
+                0x001103a8                sys_arch_protect
+                0x00110318                sys_sem_free
+                0x001100cc                sys_mbox_new
+                0x00110348                sys_thread_new
+                0x001102a8                sys_arch_sem_wait
+                0x001103b4                sys_arch_unprotect
+                0x00110204                sys_arch_mbox_tryfetch
+                0x00110140                sys_mbox_post
+ .text          0x001103c0      0x278 ../../core/lwip/src/netif/ethernetif.o
+                0x00110544                ethernetif_init
+ .text          0x00110638      0x734 ../../core/makingthings/SAM7_EMAC.o
+                0x0011098c                vClearEMACTxBuffer
+                0x00110d54                vEMACWaitForInput
+                0x00110638                lEMACSend
+                0x00110744                ulEMACInputLength
+                0x001107e0                vEMACRead
+                0x001109fc                xEMACInit
+ .text          0x00110d6c      0x688 ../../core/lwip/src/core/udp.o
+                0x0011138c                udp_remove
+                0x00111274                udp_sendto
+                0x00111104                udp_sendto_if
+                0x0011134c                udp_disconnect
+                0x00111384                udp_recv
+                0x001112d0                udp_connect
+                0x00111068                udp_bind
+                0x001112bc                udp_send
+                0x00110d6c                udp_input
+                0x001113c8                udp_new
+ .text          0x001113f4      0x750 ../../core/lwip/src/core/ipv4/ip_frag.o
+                0x001115cc                ip_reass
+                0x00111988                ip_frag
+                0x00111598                ip_reass_tmr
+ .text          0x00111b44     0x18c4 ../../core/makingthings/osc.o
+                0x001125e0                Osc_CreateMessage
+                0x00112aec                Osc_IndexBlobReceiverHelper
+                0x00111d00                Osc_GetActive
+                0x00112724                Osc_IndexIntReceiverHelper
+                0x00111f10                Osc_RegisterSubsystem
+                0x00112fc0                Osc_Quicky
+                0x00111fb0                Osc_NumberMatch
+                0x0011245c                Osc_WritePaddedBlob
+                0x00112064                Osc_ReadInt
+                0x0011207c                Osc_ExtractData
+                0x00112300                Osc_SendPacket
+                0x00112fe0                Osc_ReceiveMessage
+                0x00111f64                Osc_PropertyLookup
+                0x001125ac                Osc_CreateMessageToBuf
+                0x00111d54                Osc_ResetChannel
+                0x00111e54                Osc_UsbPacketSend
+                0x00112e34                Osc_SubsystemError
+                0x00111dd4                Osc_StartTcpTask
+                0x00111ef4                Osc_Unlock
+                0x00112070                Osc_ReadFloat
+                0x00112eec                Osc_GeneralReceiverHelper
+                0x00113210                Osc_TcpTask
+                0x001129c8                Osc_IntReceiverHelper
+                0x00111f90                Osc_FindDataTag
+                0x0011228c                Osc_LockScratchBuf
+                0x001123cc                Osc_WritePaddedString
+                0x00111e84                Osc_UnlockScratchBuf
+                0x001124cc                Osc_CreateMessageInternal
+                0x00111b44                Osc_SetActive
+                0x00111ea0                Osc_SendPacketInternal
+                0x00112d10                Osc_BlobReceiverHelper
+                0x00113328                Osc_UdpTask
+                0x001122ac                Osc_Lock
+                0x0011225c                Osc_WriteTimetag
+                0x00111e64                Osc_EndianSwap
+                0x00111d9c                Osc_UdpPacketSend
+                0x00112e90                Osc_SendError
+                0x00112430                Osc_CreateBundle
+                0x00111f0c                Osc_Poll
+                0x00111d2c                Osc_SetReplyPort
+                0x00111d74                Osc_SetReplyAddress
+                0x00111d14                Osc_GetRunning
+                0x00113124                Osc_ReceivePacket
+                0x00111e04                Osc_TcpPacketSend
+                0x0011319c                Osc_UsbTask
+                0x00111e60                Osc_SendMessage
+                0x00112350                Osc_AsyncTask
+ .text          0x00113408      0x194 ../../core/makingthings/osc_patternmatch.o
+                0x00113408                Osc_PatternMatch
+ .text          0x0011359c       0xd0 /tmp/cczrhmtu.o
+                0x0011359c                start
+                0x0011364c                endless_loop
+ .text          0x0011366c       0xfc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o)
+                0x0011366c                __udivsi3
+ .text          0x00113768      0x12c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_divsi3.o)
+                0x00113768                __divsi3
+ .text          0x00113894       0xd0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_umodsi3.o)
+                0x00113894                __umodsi3
+ .text          0x00113964       0xe8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_modsi3.o)
+                0x00113964                __modsi3
+ .text          0x00113a4c        0x4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_dvmd_tls.o)
+                0x00113a4c                __div0
+ .text          0x00113a50       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_call_via_rX.o)
+                0x00113a58                _call_via_r2
+                0x00113a68                _call_via_r6
+                0x00113a64                _call_via_r5
+                0x00113a5c                _call_via_r3
+                0x00113a7c                _call_via_fp
+                0x00113a70                _call_via_r8
+                0x00113a6c                _call_via_r7
+                0x00113a50                _call_via_r0
+                0x00113a78                _call_via_sl
+                0x00113a84                _call_via_sp
+                0x00113a74                _call_via_r9
+                0x00113a60                _call_via_r4
+                0x00113a54                _call_via_r1
+                0x00113a80                _call_via_ip
+                0x00113a88                _call_via_lr
+ .text          0x00113a8c       0xf8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_truncdfsf2.o)
+                0x00113a8c                __truncdfsf2
+ .text          0x00113b84      0x218 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubsf3.o)
+                0x00113b84                __subsf3
+                0x00113d50                __floatsisf
+                0x00113d48                __floatunsisf
+                0x00113b88                __addsf3
+ .text          0x00113d9c       0x68 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixsfsi.o)
+                0x00113d9c                __fixsfsi
+ .text          0x00113e04       0x98 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                0x00113e04                memcpy
+ .text          0x00113e9c       0x78 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+                0x00113e9c                memset
+ .text          0x00113f14       0xd4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+                0x00113f78                snprintf
+                0x00113f14                _snprintf_r
+ .text          0x00113fe8       0xd4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+                0x00113fe8                _sprintf_r
+                0x0011404c                sprintf
+ .text          0x001140bc       0xf0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+                0x001140c4                sscanf
+                0x00114138                _sscanf_r
+ .text          0x001141ac       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+                0x001141ac                strcat
+ .text          0x00114220       0xd0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+                0x00114220                strchr
+ .text          0x001142f0       0xa4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+                0x001142f0                strcmp
+ .text          0x00114394       0x90 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+                0x00114394                strcpy
+ .text          0x00114424       0x60 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+                0x00114424                strlen
+ .text          0x00114484       0xd4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+                0x00114484                strncpy
+ .text          0x00114558     0x1c84 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+                0x001145a0                _vfprintf_r
+                0x00116184                vfprintf
+ .text          0x001161dc     0x1494 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+                0x001175ec                __svfscanf
+                0x001175e8                _vfscanf_r
+                0x00117618                vfscanf
+                0x001161dc                __sccl
+                0x00116294                __svfscanf_r
+ .text          0x00117670       0xcc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+                0x00117670                vsnprintf
+                0x001176dc                _vsnprintf_r
+ .text          0x0011773c       0x80 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+                0x0011773c                _wcrtomb_r
+                0x00117790                wcrtomb
+ .text          0x001177bc      0x16c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+                0x001177bc                _wcsrtombs_r
+                0x001178dc                wcsrtombs
+ .text          0x00117928      0x3fc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+                0x00117928                _wctomb_r
+ .text          0x00117d24      0x108 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+                0x00117d24                __swsetup
+ .text          0x00117e2c     0x1578 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+                0x00118020                _dtoa_r
+ .text          0x001193a4       0xe0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+                0x001193a4                fflush
+ .text          0x00119484      0x24c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+                0x00119544                __sinit
+                0x001194e0                __sfmoreglue
+                0x001196c0                _cleanup
+                0x001196a0                _cleanup_r
+                0x001195c0                __sfp
+ .text          0x001196d0       0xcc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+                0x001196d0                fread
+ .text          0x0011979c      0x354 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+                0x001198a4                _free_r
+                0x0011979c                _malloc_trim_r
+ .text          0x00119af0      0x3c8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+                0x00119af0                __sfvwrite
+ .text          0x00119eb8       0xe0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+                0x00119eb8                _fwalk
+ .text          0x00119f98       0x1c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+                0x00119f98                iswspace
+ .text          0x00119fb4       0xb8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+                0x00119fb4                _setlocale_r
+                0x0011a024                __locale_charset
+                0x0011a034                _localeconv_r
+                0x0011a040                setlocale
+                0x0011a05c                localeconv
+ .text          0x0011a06c      0x15c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+                0x0011a06c                __smakebuf
+ .text          0x0011a1c8       0x50 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+                0x0011a1c8                malloc
+                0x0011a1f0                free
+ .text          0x0011a218      0x69c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+                0x0011a218                _malloc_r
+ .text          0x0011a8b4       0xac /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+                0x0011a914                mbrtowc
+                0x0011a8b4                _mbrtowc_r
+ .text          0x0011a960       0x54 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+                0x0011a960                _mbtowc_r
+ .text          0x0011a9b4       0xdc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+                0x0011a9b4                memchr
+ .text          0x0011aa90       0xd8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+                0x0011aa90                memmove
+ .text          0x0011ab68        0x8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+                0x0011ab6c                __malloc_unlock
+                0x0011ab68                __malloc_lock
+ .text          0x0011ab70      0xc44 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+                0x0011b750                _mprec_log10
+                0x0011add4                _hi0bits
+                0x0011ab70                _Balloc
+                0x0011b5a4                _d2b
+                0x0011aef0                _multiply
+                0x0011b6cc                _ratio
+                0x0011acf8                _s2b
+                0x0011aec4                _i2b
+                0x0011ae30                _lo0bits
+                0x0011b2fc                __mcmp
+                0x0011b0e4                _pow5mult
+                0x0011b484                _ulp
+                0x0011b4ec                _b2d
+                0x0011ac24                _multadd
+                0x0011b350                __mdiff
+                0x0011b1fc                _lshift
+                0x0011ac08                _Bfree
+ .text          0x0011b7b4      0x4c0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+                0x0011b7b4                _realloc_r
+ .text          0x0011bc74      0x1cc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+                0x0011bca4                __srefill
+ .text          0x0011be40       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+                0x0011be40                isinf
+ .text          0x0011be7c       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+                0x0011be7c                isnan
+ .text          0x0011be9c      0x13c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+                0x0011bf5c                __sseek
+                0x0011be9c                __sread
+                0x0011bfb0                __sclose
+                0x0011beec                __swrite
+ .text          0x0011bfd8      0xfd0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+                0x0011bfd8                _strtod_r
+                0x0011cf58                strtod
+                0x0011cf74                strtof
+ .text          0x0011cfa8      0x1cc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+                0x0011d148                strtol
+                0x0011cfa8                _strtol_r
+ .text          0x0011d174      0x1b8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+                0x0011d300                strtoul
+                0x0011d174                _strtoul_r
+ .text          0x0011d32c      0x864 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+                0x0011d998                _getpid
+                0x0011d464                initialise_monitor_handles
+                0x0011db34                isatty
+                0x0011d9fc                _fstat
+                0x0011d8b8                _open
+                0x0011d9a0                _sbrk
+                0x0011daa4                _raise
+                0x0011daf4                _times
+                0x0011da38                _stat
+                0x0011d71c                _lseek
+                0x0011da94                _link
+                0x0011d734                _swiwrite
+                0x0011db6c                _rename
+                0x0011d638                _swilseek
+                0x0011d8dc                _swiclose
+                0x0011d800                _swiopen
+                0x0011da9c                _unlink
+                0x0011d784                _write
+                0x0011d96c                _kill
+                0x0011daa8                _gettimeofday
+                0x0011d5c4                _read
+                0x0011d94c                _exit
+                0x0011db3c                _system
+                0x0011d574                _swiread
+                0x0011d934                _close
+ .text          0x0011db90      0x250 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+                0x0011dc58                ungetc
+                0x0011db90                __submore
+ .text          0x0011dde0       0x94 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+                0x0011dde0                _calloc_r
+ .text          0x0011de74       0x10 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+                0x0011de74                __errno
+ .text          0x0011de84      0x3a8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubdf3.o)
+                0x0011e1b4                __floatsidf
+                0x0011e1e0                __extendsfdf2
+                0x0011de88                __adddf3
+                0x0011e18c                __floatunsidf
+                0x0011de84                __subdf3
+ .text          0x0011e22c      0x4ec /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_muldivdf3.o)
+                0x0011e4a4                __divdf3
+                0x0011e22c                __muldf3
+ .text          0x0011e718       0xb4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_cmpdf2.o)
+                0x0011e728                __cmpdf2
+                0x0011e728                __eqdf2
+                0x0011e718                __gtdf2
+                0x0011e720                __ltdf2
+                0x0011e720                __ledf2
+                0x0011e728                __nedf2
+                0x0011e718                __gedf2
+ .text          0x0011e7cc       0x80 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+                0x0011e7cc                __fixdfsi
+ *(.rodata)
+ .rodata        0x0011e84c       0x3c ../../core/makingthings/serial.o
+ .rodata        0x0011e888      0x1b0 ../../core/makingthings/USB-CDC.o
+                0x0011e8cb                pxDeviceDescriptor
+                0x0011e949                pxManufacturerStringDescriptor
+                0x0011e8dd                pxInterfaceStringDescriptor
+                0x0011e921                pxProductStringDescriptor
+                0x0011e963                pxLanguageStringDescriptor
+                0x0011e8fb                pxConfigurationStringDescriptor
+                0x0011e888                pxConfigDescriptor
+ .rodata        0x0011ea38       0x70 ../../core/makingthings/network.o
+ .rodata        0x0011eaa8       0x70 ../../core/makingthings/system.o
+ .rodata        0x0011eb18       0x28 ../../core/makingthings/io.o
+ .rodata        0x0011eb40       0x38 ../../core/lwip/src/core/memp.o
+ .rodata        0x0011eb78       0x34 ../../core/lwip/src/core/tcp.o
+                0x0011eb78                tcp_persist_backoff
+                0x0011eb7f                tcp_backoff
+ .rodata        0x0011ebac       0x28 ../../core/lwip/src/core/tcp_in.o
+ .rodata        0x0011ebd4        0x8 ../../core/lwip/src/core/ipv4/ip_addr.o
+                0x0011ebd8                ip_addr_any
+                0x0011ebd4                ip_addr_broadcast
+ .rodata        0x0011ebdc        0xc ../../core/lwip/src/netif/etharp.o
+                0x0011ebe2                ethbroadcast
+                0x0011ebdc                ethzero
+ .rodata        0x0011ebe8       0x48 ../../core/makingthings/osc.o
+ .rodata        0x0011ec30      0x101 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+                0x0011ec30                _ctype_
+ .rodata        0x0011ed31       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ *fill*         0x0011ed51        0x1 00
+ .rodata        0x0011ed52       0x22 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .rodata        0x0011ed74       0x30 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .rodata        0x0011eda4      0x124 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+                0x0011eda4                __mprec_tinytens
+                0x0011edf4                __mprec_tens
+                0x0011edcc                __mprec_bigtens
+ .rodata        0x0011eec8        0x8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+                0x0011eec8                __infinity
+ *(.rodata*)
+ .rodata.str1.4
+                0x0011eed0        0x6 make.o
+                                  0x8 (size before relaxing)
+ *fill*         0x0011eed6        0x2 00
+ .rodata.str1.4
+                0x0011eed8       0x1f ../../core/freertos/tasks.o
+                                 0x20 (size before relaxing)
+ *fill*         0x0011eef7        0x1 00
+ .rodata.str1.4
+                0x0011eef8        0x5 ../../core/makingthings/main.o
+                                  0x8 (size before relaxing)
+ *fill*         0x0011eefd        0x3 00
+ .rodata.str1.4
+                0x0011ef00       0x3b ../../core/makingthings/analogin.o
+                                 0x3c (size before relaxing)
+ *fill*         0x0011ef3b        0x1 00
+ .rodata.str1.4
+                0x0011ef3c       0x53 ../../core/makingthings/serial.o
+                                 0x64 (size before relaxing)
+ *fill*         0x0011ef8f        0x1 00
+ .rodata.str1.4
+                0x0011ef90        0x4 ../../core/makingthings/usb.o
+                                 0x10 (size before relaxing)
+ .rodata.str1.4
+                0x0011ef94      0x296 ../../core/makingthings/network.o
+                                0x2a8 (size before relaxing)
+ *fill*         0x0011f22a        0x2 00
+ .rodata.str1.4
+                0x0011f22c      0x174 ../../core/makingthings/system.o
+                                0x1e0 (size before relaxing)
+ .rodata.str1.4
+                0x0011f3a0       0x3f ../../core/makingthings/io.o
+                                 0x50 (size before relaxing)
+ *fill*         0x0011f3df        0x1 00
+ .rodata.str1.4
+                0x0011f3e0        0xc ../../core/makingthings/led.o
+                                 0x14 (size before relaxing)
+ .rodata.str1.4
+                0x0011f3ec       0x23 ../../core/makingthings/debugosc.o
+                                 0x34 (size before relaxing)
+ *fill*         0x0011f40f        0x1 00
+ .rodata.str1.4
+                0x0011f410        0x4 ../../core/makingthings/can.o
+                                 0x14 (size before relaxing)
+ .rodata.str1.4
+                0x0011f414        0xf ../../core/lwip/src/core/dns.o
+                                 0x10 (size before relaxing)
+ *fill*         0x0011f423        0x1 00
+ .rodata.str1.4
+                0x0011f424        0xd ../../core/lwip/src/api/tcpip.o
+                                 0x10 (size before relaxing)
+ *fill*         0x0011f431        0x3 00
+ .rodata.str1.4
+                0x0011f434        0x5 ../../core/lwip/contrib/port/FreeRTOS/AT91SAM7X/sys_arch.o
+                                  0x8 (size before relaxing)
+ *fill*         0x0011f439        0x3 00
+ .rodata.str1.4
+                0x0011f43c        0x8 ../../core/lwip/src/netif/ethernetif.o
+ .rodata.str1.4
+                0x0011f444      0x109 ../../core/makingthings/osc.o
+                                0x12c (size before relaxing)
+ *fill*         0x0011f54d        0x3 00
+ .rodata.str1.4
+                0x0011f550       0x58 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+                                 0x5c (size before relaxing)
+ .rodata.str1.4
+                0x0011f5a8        0x5 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+                                  0x8 (size before relaxing)
+ *fill*         0x0011f5ad        0x3 00
+ .rodata.str1.4
+                0x0011f5b0       0x1e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+                                 0x20 (size before relaxing)
+ *fill*         0x0011f5ce        0x2 00
+ .rodata.str1.4
+                0x0011f5d0        0x9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+                                 0x14 (size before relaxing)
+ *fill*         0x0011f5d9        0x3 00
+ .rodata.str1.4
+                0x0011f5dc        0xb /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+                                 0x18 (size before relaxing)
+ *fill*         0x0011f5e7        0x1 00
+ .rodata.str1.4
+                0x0011f5e8        0x4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ *(.glue_7)
+ .glue_7        0x0011f5ec       0x84 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+                0x0011f640                ___read_r_from_arm
+                0x0011f64c                ___write_r_from_arm
+                0x0011f604                __xQueueGenericSendFromISR_from_arm
+                0x0011f610                __vClearEMACTxBuffer_from_arm
+                0x0011f664                ___close_r_from_arm
+                0x0011f634                ___fstat_r_from_arm
+                0x0011f628                ___sbrk_r_from_arm
+                0x0011f5f8                __vTaskIncrementTick_from_arm
+                0x0011f61c                __xQueueReceiveFromISR_from_arm
+                0x0011f658                ___lseek_r_from_arm
+                0x0011f5ec                __vTaskSwitchContext_from_arm
+ *(.glue_7t)
+ .glue_7t       0x0011f670       0xc8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+                0x0011f6f4                __strcpy_change_to_arm
+                0x0011f674                __vPortEnterCritical_change_to_arm
+                0x0011f688                __memset_from_thumb
+                0x0011f6cc                ____modsi3_change_to_arm
+                0x0011f6d8                __sscanf_from_thumb
+                0x0011f6d4                __strcmp_change_to_arm
+                0x0011f68c                __memset_change_to_arm
+                0x0011f6e4                __vPortDisableAllInterrupts_change_to_arm
+                0x0011f724                ____fixsfsi_change_to_arm
+                0x0011f690                __strncpy_from_thumb
+                0x0011f720                ____fixsfsi_from_thumb
+                0x0011f67c                __vPortExitCritical_change_to_arm
+                0x0011f718                ____floatsisf_from_thumb
+                0x0011f6ec                __strlen_change_to_arm
+                0x0011f734                __strchr_change_to_arm
+                0x0011f6a8                __memcpy_from_thumb
+                0x0011f6b0                __vPortISRStartFirstTask_from_thumb
+                0x0011f704                ____umodsi3_change_to_arm
+                0x0011f698                __sprintf_from_thumb
+                0x0011f680                __vPortDisableInterruptsFromThumb_from_thumb
+                0x0011f6f0                __strcpy_from_thumb
+                0x0011f6c8                ____modsi3_from_thumb
+                0x0011f678                __vPortExitCritical_from_thumb
+                0x0011f70c                ____udivsi3_change_to_arm
+                0x0011f730                __strchr_from_thumb
+                0x0011f728                ____truncdfsf2_from_thumb
+                0x0011f6a0                __strcat_from_thumb
+                0x0011f714                __vPassEMACSemaphore_change_to_arm
+                0x0011f6fc                __vsnprintf_change_to_arm
+                0x0011f700                ____umodsi3_from_thumb
+                0x0011f6e0                __vPortDisableAllInterrupts_from_thumb
+                0x0011f6c0                ____divsi3_from_thumb
+                0x0011f72c                ____truncdfsf2_change_to_arm
+                0x0011f6bc                __snprintf_change_to_arm
+                0x0011f710                __vPassEMACSemaphore_from_thumb
+                0x0011f670                __vPortEnterCritical_from_thumb
+                0x0011f71c                ____floatsisf_change_to_arm
+                0x0011f708                ____udivsi3_from_thumb
+                0x0011f6b4                __vPortISRStartFirstTask_change_to_arm
+                0x0011f69c                __sprintf_change_to_arm
+                0x0011f684                __vPortDisableInterruptsFromThumb_change_to_arm
+                0x0011f6a4                __strcat_change_to_arm
+                0x0011f6e8                __strlen_from_thumb
+                0x0011f6b8                __snprintf_from_thumb
+                0x0011f6dc                __sscanf_change_to_arm
+                0x0011f6ac                __memcpy_change_to_arm
+                0x0011f6d0                __strcmp_from_thumb
+                0x0011f694                __strncpy_change_to_arm
+                0x0011f6c4                ____divsi3_change_to_arm
+                0x0011f6f8                __vsnprintf_from_thumb
+                0x0011f738                __end_of_text__ = .
+
+.data           0x00200000      0x8fc load address 0x0011f738
+                0x00200000                __data_beg__ = .
+                0x0011f738                __data_beg_src__ = __end_of_text__
+ *(.data)
+ .data          0x00200000        0x4 ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/portISR.o
+                0x00200000                ulCriticalNesting
+ .data          0x00200004        0x4 ../../core/freertos/tasks.o
+ .data          0x00200008       0x14 ../../core/makingthings/analogin.o
+ .data          0x0020001c       0x30 ../../core/makingthings/serial.o
+ .data          0x0020004c       0x10 ../../core/makingthings/usb.o
+ .data          0x0020005c       0x44 ../../core/makingthings/network.o
+                0x0020005c                emacETHADDR3
+                0x0020005d                emacETHADDR2
+                0x0020005f                emacETHADDR0
+                0x0020005e                emacETHADDR1
+ .data          0x002000a0       0x40 ../../core/makingthings/system.o
+ .data          0x002000e0       0x30 ../../core/makingthings/io.o
+ .data          0x00200110       0x10 ../../core/makingthings/led.o
+ .data          0x00200120       0x18 ../../core/makingthings/debugosc.o
+ .data          0x00200138       0x10 ../../core/makingthings/can.o
+ .data          0x00200148        0x8 ../../core/lwip/src/core/tcp.o
+ .data          0x00200150        0x4 ../../core/lwip/src/core/dhcp.o
+ .data          0x00200154        0x4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+                0x00200154                __ctype_ptr
+ .data          0x00200158      0x380 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                0x00200158                _impure_ptr
+ .data          0x002004d8       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+                0x002004e4                __mb_cur_max
+                0x002004d8                __lc_ctype
+ .data          0x002004ec      0x410 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+                0x002004ec                __malloc_sbrk_base
+                0x002004f4                __malloc_av_
+                0x002004f0                __malloc_trim_threshold
+                0x002008fc                __data_end__ = .
+
+.bss            0x00200900     0xe288
+                0x00200900                __bss_beg__ = .
+ *(.bss)
+ .bss           0x00200900        0x4 ../../core/makingthings/SAM7_EMAC_ISR.o
+ .bss           0x00200904       0x44 ../../core/makingthings/USBIsr.o
+ .bss           0x00200948      0x158 ../../core/freertos/tasks.o
+                0x00200948                pxCurrentTCB
+ .bss           0x00200aa0     0x5220 ../../core/freertos/portable/MemMang/heap_2.o
+ .bss           0x00205cc0        0x4 ../../core/makingthings/eeprom.o
+ .bss           0x00205cc4      0x12c ../../core/makingthings/USB-CDC.o
+ .bss           0x00205df0       0x54 ../../core/makingthings/usb.o
+                0x00205df0                Usb
+ .bss           0x00205e44       0x38 ../../core/makingthings/network.o
+                0x00205e45                emacETHADDR4
+                0x00205e44                emacETHADDR5
+ .bss           0x00205e7c        0x4 ../../core/makingthings/led.o
+ .bss           0x00205e80       0x10 ../../core/lwip/src/core/ipv4/inet.o
+ .bss           0x00205e90      0x7f4 ../../core/lwip/src/core/mem.o
+ .bss           0x00206684     0x2d44 ../../core/lwip/src/core/memp.o
+ .bss           0x002093c8        0x1 ../../core/lwip/src/core/netif.o
+ *fill*         0x002093c9        0x3 00
+ .bss           0x002093cc        0x4 ../../core/lwip/src/core/raw.o
+ .bss           0x002093d0        0x1 ../../core/lwip/src/core/tcp.o
+ *fill*         0x002093d1        0x3 00
+ .bss           0x002093d4       0x30 ../../core/lwip/src/core/tcp_in.o
+ .bss           0x00209404        0x2 ../../core/lwip/src/core/ipv4/ip.o
+ *fill*         0x00209406        0x2 00
+ .bss           0x00209408      0x670 ../../core/lwip/src/core/dns.o
+ .bss           0x00209a78       0x10 ../../core/lwip/src/api/tcpip.o
+ .bss           0x00209a88      0x11c ../../core/lwip/src/netif/etharp.o
+ .bss           0x00209ba4        0x8 ../../core/lwip/contrib/port/FreeRTOS/AT91SAM7X/sys_arch.o
+                0x00209ba4                intlevel
+ .bss           0x00209bac        0xc ../../core/lwip/src/netif/ethernetif.o
+ .bss           0x00209bb8     0x45f8 ../../core/makingthings/SAM7_EMAC.o
+ .bss           0x0020e1b0      0x5e4 ../../core/lwip/src/core/ipv4/ip_frag.o
+ .bss           0x0020e794        0x4 ../../core/makingthings/osc_patternmatch.o
+ .bss           0x0020e798        0x4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .bss           0x0020e79c        0xc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+                0x0020e7a4                __nlocale_changed
+                0x0020e7a0                __mlocale_changed
+                0x0020e79c                _PathLocale
+ .bss           0x0020e7a8       0x34 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+                0x0020e7d8                __malloc_top_pad
+                0x0020e7d4                __malloc_max_sbrked_mem
+                0x0020e7a8                __malloc_current_mallinfo
+                0x0020e7d0                __malloc_max_total_mem
+ .bss           0x0020e7dc       0xb4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ COMMON         0x0020e890        0xc ../../core/makingthings/fasttimer_isr.o
+                                  0x0 (size before relaxing)
+                0x0020e890                jitter
+                0x0020e894                timeReference
+                0x0020e898                te
+ COMMON         0x0020e89c        0x4 ../../core/makingthings/main.o
+                                  0x0 (size before relaxing)
+                0x0020e89c                toggle
+ COMMON         0x0020e8a0        0x4 ../../core/makingthings/analogin.o
+                                  0x0 (size before relaxing)
+                0x0020e8a0                AnalogIn
+ COMMON         0x0020e8a4       0x60 ../../core/makingthings/serial.o
+                                  0x0 (size before relaxing)
+                0x0020e8a4                Serial
+ COMMON         0x0020e904       0x18 ../../core/makingthings/pwm.o
+                                  0x0 (size before relaxing)
+                0x0020e904                Pwm
+ COMMON         0x0020e91c        0xc ../../core/makingthings/spi.o
+                                  0x0 (size before relaxing)
+                0x0020e91c                Spi
+ COMMON         0x0020e928        0xc ../../core/makingthings/USB-CDC.o
+                                  0x0 (size before relaxing)
+                0x0020e928                xUSBInterruptQueue
+                0x0020e92c                xTxCDC
+                0x0020e930                xRxCDC
+ COMMON         0x0020e934        0x4 ../../core/makingthings/usb.o
+                                  0x0 (size before relaxing)
+                0x0020e934                Usb_Running
+ COMMON         0x0020e938        0xc ../../core/makingthings/network.o
+                                  0x0 (size before relaxing)
+                0x0020e938                Network
+                0x0020e93c                Network_DnsSemaphore
+                0x0020e940                Network_Valid
+ COMMON         0x0020e944        0x4 ../../core/makingthings/system.o
+                                  0x0 (size before relaxing)
+                0x0020e944                System
+ COMMON         0x0020e948       0x50 ../../core/makingthings/io.o
+                                  0x0 (size before relaxing)
+                0x0020e948                Io
+ COMMON         0x0020e998       0x2c ../../core/makingthings/timer.o
+                                  0x0 (size before relaxing)
+                0x0020e998                Timer
+ COMMON         0x0020e9c4       0x38 ../../core/makingthings/fasttimer.o
+                                  0x0 (size before relaxing)
+                0x0020e9c4                FastTimer
+ COMMON         0x0020e9fc        0x4 ../../core/makingthings/debugosc.o
+                                  0x0 (size before relaxing)
+                0x0020e9fc                DebugData
+ COMMON         0x0020ea00        0xc ../../core/makingthings/can.o
+                                  0x0 (size before relaxing)
+                0x0020ea00                Can
+ COMMON         0x0020ea0c        0x8 ../../core/lwip/src/core/netif.o
+                                  0x0 (size before relaxing)
+                0x0020ea0c                netif_list
+                0x0020ea10                netif_default
+ COMMON         0x0020ea14      0x14c ../../core/lwip/src/core/stats.o
+                                  0x0 (size before relaxing)
+                0x0020ea14                lwip_stats
+ COMMON         0x0020eb60       0x18 ../../core/lwip/src/core/tcp.o
+                                  0x0 (size before relaxing)
+                0x0020eb60                tcp_active_pcbs
+                0x0020eb64                tcp_ticks
+                0x0020eb68                tcp_listen_pcbs
+                0x0020eb6c                tcp_tmp_pcb
+                0x0020eb70                tcp_bound_pcbs
+                0x0020eb74                tcp_tw_pcbs
+ COMMON         0x0020eb78        0x4 ../../core/lwip/src/core/tcp_in.o
+                                  0x0 (size before relaxing)
+                0x0020eb78                tcp_input_pcb
+ COMMON         0x0020eb7c        0x4 ../../core/lwip/src/core/udp.o
+                                  0x0 (size before relaxing)
+                0x0020eb7c                udp_pcbs
+ COMMON         0x0020eb80        0x8 ../../core/makingthings/osc.o
+                                  0x0 (size before relaxing)
+                0x0020eb80                Osc
+                0x0020eb84                OscBusy
+                0x0020eb88                . = ALIGN (0x4)
+                0x0020eb88                . = ALIGN (0x4)
+                0x0020eb88                _end = .
+                0x0020eb88                _bss_end__ = .
+                0x0020eb88                __bss_end__ = .
+                0x0020eb88                __end__ = .
+                0x0020eb88                PROVIDE (end, .)
+OUTPUT(output/solo.elf elf32-littlearm)
+
+.comment        0x00000000      0x816
+ .comment       0x00000000       0x12 ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/portISR.o
+ .comment       0x00000012       0x12 ../../core/makingthings/SAM7_EMAC_ISR.o
+ .comment       0x00000024       0x12 ../../core/makingthings/USBIsr.o
+ .comment       0x00000036       0x12 ../../core/startup/Cstartup_SAM7.o
+ .comment       0x00000048       0x12 ../../core/makingthings/analogin_isr.o
+ .comment       0x0000005a       0x12 ../../core/makingthings/fasttimer_isr.o
+ .comment       0x0000006c       0x12 ../../core/makingthings/serial_isr.o
+ .comment       0x0000007e       0x12 ../../core/makingthings/timer_isr.o
+ .comment       0x00000090       0x12 ../../core/makingthings/can_isr.o
+ .comment       0x000000a2       0x12 make.o
+ .comment       0x000000b4       0x12 ../../core/freertos/tasks.o
+ .comment       0x000000c6       0x12 ../../core/freertos/queue.o
+ .comment       0x000000d8       0x12 ../../core/freertos/list.o
+ .comment       0x000000ea       0x12 ../../core/freertos/portable/GCC/ARM7_AT91SAM7S/port.o
+ .comment       0x000000fc       0x12 ../../core/startup/extras.o
+ .comment       0x0000010e       0x12 ../../core/freertos/portable/MemMang/heap_2.o
+ .comment       0x00000120       0x12 ../../core/makingthings/main.o
+ .comment       0x00000132       0x12 ../../core/makingthings/eeprom.o
+ .comment       0x00000144       0x12 ../../core/makingthings/analogin.o
+ .comment       0x00000156       0x12 ../../core/makingthings/serial.o
+ .comment       0x00000168       0x12 ../../core/makingthings/pwm.o
+ .comment       0x0000017a       0x12 ../../core/makingthings/spi.o
+ .comment       0x0000018c       0x12 ../../core/makingthings/USB-CDC.o
+ .comment       0x0000019e       0x12 ../../core/makingthings/rtos.o
+ .comment       0x000001b0       0x12 ../../core/makingthings/usb.o
+ .comment       0x000001c2       0x12 ../../core/makingthings/network.o
+ .comment       0x000001d4       0x12 ../../core/makingthings/system.o
+ .comment       0x000001e6       0x12 ../../core/makingthings/io.o
+ .comment       0x000001f8       0x12 ../../core/makingthings/led.o
+ .comment       0x0000020a       0x12 ../../core/makingthings/timer.o
+ .comment       0x0000021c       0x12 ../../core/makingthings/fasttimer.o
+ .comment       0x0000022e       0x12 ../../core/makingthings/debugosc.o
+ .comment       0x00000240       0x12 ../../core/makingthings/can.o
+ .comment       0x00000252       0x12 ../../core/lwip/src/core/tcp_out.o
+ .comment       0x00000264       0x12 ../../core/lwip/src/core/ipv4/inet.o
+ .comment       0x00000276       0x12 ../../core/lwip/src/core/mem.o
+ .comment       0x00000288       0x12 ../../core/lwip/src/core/memp.o
+ .comment       0x0000029a       0x12 ../../core/lwip/src/core/netif.o
+ .comment       0x000002ac       0x12 ../../core/lwip/src/core/pbuf.o
+ .comment       0x000002be       0x12 ../../core/lwip/src/core/raw.o
+ .comment       0x000002d0       0x12 ../../core/lwip/src/core/stats.o
+ .comment       0x000002e2       0x12 ../../core/lwip/src/core/sys.o
+ .comment       0x000002f4       0x12 ../../core/lwip/src/core/tcp.o
+ .comment       0x00000306       0x12 ../../core/lwip/src/core/tcp_in.o
+ .comment       0x00000318       0x12 ../../core/lwip/src/core/init.o
+ .comment       0x0000032a       0x12 ../../core/lwip/src/core/ipv4/ip.o
+ .comment       0x0000033c       0x12 ../../core/lwip/src/core/ipv4/ip_addr.o
+ .comment       0x0000034e       0x12 ../../core/lwip/src/core/ipv4/icmp.o
+ .comment       0x00000360       0x12 ../../core/lwip/src/core/ipv4/inet_chksum.o
+ .comment       0x00000372       0x12 ../../core/lwip/src/core/dhcp.o
+ .comment       0x00000384       0x12 ../../core/lwip/src/core/dns.o
+ .comment       0x00000396       0x12 ../../core/lwip/src/api/tcpip.o
+ .comment       0x000003a8       0x12 ../../core/lwip/src/api/api_msg.o
+ .comment       0x000003ba       0x12 ../../core/lwip/src/api/err.o
+ .comment       0x000003cc       0x12 ../../core/lwip/src/api/netbuf.o
+ .comment       0x000003de       0x12 ../../core/lwip/src/api/api_lib.o
+ .comment       0x000003f0       0x12 ../../core/lwip/src/netif/etharp.o
+ .comment       0x00000402       0x12 ../../core/lwip/contrib/port/FreeRTOS/AT91SAM7X/sys_arch.o
+ .comment       0x00000414       0x12 ../../core/lwip/src/netif/ethernetif.o
+ .comment       0x00000426       0x12 ../../core/makingthings/SAM7_EMAC.o
+ .comment       0x00000438       0x12 ../../core/lwip/src/core/udp.o
+ .comment       0x0000044a       0x12 ../../core/lwip/src/core/ipv4/ip_frag.o
+ .comment       0x0000045c       0x12 ../../core/makingthings/osc.o
+ .comment       0x0000046e       0x12 ../../core/makingthings/osc_patternmatch.o
+ .comment       0x00000480       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+ .comment       0x00000492       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .comment       0x000004a4       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .comment       0x000004b6       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .comment       0x000004c8       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .comment       0x000004da       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .comment       0x000004ec       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .comment       0x000004fe       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .comment       0x00000510       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .comment       0x00000522       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .comment       0x00000534       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .comment       0x00000546       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .comment       0x00000558       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .comment       0x0000056a       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .comment       0x0000057c       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .comment       0x0000058e       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .comment       0x000005a0       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .comment       0x000005b2       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .comment       0x000005c4       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .comment       0x000005d6       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .comment       0x000005e8       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .comment       0x000005fa       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .comment       0x0000060c       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .comment       0x0000061e       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .comment       0x00000630       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .comment       0x00000642       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .comment       0x00000654       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .comment       0x00000666       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .comment       0x00000678       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .comment       0x0000068a       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .comment       0x0000069c       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .comment       0x000006ae       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .comment       0x000006c0       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .comment       0x000006d2       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .comment       0x000006e4       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .comment       0x000006f6       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .comment       0x00000708       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .comment       0x0000071a       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .comment       0x0000072c       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .comment       0x0000073e       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .comment       0x00000750       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .comment       0x00000762       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .comment       0x00000774       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .comment       0x00000786       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .comment       0x00000798       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .comment       0x000007aa       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .comment       0x000007bc       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .comment       0x000007ce       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .comment       0x000007e0       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .comment       0x000007f2       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .comment       0x00000804       0x12 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+
+.debug_line     0x00000000     0x57b5
+ .debug_line    0x00000000       0x79 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o)
+ .debug_line    0x00000079       0x85 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_divsi3.o)
+ .debug_line    0x000000fe       0x6b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_umodsi3.o)
+ .debug_line    0x00000169       0x71 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_modsi3.o)
+ .debug_line    0x000001da       0x5a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x00000234       0x68 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_call_via_rX.o)
+ .debug_line    0x0000029c       0x96 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_line    0x00000332       0xe1 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubsf3.o)
+ .debug_line    0x00000413       0x72 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixsfsi.o)
+ .debug_line    0x00000485       0x58 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+ .debug_line    0x000004dd       0xcc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .debug_line    0x000005a9       0xca /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .debug_line    0x00000673      0x178 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .debug_line    0x000007eb      0x187 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .debug_line    0x00000972      0x182 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .debug_line    0x00000af4       0x7a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .debug_line    0x00000b6e       0x7b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .debug_line    0x00000be9       0x7d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .debug_line    0x00000c66       0x79 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .debug_line    0x00000cdf       0xb9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .debug_line    0x00000d98       0xd3 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .debug_line    0x00000e6b      0x520 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_line    0x0000138b      0x500 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_line    0x0000188b      0x174 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .debug_line    0x000019ff      0x162 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .debug_line    0x00001b61      0x185 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_line    0x00001ce6      0x208 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_line    0x00001eee      0x15f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .debug_line    0x0000204d      0x44c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .debug_line    0x00002499      0x16c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .debug_line    0x00002605      0x1bf /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .debug_line    0x000027c4      0x16c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .debug_line    0x00002930      0x1a1 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .debug_line    0x00002ad1      0x1ec /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .debug_line    0x00002cbd      0x160 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .debug_line    0x00002e1d       0xf2 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_line    0x00002f0f      0x100 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .debug_line    0x0000300f      0x166 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .debug_line    0x00003175      0x193 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .debug_line    0x00003308      0x10b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .debug_line    0x00003413      0x22b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_line    0x0000363e      0x163 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .debug_line    0x000037a1      0x153 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .debug_line    0x000038f4       0xdb /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .debug_line    0x000039cf       0xdd /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .debug_line    0x00003aac      0x102 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .debug_line    0x00003bae      0x389 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .debug_line    0x00003f37      0x1b5 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_line    0x000040ec      0x18e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .debug_line    0x0000427a       0xfa /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .debug_line    0x00004374       0xb1 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .debug_line    0x00004425      0x17d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .debug_line    0x000045a2      0x3b2 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .debug_line    0x00004954      0x186 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .debug_line    0x00004ada      0x188 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .debug_line    0x00004c62      0x2eb /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .debug_line    0x00004f4d      0x1af /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .debug_line    0x000050fc      0x118 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .debug_line    0x00005214      0x101 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_line    0x00005315       0xde /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+ .debug_line    0x000053f3      0x13e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubdf3.o)
+ .debug_line    0x00005531      0x18b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_muldivdf3.o)
+ .debug_line    0x000056bc       0x81 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_cmpdf2.o)
+ .debug_line    0x0000573d       0x78 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+
+.debug_info     0x00000000    0x19c0c
+ .debug_info    0x00000000       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o)
+ .debug_info    0x00000074       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_divsi3.o)
+ .debug_info    0x000000e8       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_umodsi3.o)
+ .debug_info    0x0000015c       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_modsi3.o)
+ .debug_info    0x000001d0       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00000244       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_call_via_rX.o)
+ .debug_info    0x000002b8       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_info    0x0000032b       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubsf3.o)
+ .debug_info    0x0000039e       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixsfsi.o)
+ .debug_info    0x00000411       0x79 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+ .debug_info    0x0000048a       0xfc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .debug_info    0x00000586      0x102 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .debug_info    0x00000688      0x9d4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .debug_info    0x0000105c      0x9bc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .debug_info    0x00001a18      0xa01 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .debug_info    0x00002419       0xe0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .debug_info    0x000024f9      0x103 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .debug_info    0x000025fc       0xd0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .debug_info    0x000026cc       0xff /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .debug_info    0x000027cb       0xd2 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .debug_info    0x0000289d      0x117 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .debug_info    0x000029b4     0x109f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_info    0x00003a53      0xddb /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_info    0x0000482e      0x9d5 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .debug_info    0x00005203      0x9a9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .debug_info    0x00005bac      0xa30 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_info    0x000065dc      0x9bc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_info    0x00006f98      0x904 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .debug_info    0x0000789c      0xd0c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .debug_info    0x000085a8      0x925 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .debug_info    0x00008ecd      0xa2d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .debug_info    0x000098fa      0x958 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .debug_info    0x0000a252      0xb61 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .debug_info    0x0000adb3      0xa20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .debug_info    0x0000b7d3      0x952 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .debug_info    0x0000c125      0x8e0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_info    0x0000ca05       0xf0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .debug_info    0x0000caf5      0xb40 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .debug_info    0x0000d635      0xaa1 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .debug_info    0x0000e0d6      0x924 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .debug_info    0x0000e9fa      0xc63 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_info    0x0000f65d      0x9a9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .debug_info    0x00010006      0x95a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .debug_info    0x00010960      0x123 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .debug_info    0x00010a83      0x12d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .debug_info    0x00010bb0      0x901 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .debug_info    0x000114b1     0x1235 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .debug_info    0x000126e6      0xb39 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_info    0x0001321f      0x92a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .debug_info    0x00013b49      0x147 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .debug_info    0x00013c90       0xca /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .debug_info    0x00013d5a      0xa20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .debug_info    0x0001477a      0xcf3 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .debug_info    0x0001546d      0x9d9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .debug_info    0x00015e46      0x9d8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .debug_info    0x0001681e     0x1542 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .debug_info    0x00017d60      0x94c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .debug_info    0x000186ac      0x9c5 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .debug_info    0x00019071      0x8e8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_info    0x00019959       0xe7 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+ .debug_info    0x00019a40       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubdf3.o)
+ .debug_info    0x00019ab3       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_muldivdf3.o)
+ .debug_info    0x00019b26       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_cmpdf2.o)
+ .debug_info    0x00019b99       0x73 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+
+.debug_abbrev   0x00000000     0x48c8
+ .debug_abbrev  0x00000000       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000014       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00000028       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x0000003c       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_modsi3.o)
+ .debug_abbrev  0x00000050       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000064       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_call_via_rX.o)
+ .debug_abbrev  0x00000078       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_abbrev  0x0000008c       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubsf3.o)
+ .debug_abbrev  0x000000a0       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixsfsi.o)
+ .debug_abbrev  0x000000b4       0x52 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+ .debug_abbrev  0x00000106       0x99 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .debug_abbrev  0x0000019f       0x9a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .debug_abbrev  0x00000239      0x1a0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .debug_abbrev  0x000003d9      0x191 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .debug_abbrev  0x0000056a      0x1b5 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .debug_abbrev  0x0000071f       0x89 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .debug_abbrev  0x000007a8       0x80 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .debug_abbrev  0x00000828       0x71 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .debug_abbrev  0x00000899       0x80 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .debug_abbrev  0x00000919       0x7e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .debug_abbrev  0x00000997       0x8d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .debug_abbrev  0x00000a24      0x30f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_abbrev  0x00000d33      0x25e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_abbrev  0x00000f91      0x19b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .debug_abbrev  0x0000112c      0x18e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .debug_abbrev  0x000012ba      0x195 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_abbrev  0x0000144f      0x1b8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_abbrev  0x00001607      0x170 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .debug_abbrev  0x00001777      0x1fc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .debug_abbrev  0x00001973      0x17f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .debug_abbrev  0x00001af2      0x1e7 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .debug_abbrev  0x00001cd9      0x18c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .debug_abbrev  0x00001e65      0x1d9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .debug_abbrev  0x0000203e      0x1a9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .debug_abbrev  0x000021e7      0x19c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .debug_abbrev  0x00002383      0x157 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_abbrev  0x000024da       0x9b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .debug_abbrev  0x00002575      0x1de /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .debug_abbrev  0x00002753      0x18c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .debug_abbrev  0x000028df      0x187 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .debug_abbrev  0x00002a66      0x214 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_abbrev  0x00002c7a      0x17f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .debug_abbrev  0x00002df9      0x18a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .debug_abbrev  0x00002f83       0xa8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .debug_abbrev  0x0000302b       0x99 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .debug_abbrev  0x000030c4      0x16e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .debug_abbrev  0x00003232      0x221 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .debug_abbrev  0x00003453      0x1cc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_abbrev  0x0000361f      0x185 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .debug_abbrev  0x000037a4       0xd4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .debug_abbrev  0x00003878       0x79 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .debug_abbrev  0x000038f1      0x19b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .debug_abbrev  0x00003a8c      0x21c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .debug_abbrev  0x00003ca8      0x1b3 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .debug_abbrev  0x00003e5b      0x1b3 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .debug_abbrev  0x0000400e      0x349 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .debug_abbrev  0x00004357      0x196 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .debug_abbrev  0x000044ed      0x1af /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .debug_abbrev  0x0000469c      0x15f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_abbrev  0x000047fb       0x7d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+ .debug_abbrev  0x00004878       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubdf3.o)
+ .debug_abbrev  0x0000488c       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_muldivdf3.o)
+ .debug_abbrev  0x000048a0       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_cmpdf2.o)
+ .debug_abbrev  0x000048b4       0x14 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+
+.debug_aranges  0x00000000      0x7a0
+ .debug_aranges
+                0x00000000       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00000020       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000040       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x00000060       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_modsi3.o)
+ .debug_aranges
+                0x00000080       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x000000a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_call_via_rX.o)
+ .debug_aranges
+                0x000000c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_aranges
+                0x000000e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubsf3.o)
+ .debug_aranges
+                0x00000100       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixsfsi.o)
+ .debug_aranges
+                0x00000120       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .debug_aranges
+                0x00000140       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .debug_aranges
+                0x00000160       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .debug_aranges
+                0x00000180       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .debug_aranges
+                0x000001a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .debug_aranges
+                0x000001c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .debug_aranges
+                0x000001e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .debug_aranges
+                0x00000200       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .debug_aranges
+                0x00000220       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .debug_aranges
+                0x00000240       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .debug_aranges
+                0x00000260       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .debug_aranges
+                0x00000280       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_aranges
+                0x000002a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_aranges
+                0x000002c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .debug_aranges
+                0x000002e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .debug_aranges
+                0x00000300       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_aranges
+                0x00000320       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_aranges
+                0x00000340       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .debug_aranges
+                0x00000360       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .debug_aranges
+                0x00000380       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .debug_aranges
+                0x000003a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .debug_aranges
+                0x000003c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .debug_aranges
+                0x000003e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .debug_aranges
+                0x00000400       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .debug_aranges
+                0x00000420       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .debug_aranges
+                0x00000440       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .debug_aranges
+                0x00000460       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .debug_aranges
+                0x00000480       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .debug_aranges
+                0x000004a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .debug_aranges
+                0x000004c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_aranges
+                0x000004e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .debug_aranges
+                0x00000500       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .debug_aranges
+                0x00000520       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .debug_aranges
+                0x00000540       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .debug_aranges
+                0x00000560       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .debug_aranges
+                0x00000580       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .debug_aranges
+                0x000005a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_aranges
+                0x000005c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .debug_aranges
+                0x000005e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .debug_aranges
+                0x00000600       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .debug_aranges
+                0x00000620       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .debug_aranges
+                0x00000640       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .debug_aranges
+                0x00000660       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .debug_aranges
+                0x00000680       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .debug_aranges
+                0x000006a0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .debug_aranges
+                0x000006c0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .debug_aranges
+                0x000006e0       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .debug_aranges
+                0x00000700       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_aranges
+                0x00000720       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_addsubdf3.o)
+ .debug_aranges
+                0x00000740       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_muldivdf3.o)
+ .debug_aranges
+                0x00000760       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_cmpdf2.o)
+ .debug_aranges
+                0x00000780       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/interwork/libgcc.a(_fixdfsi.o)
+
+.debug_pubnames
+                0x00000000      0xb19
+ .debug_pubnames
+                0x00000000       0x2e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+ .debug_pubnames
+                0x0000002e       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .debug_pubnames
+                0x0000004b       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .debug_pubnames
+                0x00000068       0x2f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .debug_pubnames
+                0x00000097       0x2d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .debug_pubnames
+                0x000000c4       0x2b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .debug_pubnames
+                0x000000ef       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .debug_pubnames
+                0x0000010c       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .debug_pubnames
+                0x00000129       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .debug_pubnames
+                0x00000146       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .debug_pubnames
+                0x00000163       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .debug_pubnames
+                0x00000180       0x1e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .debug_pubnames
+                0x0000019e       0x2f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_pubnames
+                0x000001cd       0x58 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_pubnames
+                0x00000225       0x31 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .debug_pubnames
+                0x00000256       0x2d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .debug_pubnames
+                0x00000283       0x31 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_pubnames
+                0x000002b4       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_pubnames
+                0x000002d4       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .debug_pubnames
+                0x000002f4       0x1e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .debug_pubnames
+                0x00000312       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .debug_pubnames
+                0x0000032f       0x55 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .debug_pubnames
+                0x00000384       0x1c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .debug_pubnames
+                0x000003a0       0x31 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .debug_pubnames
+                0x000003d1       0x21 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .debug_pubnames
+                0x000003f2       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .debug_pubnames
+                0x0000040f       0x22 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_pubnames
+                0x00000431       0x1f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .debug_pubnames
+                0x00000450       0xc3 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .debug_pubnames
+                0x00000513       0x21 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .debug_pubnames
+                0x00000534       0x26 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .debug_pubnames
+                0x0000055a       0xce /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_pubnames
+                0x00000628       0x2d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .debug_pubnames
+                0x00000655       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .debug_pubnames
+                0x00000675       0x1d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .debug_pubnames
+                0x00000692       0x1e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .debug_pubnames
+                0x000006b0       0x38 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .debug_pubnames
+                0x000006e8      0x112 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .debug_pubnames
+                0x000007fa       0x21 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_pubnames
+                0x0000081b       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .debug_pubnames
+                0x0000083b       0x1c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .debug_pubnames
+                0x00000857       0x1c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .debug_pubnames
+                0x00000873       0x44 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .debug_pubnames
+                0x000008b7       0x36 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .debug_pubnames
+                0x000008ed       0x2b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .debug_pubnames
+                0x00000918       0x2d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .debug_pubnames
+                0x00000945      0x14a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .debug_pubnames
+                0x00000a8f       0x2b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .debug_pubnames
+                0x00000aba       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .debug_pubnames
+                0x00000ada       0x1e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_pubnames
+                0x00000af8       0x21 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+
+.debug_str      0x00000000     0x1f2c
+ .debug_str     0x00000000       0x9f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ctype_.o)
+                                 0xb6 (size before relaxing)
+ .debug_str     0x0000009f       0xb6 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                                 0xe2 (size before relaxing)
+ .debug_str     0x00000155       0xa7 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+                                0x12c (size before relaxing)
+ .debug_str     0x000001fc      0x3cc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+                                0x4c2 (size before relaxing)
+ .debug_str     0x000005c8       0x4f /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+                                0x4b3 (size before relaxing)
+ .debug_str     0x00000617       0x54 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+                                0x4bf (size before relaxing)
+ .debug_str     0x0000066b       0x4e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+                                0x11c (size before relaxing)
+ .debug_str     0x000006b9       0x48 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+                                0x123 (size before relaxing)
+ .debug_str     0x00000701       0x43 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+                                0x111 (size before relaxing)
+ .debug_str     0x00000744       0x43 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+                                0x133 (size before relaxing)
+ .debug_str     0x00000787       0x43 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+                                0x12b (size before relaxing)
+ .debug_str     0x000007ca       0x45 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+                                0x142 (size before relaxing)
+ .debug_str     0x0000080f      0x1a5 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+                                0x673 (size before relaxing)
+ .debug_str     0x000009b4      0x120 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+                                0x5e2 (size before relaxing)
+ .debug_str     0x00000ad4       0x55 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+                                0x4c5 (size before relaxing)
+ .debug_str     0x00000b29       0x9c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+                                0x4b9 (size before relaxing)
+ .debug_str     0x00000bc5       0x60 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+                                0x4ce (size before relaxing)
+ .debug_str     0x00000c25       0x65 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+                                0x4ba (size before relaxing)
+ .debug_str     0x00000c8a       0x45 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+                                0x492 (size before relaxing)
+ .debug_str     0x00000ccf       0xfd /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+                                0x57d (size before relaxing)
+ .debug_str     0x00000dcc       0x42 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+                                0x48f (size before relaxing)
+ .debug_str     0x00000e0e       0x67 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+                                0x4d2 (size before relaxing)
+ .debug_str     0x00000e75       0x40 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+                                0x49f (size before relaxing)
+ .debug_str     0x00000eb5      0x15c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+                                0x5cb (size before relaxing)
+ .debug_str     0x00001011       0x5d /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+                                0x4ed (size before relaxing)
+ .debug_str     0x0000106e       0x4a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+                                0x497 (size before relaxing)
+ .debug_str     0x000010b8       0x8b /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                                0x48f (size before relaxing)
+ .debug_str     0x00001143       0x4e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+                                0x135 (size before relaxing)
+ .debug_str     0x00001191      0x1c7 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+                                0x631 (size before relaxing)
+ .debug_str     0x00001358      0x115 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+                                0x579 (size before relaxing)
+ .debug_str     0x0000146d       0x41 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+                                0x4a4 (size before relaxing)
+ .debug_str     0x000014ae       0xe9 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+                                0x679 (size before relaxing)
+ .debug_str     0x00001597       0x50 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+                                0x4b9 (size before relaxing)
+ .debug_str     0x000015e7       0x4e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+                                0x4aa (size before relaxing)
+ .debug_str     0x00001635       0x51 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+                                0x139 (size before relaxing)
+ .debug_str     0x00001686       0x4e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+                                0x14b (size before relaxing)
+ .debug_str     0x000016d4       0x59 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+                                0x496 (size before relaxing)
+ .debug_str     0x0000172d       0xd4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+                                0x565 (size before relaxing)
+ .debug_str     0x00001801       0x61 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+                                0x54b (size before relaxing)
+ .debug_str     0x00001862       0x4c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+                                0x499 (size before relaxing)
+ .debug_str     0x000018ae       0xb0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+                                0x157 (size before relaxing)
+ .debug_str     0x0000195e       0x41 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+                                0x124 (size before relaxing)
+ .debug_str     0x0000199f       0x6a /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+                                0x4c5 (size before relaxing)
+ .debug_str     0x00001a09       0xc0 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+                                0x567 (size before relaxing)
+ .debug_str     0x00001ac9       0x62 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+                                0x4c2 (size before relaxing)
+ .debug_str     0x00001b2b       0x50 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+                                0x4c5 (size before relaxing)
+ .debug_str     0x00001b7b      0x288 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+                                0x798 (size before relaxing)
+ .debug_str     0x00001e03       0x4c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+                                0x499 (size before relaxing)
+ .debug_str     0x00001e4f       0x19 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+                                0x4ca (size before relaxing)
+ .debug_str     0x00001e68       0x86 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+                                0x48a (size before relaxing)
+ .debug_str     0x00001eee       0x3e /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_infconst.o)
+                                0x132 (size before relaxing)
+
+.debug_frame    0x00000000     0x127c
+ .debug_frame   0x00000000       0x28 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ .debug_frame   0x00000028       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memset.o)
+ .debug_frame   0x00000048       0x58 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(snprintf.o)
+ .debug_frame   0x000000a0       0x5c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sprintf.o)
+ .debug_frame   0x000000fc       0x70 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(sscanf.o)
+ .debug_frame   0x0000016c       0x30 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcat.o)
+ .debug_frame   0x0000019c       0x28 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strchr.o)
+ .debug_frame   0x000001c4       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcmp.o)
+ .debug_frame   0x000001e4       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strcpy.o)
+ .debug_frame   0x00000204       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strlen.o)
+ .debug_frame   0x00000224       0x28 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strncpy.o)
+ .debug_frame   0x0000024c       0x84 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_frame   0x000002d0       0xa4 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_frame   0x00000374       0x50 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vsnprintf.o)
+ .debug_frame   0x000003c4       0x4c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcrtomb.o)
+ .debug_frame   0x00000410       0x60 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_frame   0x00000470       0x34 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_frame   0x000004a4       0x34 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wsetup.o)
+ .debug_frame   0x000004d8       0x68 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(dtoa.o)
+ .debug_frame   0x00000540       0x34 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fflush.o)
+ .debug_frame   0x00000574       0xbc /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(findfp.o)
+ .debug_frame   0x00000630       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fread.o)
+ .debug_frame   0x0000066c       0x64 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(freer.o)
+ .debug_frame   0x000006d0       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fvwrite.o)
+ .debug_frame   0x0000070c       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(fwalk.o)
+ .debug_frame   0x00000748       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(iswspace.o)
+ .debug_frame   0x00000768       0x74 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(locale.o)
+ .debug_frame   0x000007dc       0x38 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(makebuf.o)
+ .debug_frame   0x00000814       0x50 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(malloc.o)
+ .debug_frame   0x00000864       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_frame   0x000008a0       0x58 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbrtowc.o)
+ .debug_frame   0x000008f8       0x24 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mbtowc_r.o)
+ .debug_frame   0x0000091c       0x28 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memchr.o)
+ .debug_frame   0x00000944       0x28 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(memmove.o)
+ .debug_frame   0x0000096c       0x30 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mlock.o)
+ .debug_frame   0x0000099c      0x240 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mprec.o)
+ .debug_frame   0x00000bdc       0x3c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_frame   0x00000c18       0x54 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(refill.o)
+ .debug_frame   0x00000c6c       0x28 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isinf.o)
+ .debug_frame   0x00000c94       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(s_isnan.o)
+ .debug_frame   0x00000cb4       0x98 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(stdio.o)
+ .debug_frame   0x00000d4c       0x6c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtod.o)
+ .debug_frame   0x00000db8       0x54 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtol.o)
+ .debug_frame   0x00000e0c       0x54 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(strtoul.o)
+ .debug_frame   0x00000e60      0x370 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(syscalls.o)
+ .debug_frame   0x000011d0       0x5c /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(ungetc.o)
+ .debug_frame   0x0000122c       0x30 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
+ .debug_frame   0x0000125c       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+
+.debug_ranges   0x00000000      0x280
+ .debug_ranges  0x00000000       0x78 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfprintf.o)
+ .debug_ranges  0x00000078       0xa8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(vfscanf.o)
+ .debug_ranges  0x00000120       0x18 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wcsrtombs.o)
+ .debug_ranges  0x00000138       0x50 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(wctomb_r.o)
+ .debug_ranges  0x00000188       0x20 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(mallocr.o)
+ .debug_ranges  0x000001a8       0xa8 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(reallocr.o)
+ .debug_ranges  0x00000250       0x30 /usr/local/gnuarm-3.4.3/bin/../lib/gcc/arm-elf/3.4.3/../../../../arm-elf/lib/interwork/libc.a(callocr.o)
