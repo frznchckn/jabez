@@ -2,12 +2,13 @@
 
 = Introduction =
 
-- Sun dial, motor tracking light source
-- Train system, motor moves a boxcar making stops along the track.
-- Hooking up system controller boards (SCB) to router, move motor based on input from iphone accelerometer (iphone communicates with SCB via TCP socket)
+= List of application ideas so we can narrow down our focus =
 
 
-- LCD, webserver displays information for system statuses.
+* Sun dial, motor tracking light source
+* Train system, motor moves a boxcar making stops along the track.
+* Hooking up system controller boards (SCB) to router, move motor based on input from iphone accelerometer (iphone communicates with SCB via TCP socket)
+* LCD, webserver displays information for system statuses.
 
 
 
