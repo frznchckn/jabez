@@ -1,0 +1,19 @@
+
+If you are running linux, you first need to load the at91 kernel driver:
+> insmod driver/at91.ko
+
+Once that's loaded (or you are using OSX):
+> ./sam7
+response = 0d0a
+it begins
+sam7> set_clock
+sam7> unlock_regions
+unlocking page 0: done
+unlocking page 1: done
+
+
+sam7> manual_flash test.bin 
+>
+
+
+
