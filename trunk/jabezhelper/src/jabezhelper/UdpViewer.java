@@ -10,102 +10,158 @@
  */
 
 package jabezhelper;
+import java.net.*;
+import java.util.*;
+import java.text.SimpleDateFormat;
+import java.nio.ByteBuffer;
+import com.illposed.osc.*;
+import com.illposed.osc.utility.*;
+
 
 /**
  *
  * @author Tom
  */
-public class UdpViewer extends javax.swing.JPanel {
+public class UdpViewer extends javax.swing.JPanel implements Runnable {
+
+    private DatagramSocket socket;
+    private int recvport, sendport;
+    private InetAddress address;
+	protected OSCByteArrayToJavaConverter converter;
+	protected jabezhelper.OSCPacketDispatcher dispatcher;
+    protected SimpleDateFormat lFormat = new SimpleDateFormat( "HH:mm:ss:SSS: ");
 
     /** Creates new form UdpViewer */
-    public UdpViewer() {
+    public UdpViewer(int recvport, int sendport, String addressStr) {
         initComponents();
-/*
-             IPAddress myIpaddr = this.GetMyIpAddress();
-            if (myIpaddr != null)
-            {
-                // start thread to listening on DxC UPD port
- //               udpTextBox1.StartLogging(myIpaddr, 5001);
 
-                // start thread to listening on UCTA UPD port
-                udpTextBox2.StartLogging(myIpaddr, 50880);
+        // set up the client address and port number
+        try {
+            this.recvport = recvport;
+            this.sendport = sendport;
+            if (addressStr.length() > 0) {
+                this.address = InetAddress.getByName(addressStr);
             }
- */
+        } catch (Exception err) {
+            jTextArea1.append("*** ERROR *** " + err.toString() + "\n");
+        }
+
+
+        // setup the handler for osc messages
+        converter =  new OSCByteArrayToJavaConverter();
+        dispatcher = new OSCPacketDispatcher();
+
+       	OSCListener listener = new OSCListener() {
+    		public void acceptMessage(java.util.Date time, OSCMessage message) {
+                // setup the timestamp down to millisec (time arg is gabarage)
+                Date lDate = new Date(System.currentTimeMillis());
+
+                // print the osc message
+                jTextArea1.append(lFormat.format(lDate) + message.getAddress());
+                for (Object obj : message.getArguments()) {
+                    jTextArea1.append(" " + obj.toString());
+                }
+                jTextArea1.append("\n");
+
+                // automatically scroll for osc message
+                jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+            }
+        };
+        dispatcher.addListener(listener);
+
     }
 
-/*
-        public void StartLogging(IPAddress addr, int port)
-        {
-            // create a new socket connection
-            endPoint = new IPEndPoint(addr, port);
-            socket = new Socket(endPoint.Address.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+    public void run() {
+        try {
+            socket = new DatagramSocket(recvport);
 
-            // start a new receving thread
-            thread = new Thread(new ThreadStart(this.ReceiveData));
-            thread.Start();
-        }
+            // print an info message
+            jTextArea1.append("Open UDP connection to  ");
+            if (address != null) jTextArea1.append(address.getHostAddress());
+            else jTextArea1.append("TBD");
+            jTextArea1.append("  recv: " + recvport + "  send: " + sendport + "\n");
 
-        private void AddText(string text)
-        {
-            if (richTextBox1.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(AddText);
-                this.Invoke(d, new object[] { text });
-            }
-            else
-            {
-                richTextBox1.AppendText(text);
-//                richTextBox1.SelectionStart = richTextBox1.TextLength;
-//                richTextBox1.ScrollToCaret();
-            }
-        }
+            byte buffer[] = new byte[1536];
+            DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
 
-        public void ReceiveData()
-        {
-            try
-            {
-                // Creates an IPEndPoint to capture the identity of the sending host
-                EndPoint senderRemote = (EndPoint)new IPEndPoint(IPAddress.Any, 0);
-                socket.Bind(endPoint);
-
-                byte[] data = new Byte[256];
-                while (!closeRequested)
-                {
-                    // This call blocks
-                    int recv = socket.ReceiveFrom(data, ref senderRemote);
-                    AddText(DateTime.Now.ToString(" H:mm:ss:fff ") + Encoding.ASCII.GetString(data, 0, recv));
+            // data receiving loop
+            while (true) {
+                socket.receive(dp);
+                // set client ip address if we didn't know
+                if (address == null) {
+                    address = dp.getAddress();
+                    jTextArea1.append("Receiving UDP data from " + address.getHostAddress() + "\n");
                 }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.ToString());
-            }
-        }
 
-        public void CloseConnection()
-        {
-            closeRequested = true;
-            socket.Close();
-            thread.Abort();
-        }
-
-        private IPAddress GetMyIpAddress()
-        {
-            // Creates a socket for UDP datagram
-            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ipaddress in host.AddressList) {
-//                AddText("\naddress found " + ipaddress.ToString());
-                if (ipaddress.ToString().StartsWith("10.14"))
-                {
-                    return ipaddress;
+                if ((buffer[0] == '/') || (buffer[0] == '#')) {     //osc message
+                    OSCPacket oscPacket = converter.convert(buffer, dp.getLength());
+                    dispatcher.dispatchPacket(oscPacket);
                 }
+                else
+                    appendText(new String(buffer, 0, dp.getLength()));
             }
-            return null;
+        } catch (Exception err) {
+            jTextArea1.append("*** ERROR *** " + err.toString() + "\n");
         }
+    }
 
+    public void sendOSCString(String str) {
+        String segs[] = str.split(" ");
+        OSCMessage msg;
+        if (segs.length > 1)
+            msg = new OSCMessage(segs[0], parseOscString(segs));
+        else
+            msg = new OSCMessage(segs[0]);
 
- */
+        byte[] buffer = msg.getByteArray();
+        jTextArea1.append("osc");
+        sendData(buffer);
+    }
 
+    public void sendRawString(String str) {
+        jTextArea1.append("raw");
+        sendData(str.getBytes());
+    }
+
+    private void sendData(byte[] data) {
+        try {
+            DatagramPacket dp = new DatagramPacket(data, data.length, address, sendport);
+            socket.send(dp);
+            jTextArea1.append("> " + new String(data, 0, data.length) + "\n");
+        } catch (Exception err) {
+            jTextArea1.append("*** ERROR *** unable to send data" + "\n");
+        }
+    }
+
+    private Object[] parseOscString(String[] segs) {
+        Object args[] = new Object[segs.length];
+        for (int i=1; i<segs.length; i++) {
+            try {
+                if (segs[i].contains("."))
+                    args[i] = Float.valueOf(segs[i]);
+                else
+                    args[i] = Integer.valueOf(segs[i]);
+            } catch (NumberFormatException err) {
+                args[i] = segs[i];
+            } catch (NullPointerException err) {  // not possible
+                jTextArea1.append("*** ERROR *** " + err.toString() + "\n");
+            }
+        }
+        return args;
+    }
+
+    private void appendText(String str) {
+        // setup the timestamp down to millisec
+        Date lDate = new Date(System.currentTimeMillis());
+
+        // determine whether the scrollbar is currently at the very bottom position.
+        javax.swing.JScrollBar vbar = jScrollPane1.getVerticalScrollBar();
+        boolean autoScroll = ((vbar.getValue() + vbar.getVisibleAmount()) == vbar.getMaximum());
+        jTextArea1.append(lFormat.format(lDate) + str + "\n");
+
+        // now scroll if we were already at the bottom.
+        if (autoScroll) jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -126,6 +182,7 @@ public class UdpViewer extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setEditable(false);
         jTextArea1.setRows(5);
+        jTextArea1.setMargin(new java.awt.Insets(0, 8, 0, 0));
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);

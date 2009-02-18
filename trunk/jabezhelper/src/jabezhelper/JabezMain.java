@@ -10,17 +10,20 @@
  */
 
 package jabezhelper;
-
+import java.io.*;
+import java.util.*;
 /**
  *
  * @author Tom
  */
 public class JabezMain extends javax.swing.JFrame {
 
+    private HashMap networkThreads;
+
     /** Creates new form JabezMain */
     public JabezMain() {
         initComponents();
-
+        this.networkThreads = new HashMap();
 
     }
 
@@ -35,6 +38,7 @@ public class JabezMain extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -46,26 +50,33 @@ public class JabezMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jabez Datalogger");
 
-        jTabbedPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(2, 2, 2, 2));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 400));
         getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 36));
 
-        jTextField1.setEnabled(false);
-        jTextField1.setPreferredSize(new java.awt.Dimension(700, 26));
+        jCheckBox1.setSelected(true);
+        jCheckBox1.setText("OSC Packet");
+        jPanel1.add(jCheckBox1);
+
+        jTextField1.setPreferredSize(new java.awt.Dimension(600, 26));
         jPanel1.add(jTextField1);
 
         jButton1.setText("Send");
-        jButton1.setEnabled(false);
         jButton1.setPreferredSize(new java.awt.Dimension(80, 26));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.SOUTH);
 
         jMenu1.setText("File");
+        jMenu1.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
-        jMenuItem2.setText("New Connection");
+        jMenuItem2.setLabel("New Connection    ");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -92,13 +103,42 @@ public class JabezMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        UdpViewer panel = new UdpViewer();
-        jTabbedPane1.addTab("UDP Make Controller", panel);
+        OpenConnDialog openConnDialog = new OpenConnDialog(this, true);
+        if (openConnDialog.showWindow()) {
+            int port = openConnDialog.recvPort;
+            int sendport = openConnDialog.sendPort;
+            String address = openConnDialog.ipAddress;
+
+            if (! this.networkThreads.containsKey(port)) {
+                // start a new thread to monitor udp traffic
+                UdpViewer panel = new UdpViewer(port, sendport, address);
+                Thread thread = new Thread(panel);
+                thread.start();
+
+                // add thread to our collection
+                networkThreads.put(port, thread);
+                jTabbedPane1.addTab("UDP Port " + port, panel);
+            }
+        }
+        openConnDialog = null;  //make sure gc takes care of dialog
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String str = jTextField1.getText();
+        UdpViewer panel = (UdpViewer) jTabbedPane1.getSelectedComponent();
+        if ((str.length() > 0) && (panel != null)) {
+            if (this.jCheckBox1.isSelected()) {
+                panel.sendOSCString(str);
+            }
+            else {
+                panel.sendRawString(str);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -106,13 +146,16 @@ public class JabezMain extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JabezMain().setVisible(true);
+                JabezMain mainForm = new JabezMain();
+                mainForm.setLocationRelativeTo(null);
+                mainForm.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
