@@ -10,10 +10,11 @@
 
 // include all the libraries we're using
 #include "appled.h"
+#include "fdu.h"
 #include "dipswitch.h"
 #include "servo.h"
 #include "digitalout.h"
-#include "digitalin.h"
+#include "digitalin.h"p
 #include "motor.h"
 #include "pwmout.h"
 #include "stepper.h"
@@ -25,15 +26,16 @@ void CountTask( void* parameters );
 
 void Run( ) // this task gets called as soon as we boot up.
 {
-  //TaskCreate( BlinkTask, "Blink", 400, 0, 1 );
-  //TaskCreate( CountTask, "Count", 400, 0, 1 );
-
+	//  TaskCreate( BlinkTask, "Blink", 400, 0, 1 );
+	//  TaskCreate( CountTask, "Count", 400, 0, 1 );
+	TaskCreate( stroke_wdt, "stroke", 400, 0, 1);
   // Do this right quick after booting up - otherwise we won't be recognised
   Usb_SetActive( 1 );
 
   // Fire up the OSC system and register the subsystems you want to use
   Osc_SetActive( true, true, true, true );
   // make sure OSC_SUBSYSTEM_COUNT (osc.h) is large enough to accomodate them all
+	Osc_RegisterSubsystem( AppLedOsc_GetName(), AppLedOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( AppLedOsc_GetName(), AppLedOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( DipSwitchOsc_GetName(), DipSwitchOsc_ReceiveMessage, DipSwitchOsc_Async );
   Osc_RegisterSubsystem( ServoOsc_GetName(), ServoOsc_ReceiveMessage, NULL );
@@ -89,6 +91,7 @@ void BlinkTask( void* p )
 void CountTask( void* p )
 {
  (void)p;
+
  unsigned char count = 0;
 
  AppLed_SetState(0, 0);
@@ -96,16 +99,10 @@ void CountTask( void* p )
  AppLed_SetState(2, 0);
  AppLed_SetState(3, 0);
  
-  while ( true )
-  {
-    Sleep (1000);
-    
-    AppLed_SetState(0, count & 0x1);
-    AppLed_SetState(1, (count >> 1) & 0x1);
-    AppLed_SetState(2, (count >> 2) & 0x1);
-    AppLed_SetState(3, (count >> 3) & 0x1);
- 
-    count++;
+  while ( true ) {
+
+    Sleep (124);
+		
     
   }
 }
