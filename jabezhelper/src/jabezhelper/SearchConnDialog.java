@@ -30,7 +30,7 @@ public class SearchConnDialog extends javax.swing.JDialog {
     private MyTableModel tableModel;
     private static volatile Thread currentThread;
     protected OSCByteArrayToJavaConverter converter;
-	protected jabezhelper.OSCPacketDispatcher dispatcher;
+	protected jabezhelper.OscPacketDispatcher dispatcher;
     private HashMap foundConnections;
     private DatagramSocket socket;
 
@@ -61,7 +61,7 @@ public class SearchConnDialog extends javax.swing.JDialog {
 
         // setup the handler for osc messages
         converter =  new OSCByteArrayToJavaConverter();
-        dispatcher = new OSCPacketDispatcher();
+        dispatcher = new jabezhelper.OscPacketDispatcher();
        	OSCListener listener = new OSCListener() {
     		public void acceptMessage(java.util.Date time, OSCMessage message) {
                 Object args[] = message.getArguments();

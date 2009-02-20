@@ -28,7 +28,7 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
     private boolean switchSenderRequested;
     private InetAddress address;
 	protected OSCByteArrayToJavaConverter converter;
-	protected jabezhelper.OSCPacketDispatcher dispatcher;
+	protected jabezhelper.OscPacketDispatcher dispatcher;
     protected SimpleDateFormat lFormat = new SimpleDateFormat( "HH:mm:ss:SSS: ");
 
     /** Creates new form UdpViewer */
@@ -51,7 +51,7 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
 
         // setup the handler for osc messages
         converter =  new OSCByteArrayToJavaConverter();
-        dispatcher = new OSCPacketDispatcher();
+        dispatcher = new jabezhelper.OscPacketDispatcher();
 
        	OSCListener listener = new OSCListener() {
     		public void acceptMessage(java.util.Date time, OSCMessage message) {
