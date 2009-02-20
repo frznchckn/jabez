@@ -17,10 +17,12 @@ package jabezhelper;
  */
 public class OpenConnDialog extends javax.swing.JDialog {
 
-    public int recvPort;
-    public int sendPort;
-    public String ipAddress;
-    public boolean udpConnection;
+    private int recvPort;
+    private int sendPort;
+    private String ipAddress;
+    private boolean udpConnection;
+
+    private ConnectionClass conn;
 
     /** Creates new form OpenConnDialog */
     public OpenConnDialog(java.awt.Frame parent, boolean modal) {
@@ -28,13 +30,13 @@ public class OpenConnDialog extends javax.swing.JDialog {
         initComponents();
     }
 
-    public boolean showWindow() {
+    public ConnectionClass showWindow() {
         setLocationRelativeTo(null);
         setVisible(true);
-        return ValidateInputs();
+        return conn;
     }
 
-    private boolean ValidateInputs() {
+    private boolean validateInputs() {
         try {
             // validate both port number
             if ((recvPort <= 0) || (sendPort <= 0)) return false;
@@ -47,7 +49,9 @@ public class OpenConnDialog extends javax.swing.JDialog {
                     int i = Integer.parseInt(s);
                     if ((i < 0) || (i > 255)) return false;
                 }
-            }          
+            }
+            conn = new ConnectionClass(ipAddress, recvPort, sendPort, 
+                    udpConnection, "UDP Port " + recvPort);
             return true;
         } catch (Exception e) { //catch any error (null, parseint)
             return false;
@@ -197,6 +201,7 @@ public class OpenConnDialog extends javax.swing.JDialog {
             recvPort = Integer.parseInt(jTextField1.getText());
             sendPort = Integer.parseInt(jTextField2.getText());
             ipAddress = jTextField3.getText();
+            validateInputs();
         } catch (Exception e) { }
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

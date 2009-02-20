@@ -13,7 +13,6 @@ package jabezhelper;
 import java.net.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
-import java.nio.ByteBuffer;
 import com.illposed.osc.*;
 import com.illposed.osc.utility.*;
 
@@ -26,21 +25,24 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
 
     private DatagramSocket socket;
     private int recvport, sendport;
+    private boolean switchSenderRequested;
     private InetAddress address;
 	protected OSCByteArrayToJavaConverter converter;
 	protected jabezhelper.OSCPacketDispatcher dispatcher;
     protected SimpleDateFormat lFormat = new SimpleDateFormat( "HH:mm:ss:SSS: ");
 
     /** Creates new form UdpViewer */
-    public UdpViewer(int recvport, int sendport, String addressStr) {
+    public UdpViewer(ConnectionClass conn, boolean switchSender) {
         initComponents();
 
         // set up the client address and port number
         try {
-            this.recvport = recvport;
-            this.sendport = sendport;
-            if (addressStr.length() > 0) {
-                this.address = InetAddress.getByName(addressStr);
+            this.recvport = conn.recvPort;
+            this.sendport = conn.sendPort;
+            this.switchSenderRequested = switchSender;
+
+            if (conn.ipAddress.length() > 0) {
+                this.address = InetAddress.getByName(conn.ipAddress);
             }
         } catch (Exception err) {
             jTextArea1.append("*** ERROR *** " + err.toString() + "\n");
@@ -73,8 +75,6 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
 
     public void run() {
         try {
-            socket = new DatagramSocket(recvport);
-
             // print an info message
             jTextArea1.append("Open UDP connection to  ");
             if (address != null) jTextArea1.append(address.getHostAddress());
@@ -82,7 +82,13 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
             jTextArea1.append("  recv: " + recvport + "  send: " + sendport + "\n");
 
             byte buffer[] = new byte[1536];
+            socket = new DatagramSocket(recvport);
             DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
+
+            // there is a request to device to switch sending port (our receive)
+            if (switchSenderRequested) {
+                sendOSCString("/network/osc_udp_send_port " + recvport);
+            }
 
             // data receiving loop
             while (true) {
@@ -105,6 +111,18 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
         }
     }
 
+    public boolean isReady() {
+        return ((socket != null) && (socket.isBound()));
+    }
+
+    public void closeConnection() {
+        socket.close();
+    }
+
+    public int getReceivePort() {
+        return recvport;
+    }
+
     public void sendOSCString(String str) {
         String segs[] = str.split(" ");
         OSCMessage msg;
@@ -114,12 +132,12 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
             msg = new OSCMessage(segs[0]);
 
         byte[] buffer = msg.getByteArray();
-        jTextArea1.append("osc");
+        jTextArea1.append("osc> ");
         sendData(buffer);
     }
 
     public void sendRawString(String str) {
-        jTextArea1.append("raw");
+        jTextArea1.append("raw> ");
         sendData(str.getBytes());
     }
 
@@ -127,7 +145,7 @@ public class UdpViewer extends javax.swing.JPanel implements Runnable {
         try {
             DatagramPacket dp = new DatagramPacket(data, data.length, address, sendport);
             socket.send(dp);
-            jTextArea1.append("> " + new String(data, 0, data.length) + "\n");
+            jTextArea1.append(new String(data, 0, data.length) + "\n");
         } catch (Exception err) {
             jTextArea1.append("*** ERROR *** unable to send data" + "\n");
         }
