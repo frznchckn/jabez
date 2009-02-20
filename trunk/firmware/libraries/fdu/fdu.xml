@@ -1,0 +1,10 @@
+<!DOCTYPE mcbuilder_library>
+<library>
+  <version>1.0</version>
+  <author>frznchckn</author>
+  <display_name>FDU</display_name>
+  <reference></reference>
+  <files>
+    <file type="thumb" >fdu.c</file>
+  </files>
+</library>
