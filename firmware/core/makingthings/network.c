@@ -1152,15 +1152,21 @@ void NetworkOsc_SetUdpSendPort( int port )
   if( port != Network->OscUdpSendPort ) // only change things if it's a new value
   {
     Network->OscUdpSendPort = port;
-    Eeprom_Write( EEPROM_OSC_UDP_SEND_PORT, (uchar*)&port, 4 );
+// tomn - comment out write to eprom
+//    Eeprom_Write( EEPROM_OSC_UDP_SEND_PORT, (uchar*)&port, 4 );
   }
 }
 
 int NetworkOsc_GetUdpSendPort(  )
 {
   int port;
-  Eeprom_Read( EEPROM_OSC_UDP_SEND_PORT, (uchar*)&port, 4 );
-  
+
+// tomn - only read from eprom on startup when OscUdpSendPort is not yet initialized
+  if (! Network->OscUdpSendPort)
+	  Eeprom_Read( EEPROM_OSC_UDP_SEND_PORT, (uchar*)&port, 4 );
+  else
+	  port = Network->OscUdpSendPort;
+	  
   if( port > 0 && port < 65536 )
     return port;
   else
@@ -1696,7 +1702,9 @@ int NetworkOsc_PropertyGet( int property, int channel )
       int listen = NetworkOsc_GetUdpListenPort( );
       int send = NetworkOsc_GetUdpSendPort( );
       char* sysName = System_GetName( );
-      Osc_CreateMessage( channel, Network->scratch1, ",siis", Network->scratch2, listen, send, sysName );      
+// tomn - added dipswitch setting to default reply for find message
+      int dipswitch = DipSwitch_GetValue(); 
+      Osc_CreateMessage( channel, Network->scratch1, ",siisi", Network->scratch2, listen, send, sysName, dipswitch );      
       break;
     }
     case 13: // osc_udp_send_port
