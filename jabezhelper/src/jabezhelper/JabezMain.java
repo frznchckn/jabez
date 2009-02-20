@@ -10,8 +10,10 @@
  */
 
 package jabezhelper;
-import java.io.*;
 import java.util.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 /**
  *
  * @author Tom
@@ -19,12 +21,25 @@ import java.util.*;
 public class JabezMain extends javax.swing.JFrame {
 
     private HashMap networkThreads;
+    private javax.swing.JTabbedPane jTabbedPane1;
 
     /** Creates new form JabezMain */
     public JabezMain() {
         initComponents();
+        
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 400));
+        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+        pack();
+        
         this.networkThreads = new HashMap();
-
+        jTextField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER)
+                    jButton1ActionPerformed(null);
+            }
+        });
     }
 
     /** This method is called from within the constructor to
@@ -36,31 +51,56 @@ public class JabezMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JSeparator();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JSeparator();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jabez Datalogger");
-
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 400));
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().setLayout(new java.awt.BorderLayout(0, 5));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 36));
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("OSC Packet");
         jPanel1.add(jCheckBox1);
 
-        jTextField1.setPreferredSize(new java.awt.Dimension(600, 26));
-        jPanel1.add(jTextField1);
+        jPanel2.setBackground(java.awt.Color.white);
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel2.setPreferredSize(new java.awt.Dimension(600, 28));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 2, 0, 2));
+        jPanel2.add(jTextField1, java.awt.BorderLayout.CENTER);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setFocusPainted(false);
+        jButton2.setFocusable(false);
+        jButton2.setPreferredSize(new java.awt.Dimension(28, 28));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, java.awt.BorderLayout.EAST);
+
+        jPanel1.add(jPanel2);
 
         jButton1.setText("Send");
         jButton1.setPreferredSize(new java.awt.Dimension(80, 26));
@@ -76,6 +116,15 @@ public class JabezMain extends javax.swing.JFrame {
         jMenu1.setText("File");
         jMenu1.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
+        jMenuItem3.setText("Probe Network");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+        jMenu1.add(jSeparator1);
+
         jMenuItem2.setLabel("New Connection    ");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +132,15 @@ public class JabezMain extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem2);
+
+        jMenuItem4.setText("Close Connection");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem4);
+        jMenu1.add(jSeparator2);
 
         jMenuItem1.setText("Exit");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +152,16 @@ public class JabezMain extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("About");
+        jMenu2.setText("Commands");
+
+        jMenuItem5.setText("Reset Device");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -104,20 +171,20 @@ public class JabezMain extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         OpenConnDialog openConnDialog = new OpenConnDialog(this, true);
-        if (openConnDialog.showWindow()) {
-            int port = openConnDialog.recvPort;
-            int sendport = openConnDialog.sendPort;
-            String address = openConnDialog.ipAddress;
+        ConnectionClass conn = openConnDialog.showWindow();
+
+        if (conn != null) {
+            int port = conn.recvPort;
 
             if (! this.networkThreads.containsKey(port)) {
                 // start a new thread to monitor udp traffic
-                UdpViewer panel = new UdpViewer(port, sendport, address);
+                UdpViewer panel = new UdpViewer(conn, false);
                 Thread thread = new Thread(panel);
                 thread.start();
 
                 // add thread to our collection
                 networkThreads.put(port, thread);
-                jTabbedPane1.addTab("UDP Port " + port, panel);
+                jTabbedPane1.addTab(conn.deviceId, panel);
             }
         }
         openConnDialog = null;  //make sure gc takes care of dialog
@@ -140,6 +207,57 @@ public class JabezMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        SearchConnDialog searchConnDialog = new SearchConnDialog(this, true);
+        HashMap connList = searchConnDialog.showWindow();
+        if (! connList.isEmpty()) {
+            for (Object obj : connList.values()) {
+                ConnectionClass conn = (ConnectionClass) obj;
+
+                int port = conn.recvPort;
+
+                if ((conn.valid) && (! this.networkThreads.containsKey(port))) {
+                    // start a new thread to monitor udp traffic
+                    UdpViewer panel = new UdpViewer(conn, true);
+                    Thread thread = new Thread(panel);
+                    thread.start();
+
+                    // add thread to our collection
+                    networkThreads.put(port, thread);
+                    jTabbedPane1.addTab(conn.deviceId, panel);
+                }
+            }
+        }
+        searchConnDialog = null;
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        try {
+            UdpViewer panel = (UdpViewer) jTabbedPane1.getSelectedComponent();
+            int key = panel.getReceivePort();
+            panel.closeConnection();
+            Thread thread = (Thread) networkThreads.get(key);
+            thread.join();  // wait for thread to die
+            networkThreads.remove(key);
+            jTabbedPane1.removeTabAt(jTabbedPane1.getSelectedIndex());
+        } catch (Exception err) {
+            System.out.println(err.toString());
+        }
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jTextField1.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        try {
+            UdpViewer panel = (UdpViewer) jTabbedPane1.getSelectedComponent();
+            panel.sendOSCString("/system/reset 1");
+        } catch (Exception err) {
+            System.out.println(err.toString());
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -155,14 +273,20 @@ public class JabezMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
