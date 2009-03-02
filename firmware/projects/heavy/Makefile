@@ -36,6 +36,7 @@ THUMB_SRC= \
   ../../libraries/servo/servo.c \
   ../../libraries/stepper/stepper.c \
   ../../libraries/dipswitch/dipswitch.c \
+  ../../libraries/can/can.c \
   ../../libraries/fdu/fdu.c \
   ../../libraries/motor/motor.c \
   ../../libraries/appled/appled.c \
@@ -98,6 +99,7 @@ INCLUDEDIRS = \
 -I../../libraries/digitalin  \
 -I../../libraries/digitalout  \
 -I../../libraries/dipswitch  \
+-I../../libraries/can  \
 -I../../libraries/fdu  \
 -I../../libraries/motor  \
 -I../../libraries/pwmout  \
