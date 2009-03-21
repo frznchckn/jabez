@@ -214,13 +214,13 @@ int Can_SendData (Frame frame) {
   int wordpointer = 0;
   int bitpointer = 0;
   int i;
-  unsigned int data[64];
+  unsigned int data[5];
   unsigned short crc;
   unsigned char ack;
-  unsigned char* data_for_crc;
+  unsigned char data_for_crc[32];
   unsigned int data_for_crc_bytes;
 
-  for (i = 0; i < 64; i++) {
+  for (i = 0; i < 5; i++) {
     data[i] = 0;
   }
   data[0] = DOMINANT << 31 | (frame.identifier1 << 20) | (frame.rtr << 19) | (DOMINANT << 18) | (RECESSIVE << 17) | (frame.dlc << 13);
@@ -248,7 +248,6 @@ int Can_SendData (Frame frame) {
 
   //CRC
   data_for_crc_bytes =  ceil(canSendBitLength / 8.0);
-  data_for_crc = (unsigned char*) malloc(sizeof(unsigned char) * data_for_crc_bytes);
   for (i = 0; i < data_for_crc_bytes; i++) {
     if (i % 4 == 0) {
       data_for_crc[i] = (data[i/4] >> 24) & 0xFF;
@@ -267,8 +266,7 @@ int Can_SendData (Frame frame) {
 #endif
   
   crc = crc15(data_for_crc, data_for_crc_bytes);
-  free(data_for_crc);
-
+  
   crc = (crc << 1) | 0x1;
   for (i = 0; i < 16; i++) {
     data[wordpointer] =  data[wordpointer] | ( ((crc >> (15 - (i % 16))) & 0x1) << bitpointer);
@@ -382,13 +380,17 @@ unsigned int DataCount = 0;
 Frame CurrFrame;
 
 //Look at incoming telemetry and decide what to do with it
-int Can_PostProcessData () {
+int Can_PostProcessData (void* p) {
+  
+  return 0;
+  /*
+  (void)p;
   Frame lframe;
   int i;
   int count;
   unsigned int crc;
   unsigned char data[12];
- 
+  
   //Copy the frame to local memory
   lframe.standard = CurrFrame.standard;
   lframe.identifier1 = CurrFrame.identifier1;
@@ -401,7 +403,7 @@ int Can_PostProcessData () {
   lframe.crc = CurrFrame.crc;
   lframe.ack = CurrFrame.ack;
   lframe.eof = CurrFrame.eof;
-
+  
   //Check it for CRC error
   for (i = 0; i < 12; i++) {
     data[i] = 0;
@@ -424,7 +426,7 @@ int Can_PostProcessData () {
   }
 #endif
 
-  crc = (crc15(data, count) << 1) | RECESSIVE;
+  crc = lframe.crc;//(crc15(data, count) << 1) | RECESSIVE;
 
   if (crc != lframe.crc) {
     ///Deal with error
@@ -437,7 +439,7 @@ int Can_PostProcessData () {
     printf("CRC calculated (0x%04X) does equal CRC sent (0x%04X)\n", crc, lframe.crc);
 #endif
 
-  }
+  }*/
 }
 
 
@@ -586,7 +588,8 @@ void Can_ReceiveIRQCallback( int id ) {
     if (BitCount >= 7) {
       BitCount = 0;
       State = INTERFRAME;
-      TaskCreate( Can_PostProcessData, "canpost", 400, 0, 1);
+      //TaskCreate(Can_PostProcessData, "canpost", 400, 0, 1);
+      Can_PostProcessData((void*) 0);
     }
   }
   
