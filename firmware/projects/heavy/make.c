@@ -150,7 +150,7 @@ void CanReceiveTask( void* p )
  int val;
  int data[1];
 
- Can_ReceiveData(data);
+ //Can_ReceiveData(data);
 	       
 }
 

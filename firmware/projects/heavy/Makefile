@@ -158,7 +158,7 @@ output/$(OUTPUT).bin : output/$(OUTPUT).elf
 	$(OBJCOPY) output/$(OUTPUT).elf -O binary output/$(OUTPUT).bin
 	
 output/$(OUTPUT).elf : $(ARM_OBJ) $(THUMB_OBJ) $(CRT0)
-	$(CC) $(CFLAGS) $(ARM_OBJ) $(THUMB_OBJ) -nostartfiles -x assembler-with-cpp $(CRT0) $(LINKER_FLAGS)
+	$(CC) $(CFLAGS) $(ARM_OBJ) $(THUMB_OBJ) -nostartfiles -x assembler-with-cpp $(CRT0) $(LINKER_FLAGS) -lm
 
 $(THUMB_OBJ) : %.o : %.c config.h
 	$(CC) -c $(THUMB_FLAGS) $(CFLAGS) $< -o $@
