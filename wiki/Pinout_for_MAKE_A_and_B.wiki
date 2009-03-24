@@ -1,32 +1,33 @@
 #summary Pin List for MAKE's A and B in system
 
-DigitalOut_0 - FDU 0 //grey code 0
+DigitalOut 0 - FDU 0 //grey code 0
 
-DigitalOut_1 - FDU 1 //grey code 1
+DigitalOut 1 - FDU 1 //grey code 1
 
-DigitalOut_2 - FDU 2 //grey code 2
+DigitalOut 2 - FDU 2 //grey code 2
 
-DigitalOut_3 - UNUSED
+DigitalOut 3 - UNUSED
 
-DigitalOut_4 - UNUSED
+DigitalOut 4 - UNUSED
 
-DigitalOut_5 - UNUSED
+DigitalOut 5 - UNUSED
 
-DigitalOut_6 - UNUSED
+DigitalOut 6 - UNUSED
 
-DigitalOut_7 - UNUSED
+DigitalOut 7 - UNUSED
 
+AnalogIn 0 	 - PRIME //positive logic, 0 would indicate !PRIME
 
-AnalogIn_0 	 - PRIME //positive logic, 0 would indicate !PRIME
+AnalogIn 1	 -
 
-AnalogIn_2	 -
+AnalogIn 2	 -
 
-AnalogIn_3	 -
+AnalogIn 3	 -
 
-AnalogIn_4	 -
+AnalogIn 4	 -
 
-AnalogIn_5	 -
+AnalogIn 5	 -
 
-AnalogIn_6	 -
+AnalogIn 6	 -
 
-AnalogIn_7	 -
+AnalogIn 7	 -
