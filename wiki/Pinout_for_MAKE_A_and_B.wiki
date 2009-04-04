@@ -6,7 +6,7 @@ DigitalOut 1 - FDU 1 //grey code 1
 
 DigitalOut 2 - FDU 2 //grey code 2
 
-DigitalOut 3 - UNUSED
+DigitalOut 3 - Alive // square wave at 1KHz
 
 DigitalOut 4 - UNUSED
 
