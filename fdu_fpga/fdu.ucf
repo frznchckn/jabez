@@ -1,0 +1,35 @@
+# FDU pin list
+
+
+ NET "prime_led<0>"  LOC = "K12"  ;
+ NET "prime_led<1>"  LOC = "P14"  ;
+ NET "health<0>"  LOC = "L12"  ;
+ NET "health<1>"  LOC = "N14"  ;
+# NET "error<0>"  LOC = "P13"  ;
+# NET "led<5>"  LOC = "N12"  ;
+# NET "led<6>"  LOC = "P12"  ;
+# NET "led<7>"  LOC = "P11"  ;
+
+NET "clk"       LOC = "T9"  ;
+NET "reset"     LOC = "L14" ;
+
+NET "fdu0<0>"   LOC = "D5"  ;
+NET "fdu0<1>"   LOC = "D6"  ;
+NET "fdu0<2>"   LOC = "E7"  ;
+
+NET "fdu1<0>"   LOC = "C5"  ;
+NET "fdu1<1>"   LOC = "C6"  ;
+NET "fdu1<2>"   LOC = "C7"  ;
+
+NET "error<0>"  LOC = "D7"  ;
+NET "error<1>"  LOC = "D8"  ;
+
+NET "prime<0>"  LOC = "C8"  ;
+NET "prime<1>"  LOC = "C9"  ;
+
+NET "por<0>"    LOC = "A3"  ;
+NET "por<1>"    LOC = "A4"  ;
+
+
+
+TIMESPEC "TS_clk1" = PERIOD "clk1" 20 ns HIGH 50 %;
