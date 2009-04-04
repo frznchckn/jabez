@@ -11,9 +11,9 @@ module wdt (
    reg [23:0]          count;
    reg                 clear;
    
-   //   parameter TIMEOUT = 6500000;
+   parameter TIMEOUT = 6500000;
    // this for sim
-   parameter TIMEOUT = 6100;
+//   parameter TIMEOUT = 10000;
    
    parameter IDLE = 4'b1110;
    parameter ZERO = 4'b0000;
@@ -28,51 +28,96 @@ module wdt (
 
    parameter UNHEALTHY = 1'b0;
    parameter HEALTHY = 1'b1;
-   
+
    always @ (posedge clk or posedge reset)
      begin
         if (reset)
           begin
              count <= 0;
-             next_state <= IDLE;
-             state <= IDLE;
+          end
+        else if (clear)
+          begin
+             count <= 0;
+          end
+        else if (count < TIMEOUT)
+          begin
+             count <= count + 1;
+          end
+     end // always @ (posedge clk or posedge reset)
+
+   always @ (posedge clk or posedge reset)
+     begin
+        if (reset)
+          begin
+             clear <= 1'b0;
+          end
+        else if ((next_state == SEVEN) && (state == SIX))
+          begin
+             clear <= 1'b1;
+          end
+        else if (count >= TIMEOUT)
+          begin
+             clear <= 1'b1;
+          end
+        else if (clear)
+          begin
+             clear <= 1'b0;
+          end
+     end // always @ (posedge clk or posedge reset)
+
+   always @ (posedge clk or posedge reset)
+     begin
+        if (reset)
+          begin
              health <= UNHEALTHY;
-             clear <= 0;
+          end
+        else if ((count >= TIMEOUT))
+          begin
+             health <= UNHEALTHY;
+          end
+        else if (state == SEVEN)
+          begin
+             health <= HEALTHY;
+          end
+        else if ((state == IDLE) || (state == ERROR))
+          begin
+             health <= UNHEALTHY;
+          end
+        else
+          begin
+             health <= health;
+          end
+     end // always @ (posedge clk or posedge reset)
+
+   always @ (posedge clk or posedge reset)
+     begin
+        if (reset)
+          begin
+             state <= IDLE;
+          end
+        else if ((count >= TIMEOUT))
+          begin
+             state <= ERROR;
+          end
+        else
+          begin
+             state <= next_state;
+          end
+     end // always @ (posedge clk or posedge reset)
+
+   always @ (posedge clk)
+     begin
+        if (count == TIMEOUT)
+          begin
+             next_state = IDLE;
           end
         else
           begin
              
-             count <= count + 1;
-             state <= next_state;
-             health <= health;
-             
-             if (count >= TIMEOUT || state == ERROR)
-               begin
-                  health <= UNHEALTHY;
-                  count <= 0;
-                  clear <= 0;
-                  next_state <= IDLE;
-               end
-             else if (state == SIX)
-               begin
-                  clear <= 1;
-               end
-             else if (state == SEVEN && next_state != IDLE && next_state != ERROR)
-               begin
-                  
-                  health <= HEALTHY;
-
-                  if (clear)
-                    begin
-                       count <= 0;
-                       clear <= 0;
-                    end
-               end // if (state == SEVEN)
-
              next_state = state;
              
              case (state)
-
+  
                IDLE : begin
                   if (fdu == 3'b000)
                     begin
@@ -217,19 +262,13 @@ module wdt (
                end
 
                default : begin
-                  next_state = state;
+                  next_state = IDLE;
                end
 
              endcase
-             
-
-          end // else: !if(reset)
-     end // always @ (posedge clk or posedge reset)
-
-   always @ (posedge clk)
-     //   always @ (fdu)
-     begin
-
-     end
+          end // else: !if(count = TIMEOUT)
+        
+     end // always @ (posedge clk)
+   
    
 endmodule
