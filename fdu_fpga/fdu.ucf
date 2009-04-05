@@ -5,9 +5,9 @@
  NET "prime_led<1>"  LOC = "P14"  ;
  NET "health<0>"  LOC = "L12"  ;
  NET "health<1>"  LOC = "N14"  ;
-# NET "error<0>"  LOC = "P13"  ;
-# NET "led<5>"  LOC = "N12"  ;
-# NET "led<6>"  LOC = "P12"  ;
+ NET "state_led<0>"  LOC = "P13"  ;
+ NET "state_led<1>"  LOC = "N12"  ;
+ NET "state_led<2>"  LOC = "P12"  ;
 # NET "led<7>"  LOC = "P11"  ;
 
 NET "clk"       LOC = "T9"  ;
@@ -21,14 +21,17 @@ NET "fdu1<0>"   LOC = "C5"  ;
 NET "fdu1<1>"   LOC = "C6"  ;
 NET "fdu1<2>"   LOC = "C7"  ;
 
-NET "error<0>"  LOC = "D7"  ;
-NET "error<1>"  LOC = "D8"  ;
+#NET "error<0>"  LOC = "F12"  ;
+#NET "error<1>"  LOC = "G12"  ;
+
+NET "error<0>"  LOC = "F12"  ;
+NET "error<1>"  LOC = "G12"  ;
 
 NET "prime<0>"  LOC = "C8"  ;
 NET "prime<1>"  LOC = "C9"  ;
 
-NET "por<0>"    LOC = "A3"  ;
-NET "por<1>"    LOC = "A4"  ;
+NET "por_out<0>"    LOC = "A3"  ;
+NET "por_out<1>"    LOC = "A4"  ;
 
 
 
