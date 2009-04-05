@@ -10,6 +10,7 @@ module wdt (
    //actual WDT count
    reg [23:0]          count;
    reg                 clear;
+   reg [2:0] 	       fdu_d1;
    
    parameter TIMEOUT = 6500000;
    // this for sim
@@ -29,6 +30,10 @@ module wdt (
    parameter UNHEALTHY = 1'b0;
    parameter HEALTHY = 1'b1;
 
+   always @ (posedge clk)
+     begin
+	fdu_d1 <= fdu[2:0];
+     end
    always @ (posedge clk or posedge reset)
      begin
         if (reset)
@@ -119,7 +124,7 @@ module wdt (
              case (state)
   
                IDLE : begin
-                  if (fdu == 3'b000)
+                  if (fdu_d1 == 3'b000)
                     begin
                        next_state = ZERO;
                     end
@@ -130,11 +135,11 @@ module wdt (
                end
 
                ZERO : begin
-                  if (fdu == 3'b000)
+                  if (fdu_d1 == 3'b000)
                     begin
                        next_state = ZERO;
                     end
-                  else if (fdu == 3'b001)
+                  else if (fdu_d1 == 3'b001)
                     begin
                        next_state = ONE;
                     end
@@ -145,11 +150,11 @@ module wdt (
                end // case: ZERO
                
                ONE : begin
-                  if (fdu == 3'b001)
+                  if (fdu_d1 == 3'b001)
                     begin
                        next_state = ONE;
                     end
-                  else if (fdu == 3'b011)
+                  else if (fdu_d1 == 3'b011)
                     begin
                        next_state = TWO;
                     end
@@ -160,11 +165,11 @@ module wdt (
                end
 
                TWO : begin
-                  if (fdu == 3'b011)
+                  if (fdu_d1 == 3'b011)
                     begin
                        next_state = TWO;
                     end
-                  else if (fdu == 3'b010)
+                  else if (fdu_d1 == 3'b010)
                     begin
                        next_state = THREE;
                     end
@@ -175,11 +180,11 @@ module wdt (
                end
 
                THREE : begin
-                  if (fdu == 3'b010)
+                  if (fdu_d1 == 3'b010)
                     begin
                        next_state = THREE;
                     end
-                  else if (fdu == 3'b110)
+                  else if (fdu_d1 == 3'b110)
                     begin
                        next_state = FOUR;
                     end
@@ -190,11 +195,11 @@ module wdt (
                end
 
                FOUR : begin
-                  if (fdu == 3'b110)
+                  if (fdu_d1 == 3'b110)
                     begin
                        next_state = FOUR;
                     end
-                  else if (fdu == 3'b111)
+                  else if (fdu_d1 == 3'b111)
                     begin
                        next_state = FIVE;
                     end
@@ -205,11 +210,11 @@ module wdt (
                end
 
                FIVE : begin
-                  if (fdu == 3'b111)
+                  if (fdu_d1 == 3'b111)
                     begin
                        next_state = FIVE;
                     end
-                  else if  (fdu == 3'b101)
+                  else if  (fdu_d1 == 3'b101)
                     begin
                        next_state = SIX;
                     end
@@ -221,11 +226,11 @@ module wdt (
                
 
                SIX : begin
-                  if (fdu == 3'b101)
+                  if (fdu_d1 == 3'b101)
                     begin
                        next_state = SIX;
                     end
-                  else if (fdu == 3'b100)
+                  else if (fdu_d1 == 3'b100)
                     begin
                        next_state = SEVEN;
                     end
@@ -236,11 +241,11 @@ module wdt (
                end
 
                SEVEN : begin
-                  if (fdu == 3'b100)
+                  if (fdu_d1 == 3'b100)
                     begin
                        next_state = SEVEN;
                     end
-                  else if (fdu == 3'b000)
+                  else if (fdu_d1 == 3'b000)
                     begin
                        next_state = ZERO;
                     end
@@ -251,7 +256,7 @@ module wdt (
                end
 
                ERROR : begin
-                  if (fdu == 3'b000)
+                  if (fdu_d1 == 3'b000)
                     begin
                        next_state = ZERO;
                     end

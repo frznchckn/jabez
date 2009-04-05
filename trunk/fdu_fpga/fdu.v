@@ -7,9 +7,10 @@ module fdu (
             input [2:0] fdu1,
             input [1:0] error,
             output reg [1:0] prime,
+	    output reg [2:0] state_led,
             output reg [1:0] prime_led,
             output reg [1:0] health,
-            output reg [1:0] por);
+            output [1:0] por_out);
    
 
 
@@ -28,7 +29,6 @@ module fdu (
    parameter PRIME_B = 3'b010;
    parameter UNHEALTHY = 1'b0;
    parameter HEALTHY = 1'b1;
-   //   parameter THREE = 4'b0011;
 
    reg                       to_reached;
    reg [2:0]                 state;
@@ -38,18 +38,48 @@ module fdu (
    reg [28:0]                por_count1;
    wire [1:0]                health_int;
 
-   wire [2:0]                fdu0_tri;
-   wire [2:0]                fdu1_tri;
+   reg [2:0]                fdu0_tri;
+   reg [2:0]                fdu1_tri;
                
    reg [28:0]                to_count;
+   reg [1:0] 		     por;
+ 		     
 
-
-   bufif0 fdu0_buf (fdu0_tri, fdu0[2:0], error[0]);
-   bufif0 fdu1_buf (fdu1_tri, fdu1[2:0], error[1]);
+   assign por_out[0] = por[0] ? 1'b1 : 1'bz;
+   assign por_out[1] = por[1] ? 1'b1 : 1'bz;
+			
+   always @ (posedge clk)
+     begin
+	if (error[0])
+	  begin
+	     fdu0_tri[2:0] <= 3'bzzz;
+	  end
+	else
+	  begin
+	     fdu0_tri[2:0] <= fdu0[2:0];
+	  end
+     end // always @ (posedge clk)
+   
+   always @ (posedge clk)
+     begin
+	if (error[1])
+	  begin
+	     fdu1_tri[2:0] <= 3'bzzz;
+	  end
+	else
+	  begin
+	     fdu1_tri[2:0] <= fdu1[2:0];
+	  end
+     end // always @ (posedge clk)
+   
+   always @ (posedge clk)
+     begin
+        prime_led[1:0] <= ~prime[1:0];
+     end
 
    always @ (posedge clk)
      begin
-        prime_led[1:0] <= prime[1:0];
+        state_led[2:0] <= state[2:0];
      end
    
    always @ (posedge clk)
