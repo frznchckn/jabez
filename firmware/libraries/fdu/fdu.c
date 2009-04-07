@@ -5,6 +5,8 @@
 #include "digitalout.h"
 #include "digitalin.h"
 #include "config.h"
+#include "fdu.h"
+#include "led.h"
 
 //int stroke_wdt(int rti_period, int rti_width) {
 int stroke_wdt( void* p) {
@@ -22,8 +24,11 @@ int stroke_wdt( void* p) {
   //AppLed_SetState(1, 0);
   //AppLed_SetState(2, 0);
   //AppLed_SetState(3, 0);
- 
+
   while ( true ) {
+    setPrime(AnalogIn_GetValue(0) > 512);
+    Led_SetState(isPrime());
+    
     //AppLed_SetState(0, !AppLed_GetState(0));
     Sleep (124);
 		
@@ -53,3 +58,40 @@ int stroke_wdt( void* p) {
 }
 
 
+///////////////////////////////////////////////////////////
+int ISPRIME = 0;
+
+int isPrime() {
+  return ISPRIME;
+}
+
+void setPrime(int i) {
+  ISPRIME = i;
+}
+///////////////////////////////////////////////////////////
+
+
+FastTimerEntry aliveTimer; // our TimerEntry
+int aliveValue = 0;
+void aliveIRQCallback(int id) {
+  (void)id;
+  
+  aliveValue = !aliveValue;
+  if (isPrime()) {
+    DigitalOut_SetValue(3, aliveValue);
+  } else {
+    DigitalOut_SetValue(3, 0);
+  }
+}
+
+int gen_alive( void* p) {
+
+  (void)p;
+
+  FastTimer_SetActive(true);
+  FastTimer_InitializeEntry( &aliveTimer, aliveIRQCallback, 0, 100 /*us*/, true );
+  FastTimer_Set( &aliveTimer ); // start our timer
+  
+  return 0;
+
+}
