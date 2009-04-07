@@ -1,28 +1,36 @@
 `timescale 1ns / 1ps
 
 module fdu (
-            input clk,
-            input reset,
-            input [2:0] fdu0,
-            input [2:0] fdu1,
-            input [1:0] error,
-            output reg [1:0] prime,
-	    output reg [2:0] state_led,
-            output reg [1:0] prime_led,
-            output reg [1:0] health,
-            output [1:0] por_out);
+    input clk,
+    input reset,
+    input [2:0] fdu0,
+    input [2:0] fdu1,
+    input [1:0] error,
+    inout 	usrs,
+    output reg [1:0] prime,
+    output reg [2:0] state_led,
+    output reg [1:0] prime_led,
+    output reg [1:0] health,
+    output [1:0]     por_out,
+    output [3:0]     an,
+    output [6:0]     ssg);
    
 
 
+
+   
    parameter TIMEOUT = 250000000;
-      //value to be used for simulation only!!!!
-//   parameter TIMEOUT = 50000;
+   //value to be used for simulation only!!!!
+   //   parameter TIMEOUT = 50000;
 
    parameter POR_TERMINAL_COUNT = 50000000;
-      //value to be used for simulation only!!!!
-//   parameter POR_TERMINAL_COUNT = 50000;
+   //value to be used for simulation only!!!!
+   //   parameter POR_TERMINAL_COUNT = 50000;
 
-
+//   parameter PING_TIMEOUT = 2500000; //ping every 25ms
+   parameter PING_TIMEOUT = 25000000; //ping every 5s
+   
+   parameter TRIGGER_PULSE = 250; //start pulse to ranger findger of 5us
    
    parameter NO_PRIME = 3'b000;
    parameter PRIME_A = 3'b001;
@@ -30,24 +38,105 @@ module fdu (
    parameter UNHEALTHY = 1'b0;
    parameter HEALTHY = 1'b1;
 
-   reg                       to_reached;
-   reg [2:0]                 state;
-   reg [2:0]                 next_state;
-   reg [1:0]                 health_d1;
-   reg [28:0]                por_count0;
-   reg [28:0]                por_count1;
-   wire [1:0]                health_int;
+   reg 		     to_reached;
+   reg [2:0] 	     state;
+   reg [2:0] 	     next_state;
+   reg [1:0] 	     health_d1;
+   reg [28:0] 	     por_count0;
+   reg [28:0] 	     por_count1;
+   wire [1:0] 	     health_int;
 
-   reg [2:0]                fdu0_tri;
-   reg [2:0]                fdu1_tri;
-               
-   reg [28:0]                to_count;
-   reg [1:0] 		     por;
- 		     
+   reg [2:0] 	     fdu0_tri;
+   reg [2:0] 	     fdu1_tri;
+   
+   reg [28:0] 	     to_count;
+   reg [1:0] 	     por;
+   
+   reg [32:0] 	     ping_count;
+   reg 		     pulsing;
+   reg 		     pulse;
+   reg [31:0] 	     usrs_count;
+//   wire [15:0] 	     usrs_count_reduced;
+   reg [31:0] 	     usrs_count_reduced;
+   
 
+   //   always @ (posedge clk)
+   //     begin
+//   assign usrs_count_reduced = usrs_count / 512;
+   //     end
    assign por_out[0] = por[0] ? 1'b1 : 1'bz;
    assign por_out[1] = por[1] ? 1'b1 : 1'bz;
-			
+
+   assign usrs = (pulsing) ? pulse : 1'bz;
+
+   always @ (posedge clk or posedge reset)
+     begin
+	if (reset)
+	  begin
+	     usrs_count <= 0;
+	     usrs_count_reduced <= 0;
+	  end
+	else if (ping_count == 0)
+	  begin
+	     usrs_count <= 0;
+	     usrs_count_reduced <= usrs_count_reduced;
+	  end
+	else if ((ping_count > TRIGGER_PULSE) && (usrs))
+	  begin
+	     usrs_count <= usrs_count + 1;
+	     usrs_count_reduced <= usrs_count_reduced;
+	  end
+	else if (ping_count == PING_TIMEOUT)
+	  begin
+	     usrs_count <= usrs_count;
+	     usrs_count_reduced <= usrs_count >> 4;
+	  end
+	else
+	  begin
+	     usrs_count <= usrs_count;
+	     usrs_count_reduced <= usrs_count_reduced;
+	  end
+     end
+   always @ (posedge clk or posedge reset)
+     begin
+	if (reset)
+	  begin
+	     pulsing <= 1'b0;
+	     pulse <= 1'b0;
+	  end
+	else if (ping_count < TRIGGER_PULSE)
+	  begin
+	     pulsing <= 1'b1;
+	     pulse <= 1'b1;
+	  end
+	else if (ping_count == TRIGGER_PULSE)
+	  begin
+	     pulsing <= 1'b1;
+	     pulse <= 1'b0;
+	  end
+	else
+	  begin
+	     pulsing <= 1'b0;
+	     pulse <= 1'b0;
+	  end
+     end // always @ (posedge clk)
+   
+   always @ (posedge clk or posedge reset)
+     begin
+	if (reset)
+	  begin
+	     ping_count <= 0;
+	  end
+	else if (ping_count < PING_TIMEOUT)
+	  begin
+	     ping_count <= ping_count + 1;
+	  end
+	else
+	  begin
+	     ping_count <= 0;
+	  end
+     end
+
    always @ (posedge clk)
      begin
 	if (error[0])
@@ -285,5 +374,19 @@ module fdu (
              fdu1_tri[2:0],
              health_int[1]
              );
+
+/*   display_value display_value0 (clk,
+				 reset,
+				 usrs_count_reduced,
+				 1'b1,
+				 an,
+				 ssg);
+*/
+   ssd display0 (clk,
+		 reset,
+		 1'b1,
+		 usrs_count_reduced,
+		 an,
+		 ssg);
    
 endmodule // fdu

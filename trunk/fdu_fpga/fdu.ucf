@@ -33,6 +33,19 @@ NET "prime<1>"  LOC = "C9"  ;
 NET "por_out<0>"    LOC = "A3"  ;
 NET "por_out<1>"    LOC = "A4"  ;
 
-
+NET "usrs"	    LOC = "A5";
 
 TIMESPEC "TS_clk1" = PERIOD "clk1" 20 ns HIGH 50 %;
+
+NET "an<0>" LOC = "E13";
+NET "an<1>" LOC = "F14";//
+NET "an<2>" LOC = "G14";
+NET "an<3>" LOC = "D14";
+
+NET "ssg<0>" LOC = "E14";//
+NET "ssg<1>" LOC = "G13";
+NET "ssg<2>" LOC = "N15";
+NET "ssg<3>" LOC = "P15";//
+NET "ssg<4>" LOC = "R16";//
+NET "ssg<5>" LOC = "F13";//
+NET "ssg<6>" LOC = "N16";//
