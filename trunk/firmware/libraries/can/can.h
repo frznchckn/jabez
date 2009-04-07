@@ -22,7 +22,7 @@ int Can_GetActive(void);
 int Can_Start(void);
 int Can_Stop(void);
 int Can_Init(void);
-int Can_SendData(Frame frame);
+int Can_SendData(Frame* frame);
 int Can_ReceiveData(unsigned int* data);
 
 /* OSC Interface */

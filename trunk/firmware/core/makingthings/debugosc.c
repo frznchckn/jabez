@@ -27,7 +27,7 @@
 #include "osc.h"
 #include <stdarg.h>
 
-#define DEBUG_MAX_MESSAGE 100
+#define DEBUG_MAX_MESSAGE 1000
 
 typedef struct Debug_
 {
@@ -80,7 +80,7 @@ int Debug_SetActive( int state )
   if( state && DebugData == NULL )
   {
 		DebugData = MallocWait( sizeof( struct Debug_ ), 100 );
-    DebugData->usb = 1;
+    DebugData->usb = 0;
     DebugData->udp = 1;
     DebugData->level = DEBUG_MESSAGE;
   }
@@ -276,13 +276,13 @@ int Debug( int level, char* format, ... )
     va_start( args, format );
     vsnprintf( DebugData->message, DEBUG_MAX_MESSAGE, format, args ); 
     // va_end( args );
-    #ifdef MAKE_CTRL_USB
+    /*#ifdef MAKE_CTRL_USB
     if ( DebugData->usb && Usb_GetActive() )
     {
       Osc_CreateMessage( OSC_CHANNEL_USB, "/debug/message", ",s", DebugData->message );
       Osc_SendPacket( OSC_CHANNEL_USB );
     }
-    #endif
+    #endif*/
     #ifdef MAKE_CTRL_NETWORK
     if ( DebugData->udp && Network_GetActive() )
     {
