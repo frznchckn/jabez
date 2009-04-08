@@ -18,16 +18,16 @@ DigitalOut 7 - UNUSED
 
 AnalogIn 0 	 - PRIME //positive logic, 0 would indicate !PRIME
 
-AnalogIn 1	 -
+AnalogIn 1	 - 
 
 AnalogIn 2	 -
 
 AnalogIn 3	 -
 
-AnalogIn 4	 -
+AnalogIn 4	 - Error Injection[0]
 
-AnalogIn 5	 -
+AnalogIn 5	 - Error Injection[1]
 
-AnalogIn 6	 -
+AnalogIn 6	 - Error Injection[2]
 
-AnalogIn 7	 -
+AnalogIn 7	 - Error Injection[3]
