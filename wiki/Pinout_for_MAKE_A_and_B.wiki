@@ -24,10 +24,10 @@ AnalogIn 2	 -
 
 AnalogIn 3	 -
 
-AnalogIn 4	 - Error Injection[0]
+AnalogIn 4	 - Error Injection 0
 
-AnalogIn 5	 - Error Injection[1]
+AnalogIn 5	 - Error Injection 1
 
-AnalogIn 6	 - Error Injection[2]
+AnalogIn 6	 - Error Injection 2
 
-AnalogIn 7	 - Error Injection[3]
+AnalogIn 7	 - Error Injection 3
