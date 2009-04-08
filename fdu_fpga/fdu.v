@@ -5,7 +5,8 @@ module fdu (
     input reset,
     input [2:0] fdu0,
     input [2:0] fdu1,
-    input [1:0] error,
+    input [1:0] error_sw,
+    input [1:0] error_bte,
     inout 	usrs,
     output reg [1:0] prime,
     output reg [2:0] state_led,
@@ -58,7 +59,11 @@ module fdu (
    reg [31:0] 	     usrs_count;
 //   wire [15:0] 	     usrs_count_reduced;
    reg [31:0] 	     usrs_count_reduced;
-   
+   wire [1:0] 	     error_inject;
+   reg [1:0] 	     error_bte_d1;
+   reg [1:0] 	     error_bte_d2;
+   reg [1:0] 	     error_bte_d3;
+   reg [1:0] 	     error_bte_diff;
 
    //   always @ (posedge clk)
    //     begin
@@ -69,6 +74,56 @@ module fdu (
 
    assign usrs = (pulsing) ? pulse : 1'bz;
 
+   assign error_inject[0] = error_sw[0] || error_bte_diff[0];
+   assign error_inject[1] = error_sw[1] || error_bte_diff[1];
+
+   always @ (posedge clk or posedge reset)
+     begin
+	if (reset)
+	  begin
+	     error_bte_diff[0] <= 0;
+	  end
+	else if (error_bte_d2[0] && ~error_bte_d3[0])
+	  begin
+	     error_bte_diff[0] <= 1'b1;
+	  end
+	else
+	  begin
+	     error_bte_diff[0] <= error_bte_diff[0];
+	  end
+     end // always @ (posedge clk or posedge reset)
+   
+   always @ (posedge clk or posedge reset)
+     begin
+	if (reset)
+	  begin
+	     error_bte_diff[1] <= 0;
+	  end
+	else if (error_bte_d2[1] && ~error_bte_d3[1])
+	  begin
+	     error_bte_diff[1] <= 1'b1;
+	  end
+	else
+	  begin
+	     error_bte_diff[1] <= error_bte_diff[1];
+	  end
+     end // always @ (posedge clk or posedge reset)
+   
+   always @ (posedge clk or posedge reset)
+     begin
+	if (reset)
+	  begin
+	     error_bte_d1 <= 2'b00;
+	     error_bte_d2 <= 2'b00;
+	     error_bte_d3 <= 2'b00;
+	  end
+	else
+	  begin
+	     error_bte_d3 <= error_bte_d2;
+	     error_bte_d2 <= error_bte_d1;
+	     error_bte_d1 <= error_bte;
+	  end
+     end
    always @ (posedge clk or posedge reset)
      begin
 	if (reset)
@@ -139,7 +194,7 @@ module fdu (
 
    always @ (posedge clk)
      begin
-	if (error[0])
+	if (error_inject[0])
 	  begin
 	     fdu0_tri[2:0] <= 3'bzzz;
 	  end
@@ -151,7 +206,7 @@ module fdu (
    
    always @ (posedge clk)
      begin
-	if (error[1])
+	if (error_inject[1])
 	  begin
 	     fdu1_tri[2:0] <= 3'bzzz;
 	  end
