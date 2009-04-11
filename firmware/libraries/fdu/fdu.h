@@ -10,10 +10,11 @@
 /* FDU Functions */
 
 //int stroke_wdt(int rti_period, int rti_width);
-int stroke_wdt(void* p);
-int gen_alive(void* p);
+void stroke_wdt(void* p);
+void gen_alive(void* p);
+void error_injector(void* p);
 void setPrime(int i);
-int isPrime();
+int isPrime(void);
 
 /* OSC Interface */
 const char* fduOsc_GetName( void );

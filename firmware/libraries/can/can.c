@@ -132,7 +132,7 @@ int Io_SetPullup(int i, int j) {}
 
 //#define CAN_PERIOD 62500 //16 Hz
 //#define CAN_PERIOD 10 //100 kHz
-#define CAN_PERIOD 1000 //1 kHz
+#define CAN_PERIOD 1000 //10 kHz
 
 
 void Can_SendIRQCallback( int id );
@@ -140,6 +140,9 @@ void Can_ReceiveIRQCallback( int id );
 unsigned int Debug2( int level, char* format, ... );
 
 ///////////
+
+char tempstring[100];
+
 
 unsigned long crc15(unsigned char* p, unsigned long len) {
   int order = 15;
@@ -277,19 +280,33 @@ int Can_SendData (Frame* frame) {
       data_for_crc[i] = (data[i/4] >> 0) & 0xFF;
     }
   }
-  /*{
-    char* string = (char*) Malloc(sizeof(char) * data_for_crc_bytes * 40);
+  
+  /*if(1) {
+    char* string = (char*) Malloc(sizeof(char) * data_for_crc_bytes * 21);
     string[0] = 0;
     for(i = 0; i < data_for_crc_bytes; i++) {
       if (i == 0) {
-	sprintf(string, "(CRC Sending) %d:0x%02x", i, data_for_crc[i]);
+	sprintf(string, "(CRC Sending) 0:0x%02x", data_for_crc[0]);
       } else {
 	sprintf(string, "%s %d:0x%02X", string, i, data_for_crc[i]);
       }
     }
-    //Debug(DEBUG_ALWAYS, "%s\n", string);
+    Debug2(DEBUG_ALWAYS, string);
     Free(string);
     }*/
+  //for(i = 0; i < data_for_crc_bytes; i++) {
+    //sprintf(string, "%d:0x%02x", i, data_for_crc[0]);
+  //  Debug2(DEBUG_ALWAYS, "1");
+  // Free(string);
+  //}
+  for(i = 0; i < data_for_crc_bytes; i++) {
+    if (i == 0) {
+      sprintf(tempstring, "(CRC Sending) 0:0x%02x", data_for_crc[0]);
+    } else {
+      sprintf(tempstring, "%s %d:0x%02X", tempstring, i, data_for_crc[i]);
+    }
+  }
+  Debug2(DEBUG_ALWAYS, tempstring);
   
   crc = crc15(data_for_crc, data_for_crc_bytes);
   
@@ -412,7 +429,6 @@ unsigned int ReceivingFrame = 0;
 unsigned int BitCount = 0;
 unsigned int DataCount = 0;
 Frame CurrFrame;
-char tempstring[60];
     
 int Can_CheckCRC () {
   Frame lframe;
@@ -450,21 +466,16 @@ int Can_CheckCRC () {
   }
   count++;
 
-  /*
+  
   for(i = 0; i < count; i++) {
-    char* string = (char*) Malloc(sizeof(char) * count * 21);
-    string[0] = 0;
-    for(i = 0; i < count; i++) {
-      if (i == 0) {
-	sprintf(string, "(CRC Receiving) 0:0x%02x", data[0]);
-      } else {
-	sprintf(string, "%s %d:0x%02X", string, i, data[i]);
-      }
+    if (i == 0) {
+      sprintf(tempstring, "(CRC Receiving) 0:0x%02x", data[0]);
+    } else {
+      sprintf(tempstring, "%s %d:0x%02X", tempstring, i, data[i]);
     }
-    Debug(DEBUG_ALWAYS, "%s\n", string);
-    Free(string);
-    }
-  */
+  }
+  Debug2(DEBUG_ALWAYS, tempstring);
+  
   crc = (crc15(data, count) << 1) | RECESSIVE;
   CurrFrame.crc = crc;
   {
