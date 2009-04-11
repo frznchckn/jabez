@@ -5,7 +5,8 @@ use String::CRC32;
 use strict;
 
 my $direction = shift;
-my $val = shift;
+my $val1 = shift;
+my $val2 = shift;
 my $port = 10228;
 
 
@@ -24,11 +25,15 @@ if ($direction =~ /out/) {
 	
 	
 	my @array;
-	if ($val eq "") {
-	    @array = ($i);
+	if ($val1 eq "") {
+	    @array = ($i, $i);
+	} elsif ($val1 ne "" && $val2 eq "") {
+	    $val1 = hex($val1);
+	    @array = ($val1, $val1);
 	} else {
-	    $val = hex($val);
-	    @array = ($val);
+	    $val1 = hex($val1);
+	    $val2 = hex($val2);
+	    @array = ($val1, $val2);
 	}
 	my $out = bin2string(\@array);
 	my @crc = (crc32($out));
