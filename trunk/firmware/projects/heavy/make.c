@@ -73,12 +73,21 @@ void Run( ) // this task gets called as soon as we boot up.
   setMonitorBoard((DipSwitch_GetValue() & 3) == 3);
 
 
-
+  AppLed_SetState(0, isC0Board());
+  AppLed_SetState(1, isC1Board());
+  AppLed_SetState(2, isMotorBoard());
+  AppLed_SetState(3, isMonitorBoard());
+  
   // Starts the network up.  Will not return until a network is found...
   Network_SetDhcpEnabled(1);
   Network_SetActive( true );
   AppLed_SetState(1, 1);
 
+
+  if (isMotorBoard()) {
+    Stepper_SetActive(1, 1);
+    Stepper_SetPositionRequested(1, 100);
+  }
 
   //UDP Server/Client
   while( udpsendsocket == NULL ) {
@@ -169,7 +178,7 @@ int sendDataMessage(unsigned int* message, int length) {
   localMessageInt[length] = crc32(localMessage, length);
   int2char(localMessage, localMessageInt, length+1);
   
-  if (isPrime()) {
+  if (isPrime() || isMotorBoard()) {
     sentLength = DatagramSocketSend( udpsendsocket, IP_ADDRESS( 255,255,255,255), 10228, localMessage, (length*4)+4);    
   }
   
@@ -390,11 +399,14 @@ int doMotorCommand(int csr, int val) {
     tellController(1);
   } else if (cmd == MOVE_RIGHT) {
     //Handle moving right here
-    
+    int currPosition = Stepper_GetPositionRequested(1);
+    Stepper_SetPositionRequested(1, currPosition + val);
 
     tellController(1);
   } else if (cmd == MOVE_LEFT) {
     //Handle moving left here
+    int currPosition = Stepper_GetPositionRequested(1);
+    Stepper_SetPositionRequested(1, currPosition - val);
 
     tellController(1);
   } else {
