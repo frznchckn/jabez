@@ -8,28 +8,21 @@
 #include "fdu.h"
 #include "led.h"
 
-//int stroke_wdt(int rti_period, int rti_width) {
-int stroke_wdt( void* p) {
+
+void stroke_wdt( void* p) {
 
   (void)p;
 
-  unsigned char count = 0;
   unsigned char wdt_bits[3];
   wdt_bits[0] = 0;
   wdt_bits[1] = 0;
   wdt_bits[2] = 0;
   unsigned char i = 0;
 
-  //AppLed_SetState(0, 0);
-  //AppLed_SetState(1, 0);
-  //AppLed_SetState(2, 0);
-  //AppLed_SetState(3, 0);
-
   while ( true ) {
-    setPrime(AnalogIn_GetValue(0) > 512);
+    setPrime(DigitalIn_GetValue(0));
     Led_SetState(isPrime());
     
-    //AppLed_SetState(0, !AppLed_GetState(0));
     Sleep (124);
 		
     DigitalOut_SetValue(3, 1);
@@ -73,6 +66,7 @@ void setPrime(int i) {
 
 FastTimerEntry aliveTimer; // our TimerEntry
 int aliveValue = 0;
+void aliveIRQCallback(int id);
 void aliveIRQCallback(int id) {
   (void)id;
   
@@ -84,14 +78,102 @@ void aliveIRQCallback(int id) {
   }
 }
 
-int gen_alive( void* p) {
+void gen_alive( void* p) {
 
   (void)p;
 
   FastTimer_SetActive(true);
-  FastTimer_InitializeEntry( &aliveTimer, aliveIRQCallback, 0, 100 /*us*/, true );
+  FastTimer_InitializeEntry( &aliveTimer, aliveIRQCallback, 0, 1000 /*us*/, true );
   FastTimer_Set( &aliveTimer ); // start our timer
   
-  return 0;
+  return;
 
+}
+
+
+///////////////////////////////////////////////////////////
+
+void error_injector( void* p) {
+
+  (void)p;
+  int err = 0;
+  int prev_err = 0;
+  while(true) {
+    err = DigitalIn_GetValue(4) | 
+      (DigitalIn_GetValue(5) << 1) |
+      (DigitalIn_GetValue(6) << 2) |
+      (DigitalIn_GetValue(7) << 3);
+    
+    if (err != prev_err) {
+      switch(err) {
+	
+      case 0: 
+	break;
+	
+      case 1:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 1");
+	break;
+	
+      case 2:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 2");
+	break;
+	
+      case 3:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 3");
+	break;
+	
+      case 4:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 4");
+	break;
+	
+      case 5:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 5");
+	break;
+	
+      case 6:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 6");
+	break;
+	
+      case 7:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 7");
+	break;
+	
+      case 8:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 8");
+	break;
+	
+      case 9:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 9");
+	break;
+	
+      case 10:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 10");
+	break;
+	
+      case 11:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 11");
+	break;
+	
+      case 12:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 12");
+	break;
+	
+      case 13:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 13");
+	break;
+	
+      case 14:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 14");
+	break;
+	
+      case 15:
+	Debug(DEBUG_ALWAYS, "Got Error Injection Case 15");
+	break;
+	
+      }
+    }
+    
+    prev_err = err;
+    Sleep(5);
+  }
 }
