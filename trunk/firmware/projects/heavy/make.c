@@ -83,7 +83,7 @@ void Run( ) // this task gets called as soon as we boot up.
   Network_SetActive( true );
   AppLed_SetState(1, 1);
 
-  // calibrate the shuttle keep moving back until it trips index sensor
+  // calibrate the shuttle keep moving forward until it trips index sensor
   if (isMotorBoard()) {
     Stepper_SetActive(1, 1);
     int currentPos = 10;
@@ -195,17 +195,38 @@ int sendDataMessage(unsigned int* message, int length) {
 }
 
 int waiting_for_response = 0;
+int current_direction = 0;
+
+typedef enum {
+	STATUS = 0,
+	MOVE_FORWARD = 1,
+	MOVE_BACKWARD = 2
+} MOTOR_COMMAND;
+
+const int WAIT_TIME = 1000;
+const int STEP_SIZE = 4;
+const int MIN_POSITION = 0x39;
+const int MAX_POSITION = 0x6B;
 
 void sendMotorCommandTask(void* p) {
   (void)p;
   
   while(true) {
-    int analogin[2];
-    Sleep(1000);
-    
-    analogin[0] = 0x0100000 | (isC1Board() << 25) | (isC0Board() << 24);
-    analogin[1] = AnalogIn_GetValue(1);
-    sendDataMessage(analogin, 2);
+    int analogIn = AnalogIn_GetValue(1);
+
+	if (analogIn > MAX_POSITION) 
+		current_direction = MOVE_BACKWARD;
+	else if (analogIn < MIN_POSITION)
+		current_direction = MOVE_FORWARD;
+
+//// for debug	  
+//	dataToSend[0] = 0x0100000 | (isC1Board() << 25) | (isC0Board() << 24);
+//	dataToSend[1] = AnalogIn_GetValue(1);
+//	sendDataMessage(dataToSend, 2);
+	
+    tellMotorBoard(current_direction, STEP_SIZE);
+	  
+    Sleep(WAIT_TIME);
   }
 }
 
@@ -359,12 +380,6 @@ void crc32_gentab () {
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 
-typedef enum {
-  STATUS = 0,
-  MOVE_RIGHT = 1,
-  MOVE_LEFT = 2
-} MOTOR_COMMAND;
-
 void tellMotorBoard(unsigned int cmd, unsigned int magnitude) {
   unsigned int data[2];
   data[0] = 0x0200000 | (isC1Board() << 25) | (isC0Board() << 24) | (cmd << 16);
@@ -394,14 +409,14 @@ int doMotorCommand(int csr, int val) {
 
   if (cmd == STATUS) {
     tellController(1);
-  } else if (cmd == MOVE_RIGHT) {
-    //Handle moving right here
+  } else if (cmd == MOVE_FORWARD) {
+    //Handle moving forward here
     int currPosition = Stepper_GetPositionRequested(1);
     Stepper_SetPositionRequested(1, currPosition + val);
 
     tellController(1);
-  } else if (cmd == MOVE_LEFT) {
-    //Handle moving left here
+  } else if (cmd == MOVE_BACKWARD) {
+    //Handle moving backward here
     int currPosition = Stepper_GetPositionRequested(1);
     Stepper_SetPositionRequested(1, currPosition - val);
 
