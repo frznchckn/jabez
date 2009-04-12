@@ -20,7 +20,7 @@ AnalogIn 0 	 - PRIME //positive logic, 0 would indicate !PRIME
 
 AnalogIn 1	 - DAC output from ranger finder
 
-AnalogIn 2	 -
+AnalogIn 2	 - Motor Opto-switch
 
 AnalogIn 3	 -
 
