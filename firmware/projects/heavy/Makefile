@@ -39,7 +39,6 @@ THUMB_SRC= \
   ../../libraries/fdu/fdu.c \
   ../../libraries/motor/motor.c \
   ../../libraries/appled/appled.c \
-  ../../libraries/iphone/iphone.c \
   ../../libraries/pwmout/pwmout.c \
   ../../libraries/digitalin/digitalin.c \
   ../../libraries/digitalout/digitalout.c \
@@ -96,7 +95,6 @@ ARM_SRC= \
 INCLUDEDIRS = \
 -I.  \
 -I../../libraries/appled  \
--I../../libraries/iphone \
 -I../../libraries/digitalin  \
 -I../../libraries/digitalout  \
 -I../../libraries/dipswitch  \
