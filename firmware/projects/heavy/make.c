@@ -95,11 +95,6 @@ void Run( ) // this task gets called as soon as we boot up.
   }
 
 
-  if (isMotorBoard()) {
-    Stepper_SetActive(1, 1);
-    Stepper_SetPositionRequested(1, 100);
-  }
-
   //UDP Server/Client
   while( udpsendsocket == NULL ) {
     AppLed_SetState(2, !AppLed_GetState(2));
@@ -203,38 +198,18 @@ int waiting_for_response = 0;
 
 void sendMotorCommandTask(void* p) {
   (void)p;
-  int address = IP_ADDRESS( 255,255,255,255);
-  int sentLength = 0;
-  char ptrn[4];
-  ptrn[0] = 0xde;
-  ptrn[1] = 0xad;
-  ptrn[2] = 0xbe;
-  ptrn[3] = 0xef;
-  Debug(DEBUG_ALWAYS, "IP Address = 0x%08x", address);
+  
   while(true) {
-    int analogin[1];
-    //AppLed_SetState(2, !AppLed_GetState(2));
+    int analogin[2];
     Sleep(1000);
     
-    //sentLength = DatagramSocketSend( udpsendsocket, address, 10228, ptrn, 4 );
-    //Debug(DEBUG_ALWAYS, "Sent %d bytes", sentLength); 
-     
-    analogin[0] = AnalogIn_GetValue(1);
-    sendDataMessage(analogin, 1);
-
-    /*    unsigned char ptrn[4];
-    ptrn[0] = 0;
-    ptrn[1] = 0;
-    ptrn[2] = (analogIn >> 8) & 0xf;
-    ptrn[3] = analogIn & 0xf;
-    Sleep(1000);
-
-    */
-    //DatagramSocketClose(socket);
-    //Osc_CreateMessage( OSC_CHANNEL_UDP, "/motorboard/movemoterup", ",s",  "blah");
-    //Osc_SendPacket( OSC_CHANNEL_UDP );
+    analogin[0] = 0x0100000 | (isC1Board() << 25) | (isC0Board() << 24);
+    analogin[1] = AnalogIn_GetValue(1);
+    sendDataMessage(analogin, 2);
   }
 }
+
+
 void receiveMotorCommandTask(void* p) {
   (void)p;
   int address, port, size;
@@ -258,9 +233,8 @@ void receiveMotorCommandTask(void* p) {
       recv_crc32 = incoming[incomingSize - 1];
       calc_crc32 = crc32(packet, size - 4);
       
-      if (isMonitorBoard()) {
+      if (isMotorBoard()) {
 	receiveMotorCommandEcho(packet, size);
-      } else if (isMotorBoard()) {
 	if (recv_crc32 == calc_crc32 && ((incoming[0] & 0x03000000) != 0) && ((incoming[0] & 0x00200000) != 0)) {
 	  //AppLed_SetState(0, !AppLed_GetState(0));
 	  doMotorCommand(incoming[0], incoming[1]);
@@ -297,10 +271,10 @@ void receiveMotorCommandEchoIRQCallback(int id) {
   (void)id;
 
   if (echoBytePointer < echoLengthInBytes) {
-    DigitalOut_SetValue(4, (echoData[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
+    DigitalOut_SetValue(0, !DigitalOut_GetValue(5));
+    DigitalOut_SetValue(1, (echoData[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
       
-    DigitalOut_SetValue(5, !DigitalOut_GetValue(5));
-
+    
     if (echoBitPointer == 7) {
       echoBitPointer = 0;
       echoBytePointer++;

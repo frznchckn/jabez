@@ -51,7 +51,8 @@ if ($direction =~ /out/) {
     my $i = 0;
     while (1) {
 	$socket->recv($text,128);
-	print "$i: '", $text,"'\n";
+	#print "$i: '", $text,"'\n";
+	print "$i:\n";
 	$i++;
 	
 	my @decoded = string2bin($text);
