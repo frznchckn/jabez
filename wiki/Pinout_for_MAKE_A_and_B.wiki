@@ -18,7 +18,7 @@ DigitalOut 7 - UNUSED
 
 AnalogIn 0 	 - PRIME //positive logic, 0 would indicate !PRIME
 
-AnalogIn 1	 - 
+AnalogIn 1	 - DAC output from ranger finder
 
 AnalogIn 2	 -
 
