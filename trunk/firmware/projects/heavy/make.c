@@ -86,9 +86,8 @@ void Run( ) // this task gets called as soon as we boot up.
   // calibrate the shuttle keep moving back until it trips index sensor
   if (isMotorBoard()) {
     Stepper_SetActive(1, 1);
-    Stepper_SetPositionRequested(1, 100);
     int currentPos = 10;
-    while (AnalogIn_GetValue(5) > 0x0100) {
+    while (AnalogIn_GetValue(2) > 0x0100) {
       Stepper_SetPositionRequested(1, currentPos);
       while (Stepper_GetPosition(1) != currentPos) Sleep(10);
       currentPos += 2;
@@ -220,7 +219,7 @@ void sendMotorCommandTask(void* p) {
     //sentLength = DatagramSocketSend( udpsendsocket, address, 10228, ptrn, 4 );
     //Debug(DEBUG_ALWAYS, "Sent %d bytes", sentLength); 
      
-    analogin[0] = AnalogIn_GetValue(0);
+    analogin[0] = AnalogIn_GetValue(1);
     sendDataMessage(analogin, 1);
 
     /*    unsigned char ptrn[4];
