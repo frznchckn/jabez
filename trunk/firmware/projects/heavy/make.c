@@ -10,6 +10,7 @@
 #include "math.h"
 
 // include all the libraries we're using
+#include "iphone.h"
 #include "appled.h"
 #include "can.h"
 #include "fdu.h"
@@ -83,11 +84,17 @@ void Run( ) // this task gets called as soon as we boot up.
   Network_SetActive( true );
   AppLed_SetState(1, 1);
 
-
+  // calibrate the shuttle keep moving back until it trips index sensor
   if (isMotorBoard()) {
     Stepper_SetActive(1, 1);
-    Stepper_SetPositionRequested(1, 100);
+	int currentPos = 10;
+	while (AnalogIn_GetValue(5) > 0x0100) {
+		  Stepper_SetPositionRequested(1, currentPos);
+		  while (Stepper_GetPosition(1) != currentPos) Sleep(10);
+		  currentPos += 2;
+	}
   }
+	
 
   //UDP Server/Client
   while( udpsendsocket == NULL ) {
@@ -95,6 +102,7 @@ void Run( ) // this task gets called as soon as we boot up.
     udpsendsocket = DatagramSocket( 0 );
     Sleep( 100 );
   }
+	
   while( udplistensocket == NULL ) {
     AppLed_SetState(3, !AppLed_GetState(3));
     udplistensocket = DatagramSocket( 10228 );
@@ -102,13 +110,16 @@ void Run( ) // this task gets called as soon as we boot up.
   }
   
   TaskCreate(receiveMotorCommandTask, "motorreceive", 400, 0, 1);
-  //TaskCreate(sendMotorCommandTask, "motorsender", 400, 0, 1);
- 
 
+  if (! isMotorBoard()) {
+	TaskCreate(sendMotorCommandTask, "motorsender", 400, 0, 1);
+  }
 
+/*	
   // Fire up the OSC system and register the subsystems you want to use
-  /*Osc_SetActive( true, true, false, true );
+  Osc_SetActive( true, true, false, true );
   // make sure OSC_SUBSYSTEM_COUNT (osc.h) is large enough to accomodate them all
+  Osc_RegisterSubsystem( IphoneOsc_GetName(), IphoneOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( AppLedOsc_GetName(), AppLedOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( DipSwitchOsc_GetName(), DipSwitchOsc_ReceiveMessage, DipSwitchOsc_Async );
   Osc_RegisterSubsystem( ServoOsc_GetName(), ServoOsc_ReceiveMessage, NULL );
@@ -118,7 +129,7 @@ void Run( ) // this task gets called as soon as we boot up.
   Osc_RegisterSubsystem( MotorOsc_GetName(), MotorOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( PwmOutOsc_GetName(), PwmOutOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( LedOsc_GetName(), LedOsc_ReceiveMessage, NULL );
-  Osc_RegisterSubsystem( DebugOsc_GetName(), DebugOsc_ReceiveMessage, NULL );
+//  Osc_RegisterSubsystem( DebugOsc_GetName(), DebugOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( SystemOsc_GetName(), SystemOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( NetworkOsc_GetName(), NetworkOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( SerialOsc_GetName(), SerialOsc_ReceiveMessage, NULL );
@@ -127,7 +138,7 @@ void Run( ) // this task gets called as soon as we boot up.
   Osc_RegisterSubsystem( XBeeOsc_GetName(), XBeeOsc_ReceiveMessage, XBeeOsc_Async );
   Osc_RegisterSubsystem( XBeeConfigOsc_GetName(), XBeeConfigOsc_ReceiveMessage, NULL );
   Osc_RegisterSubsystem( WebServerOsc_GetName(), WebServerOsc_ReceiveMessage, NULL );
-  */
+*/
 }
 
 int char2int(unsigned int* myInt, unsigned char* myChar, int lengthBytes) {
@@ -193,24 +204,34 @@ void sendMotorCommandTask(void* p) {
   (void)p;
   int address = IP_ADDRESS( 255,255,255,255);
   int sentLength = 0;
-  char ptrn[4];
-  ptrn[0] = 0xde;
-  ptrn[1] = 0xad;
-  ptrn[2] = 0xbe;
-  ptrn[3] = 0xef;
+
   Debug(DEBUG_ALWAYS, "IP Address = 0x%08x", address);
+
+//  int lastAnalogIn;
+	AnalogIn_SetActive(0, 1);
+	
   while(true) {
-    AppLed_SetState(2, !AppLed_GetState(2));
-    Sleep(1000);
-    
+	AppLed_SetState(2, !AppLed_GetState(2));
+
+/*
+		int analogIn = AnalogIn_GetValue(4);
+ 
+		Sleep(50);
+ */
+	  
+    int analogIn = AnalogIn_GetValue(0);
+	unsigned char ptrn[4];
+	ptrn[0] = 0;
+    ptrn[1] = 0;
+	ptrn[2] = (analogIn >> 8) & 0xf;
+	ptrn[3] = analogIn & 0xf;
+	Sleep(1000);
+	  
     sentLength = DatagramSocketSend( udpsendsocket, address, 10228, ptrn, 4 );
-    Debug(DEBUG_ALWAYS, "Sent %d bytes", sentLength); 
-    
-    //DatagramSocketClose(socket);
-    //Osc_CreateMessage( OSC_CHANNEL_UDP, "/motorboard/movemoterup", ",s",  "blah");
-    //Osc_SendPacket( OSC_CHANNEL_UDP );
   }
 }
+
+
 void receiveMotorCommandTask(void* p) {
   (void)p;
   int address, port, size;
