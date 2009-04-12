@@ -26,9 +26,11 @@ NET "error_bte<1>"  LOC = "D15"  ;
 
 NET "error_sw<0>"  LOC = "F12"  ;
 NET "error_sw<1>"  LOC = "G12"  ;
+NET "prime_bte<0>" LOC = "E15" ;
+NET "prime_bte<1>" LOC = "F15" ;
 
-NET "prime<0>"  LOC = "C8"  ;
-NET "prime<1>"  LOC = "C9"  ;
+NET "prime<0>"  LOC = "D7"  ;
+NET "prime<1>"  LOC = "C8"  ;
 
 NET "por_out<0>"    LOC = "A3"  ;
 NET "por_out<1>"    LOC = "A4"  ;
@@ -49,3 +51,12 @@ NET "ssg<3>" LOC = "P15";//
 NET "ssg<4>" LOC = "R16";//
 NET "ssg<5>" LOC = "F13";//
 NET "ssg<6>" LOC = "N16";//
+
+NET "dac<7>" LOC = "C10";
+NET "dac<6>" LOC = "E10";
+NET "dac<5>" LOC = "C11";
+NET "dac<4>" LOC = "D11";
+NET "dac<3>" LOC = "C12";
+NET "dac<2>" LOC = "D12";
+NET "dac<1>" LOC = "E11";
+NET "dac<0>" LOC = "B16";
