@@ -35,9 +35,9 @@ void stroke_wdt( void* p) {
       wdt_bits[1] = (i >> 2 & 0x1) ^ (i >> 1 & 0x1);
       wdt_bits[2] = (i >> 3 & 0x1) ^ (i >> 2 & 0x1);
 
-      AppLed_SetState(0, wdt_bits[0]);
-      AppLed_SetState(1, wdt_bits[1]);
-      AppLed_SetState(2, wdt_bits[2]);
+      //AppLed_SetState(0, wdt_bits[0]);
+      //AppLed_SetState(1, wdt_bits[1]);
+      //AppLed_SetState(2, wdt_bits[2]);
       //AppLed_SetState(3, 1);
 
       DigitalOut_SetValue(0, wdt_bits[0]);
