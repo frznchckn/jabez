@@ -2,31 +2,32 @@
 
 `include "ssd.v"
 `include "wdt.v"
+`include "clk_cntr.v"
 
 module fdu (
-    input clk,
-    input reset,
-    input [2:0] fdu0,
-    input [2:0] fdu1,
-    input [1:0] error_sw,
-    input [1:0] error_bte,
-    inout 	usrs,
-    output reg [1:0] prime,
-    output [1:0]     prime_bte,
-    output reg [2:0] state_led,
-    output reg [1:0] prime_led,
-    output reg [1:0] health,
-    output [1:0]     por_out,
-    output [7:0]     dac, 	     
-    output [3:0]     an,
-    output [6:0]     ssg);
+            input clk,
+            input reset,
+            input [2:0] fdu0,
+            input [2:0] fdu1,
+            input [1:0] error_sw,
+            input [1:0] error_bte,
+            inout 	usrs,
+            output reg [1:0] prime,
+            output [1:0]     prime_bte,
+            output reg [2:0] state_led,
+            output reg [1:0] prime_led,
+            output reg [1:0] health,
+            output [1:0]     por_out,
+            output [7:0]     dac, 	     
+            output [3:0]     an,
+            output [6:0]     ssg);
    
 
    parameter DIV = 1;
    //use below value for simulation
    //   parameter DIV = 1000;
 
-//   parameter CLK_PRD = 40e-09;
+   //   parameter CLK_PRD = 40e-09;
    //TIMEOUT: String B cannot become PRIME in first 5 second unless String A loses PRIME
    //   parameter TIMEOUT = 5 / CLK_PRD / DIV;
    parameter TIMEOUT = 125000000;
@@ -34,7 +35,7 @@ module fdu (
    //   parameter POR_TERMINAL_COUNT = 0.5 / CLK_PRD / DIV;
    parameter POR_TERMINAL_COUNT = 12500000;
    //   parameter PING_TIMEOUT = 5 / CLK_PRD / DIV; //ping every 5s   
-   parameter PING_TIMEOUT = 25000000; //ping every 5s
+   parameter PING_TIMEOUT = 625000; //ping every 25ms
 
    //Do not use DIV for simulation here because that would be below CLK resolution
    //   parameter TRIGGER_PULSE = 5e-06 / CLK_PRD; //start pulse to ranger findger of 5us
@@ -45,32 +46,36 @@ module fdu (
    parameter UNHEALTHY = 1'b0;
    parameter HEALTHY = 1'b1;
 
-   reg 		     to_reached;
-   reg [2:0] 	     state;
-   reg [2:0] 	     next_state;
-   reg [1:0] 	     health_d1;
-   reg [28:0] 	     por_count0;
-   reg [28:0] 	     por_count1;
-   wire [1:0] 	     health_int;
+   reg                       to_reached;
+   reg [2:0]                 state;
+   reg [2:0]                 next_state;
+   reg [1:0]                 health_d1;
+   reg [28:0]                por_count0;
+   reg [28:0]                por_count1;
+   wire [1:0]                health_int;
 
-   reg [2:0] 	     fdu0_tri;
-   reg [2:0] 	     fdu1_tri;
+   reg [2:0]                 fdu0_tri;
+   reg [2:0]                 fdu1_tri;
    
-   reg [28:0] 	     to_count;
-   reg [1:0] 	     por;
+   reg [28:0]                to_count;
+   reg [1:0]                 por;
    
-   reg [32:0] 	     ping_count;
-   reg 		     pulsing;
-   reg 		     pulse;
-   reg [31:0] 	     usrs_count;
-   reg [31:0] 	     usrs_count_reduced;
-   wire [1:0] 	     error_inject;
-   reg [1:0] 	     error_bte_d1;
-   reg [1:0] 	     error_bte_d2;
-   reg [1:0] 	     error_bte_d3;
-   reg [1:0] 	     error_bte_diff;
+   reg [32:0]                ping_count;
+   reg                       pulsing;
+   reg                       pulse;
+   reg [31:0]                usrs_count;
+   reg [31:0]                usrs_count_reduced;
+   wire [1:0]                error_inject;
+   reg [1:0]                 error_bte_d1;
+   reg [1:0]                 error_bte_d2;
+   reg [1:0]                 error_bte_d3;
+   reg [1:0]                 error_bte_diff;
 
+   wire                      ignore_bte;
+   wire [1:0]                error_bte_d0;
 
+   assign error_bte_d0[1:0] = ignore_bte ? error_bte[1:0] : 2'b00;
+   
    assign dac[7:0] = usrs_count_reduced[15:8];
    
    assign por_out[0] = por[0] ? 1'b0 : 1'bz;
@@ -78,6 +83,7 @@ module fdu (
 
    assign usrs = (pulsing) ? pulse : 1'bz;
    assign prime_bte[1:0] = prime[1:0];
+
    
    assign error_inject[0] = error_sw[0] || error_bte_diff[0];
    assign error_inject[1] = error_sw[1] || error_bte_diff[1];
@@ -126,7 +132,7 @@ module fdu (
           begin
              error_bte_d3 <= error_bte_d2;
              error_bte_d2 <= error_bte_d1;
-             error_bte_d1 <= error_bte;
+             error_bte_d1 <= error_bte_d0;
           end
      end
    always @ (posedge clk or posedge reset)
@@ -448,5 +454,11 @@ module fdu (
                  usrs_count_reduced,
                  an,
                  ssg);
+
+   clk_cntr #(
+              .MAX_CNT(25000000),
+              .ROLLOVER(1'b0)) clk_cntr0 (clk,
+                                          reset,
+                                          ignore_bte);
    
 endmodule // fdu
