@@ -1,9 +1,9 @@
 /*
-	make.c
+  make.c
 	
-	make.c is the main project file.  The Run( ) task gets called on bootup, so stick any initialization stuff in there.
-	In Heavy, by default we set the USB, OSC, and Network systems active, but you don't need to if you aren't using them.
-	Furthermore, only register the OSC subsystems you need - by default, we register all of them.
+  make.c is the main project file.  The Run( ) task gets called on bootup, so stick any initialization stuff in there.
+  In Heavy, by default we set the USB, OSC, and Network systems active, but you don't need to if you aren't using them.
+  Furthermore, only register the OSC subsystems you need - by default, we register all of them.
 */
 
 #include "config.h"
@@ -39,7 +39,8 @@ int char2int(unsigned int* myInt, unsigned char* myChar, int lengthBytes);
 int int2char(unsigned char* myChar, unsigned int* myInt, int lengthDWords);
 
 void tellMotorBoard(unsigned int cmd, unsigned int magnitude);
-void tellController(int ok);
+void sendStatus(unsigned int value);
+void tellController(int ok, int val);
 int checkAck(unsigned int data);
 int doMotorCommand(int csr, int val);
 
@@ -56,12 +57,11 @@ int isMonitorBoard(void);
 void* udpsendsocket = NULL;
 void* udplistensocket = NULL;
 
+int motorZeroPoint = 0;
+
 void Run( ) // this task gets called as soon as we boot up.
 {
-  TaskCreate( stroke_wdt, "stroke", 400, 0, 1);
-  gen_alive(0);
-  TaskCreate( error_injector, "errinj", 400, 0, 1);
-
+  
   // Do this right quick after booting up - otherwise we won't be recognised
   Usb_SetActive( 0 );
   AppLed_SetState(0, 1);
@@ -72,12 +72,30 @@ void Run( ) // this task gets called as soon as we boot up.
   setMotorBoard((DipSwitch_GetValue() & 3) == 2);
   setMonitorBoard((DipSwitch_GetValue() & 3) == 3);
 
+  if (!isMonitorBoard) {
+    TaskCreate( stroke_wdt, "stroke", 400, 0, 1);
+    gen_alive(0);
+    TaskCreate( error_injector, "errinj", 400, 0, 1);
+  }
+  
 
   AppLed_SetState(0, isC0Board());
   AppLed_SetState(1, isC1Board());
   AppLed_SetState(2, isMotorBoard());
   AppLed_SetState(3, isMonitorBoard());
   
+  /*
+  if (isMonitorBoard()) {
+    int i;
+    DigitalOut_SetValue(0, 0);
+    DigitalOut_SetValue(1, 0);
+
+    //for (i = 0; i < 96; i++) {
+    //  DigitalOut_SetValue(0, !DigitalOut_GetValue(0));
+    //  DigitalOut_SetValue(1, !DigitalOut_GetValue(1));
+    //}
+    }*/
+
   // Starts the network up.  Will not return until a network is found...
   Network_SetDhcpEnabled(1);
   Network_SetActive( true );
@@ -92,6 +110,7 @@ void Run( ) // this task gets called as soon as we boot up.
       while (Stepper_GetPosition(1) != currentPos) Sleep(10);
       currentPos += 2;
     }
+    motorZeroPoint = currentPos;
   }
 
 
@@ -172,25 +191,29 @@ int sendDataMessage(unsigned int* message, int length) {
   int sentLength = 0;
   int* localMessageInt;
   char* localMessage;
+  char* localMessagewithcrc;
   int i;
 
   localMessageInt = Malloc(sizeof(unsigned int) * (length + 1));
-  localMessage = Malloc(sizeof(unsigned char) * ((length * 4) + 4));
+  localMessage = Malloc(sizeof(unsigned char) * ((length * 4)));
+  localMessagewithcrc = Malloc(sizeof(unsigned char) * ((length * 4) + 4));
   
   for (i = 0; i < length; i++) {
     localMessageInt[i] = message[i];
   }
 
   int2char(localMessage, localMessageInt, length);
-  localMessageInt[length] = crc32(localMessage, length);
-  int2char(localMessage, localMessageInt, length+1);
+  localMessageInt[length] = crc32(localMessage, length*4);
+  int2char(localMessagewithcrc, localMessageInt, length+1);
   
   if (isPrime() || isMotorBoard()) {
-    sentLength = DatagramSocketSend( udpsendsocket, IP_ADDRESS( 255,255,255,255), 10228, localMessage, (length*4)+4);    
+    sentLength = DatagramSocketSend( udpsendsocket, IP_ADDRESS( 255,255,255,255), 10228, localMessagewithcrc, ((length+1)*4));    
   }
   
   Free(localMessageInt);
   Free(localMessage);
+  Free(localMessagewithcrc);
+
   return (sentLength > 0);
 }
 
@@ -198,12 +221,12 @@ int waiting_for_response = 0;
 int current_direction = 0;
 
 typedef enum {
-	STATUS = 0,
-	MOVE_FORWARD = 1,
-	MOVE_BACKWARD = 2
+  STATUS = 0,
+  MOVE_FORWARD = 1,
+  MOVE_BACKWARD = 2
 } MOTOR_COMMAND;
 
-const int WAIT_TIME = 1000;
+const int WAIT_TIME = 30;
 const int STEP_SIZE = 4;
 const int MIN_POSITION = 0x39;
 const int MAX_POSITION = 0x6B;
@@ -213,33 +236,48 @@ void sendMotorCommandTask(void* p) {
   
   while(true) {
     int analogIn = AnalogIn_GetValue(1);
-
-	if (analogIn > MAX_POSITION) 
-		current_direction = MOVE_BACKWARD;
-	else if (analogIn < MIN_POSITION)
-		current_direction = MOVE_FORWARD;
-
-//// for debug	  
-//	dataToSend[0] = 0x0100000 | (isC1Board() << 25) | (isC0Board() << 24);
-//	dataToSend[1] = AnalogIn_GetValue(1);
-//	sendDataMessage(dataToSend, 2);
-	
+    
+    if (analogIn > 0x20) {
+      current_direction = MOVE_BACKWARD;
+    } else {
+      current_direction = MOVE_FORWARD;
+    }
+    
+    //if (analogIn > MAX_POSITION) 
+    //  current_direction = MOVE_BACKWARD;
+    //else if (analogIn < MIN_POSITION)
+    //  current_direction = MOVE_FORWARD;
+    
+    //// for debug	  
+    //	dataToSend[0] = 0x0100000 | (isC1Board() << 25) | (isC0Board() << 24);
+    //	dataToSend[1] = AnalogIn_GetValue(1);
+    //	sendDataMessage(dataToSend, 2);
+    
+    //sendStatus(analogIn);
     tellMotorBoard(current_direction, STEP_SIZE);
-	  
+    
     Sleep(WAIT_TIME);
   }
 }
 
 
+unsigned char* echoData;
 void receiveMotorCommandTask(void* p) {
   (void)p;
-  int address, port, size;
+  int address, port, size, i;
   unsigned char* packet = Malloc(sizeof(char) * 1000);
-  Debug(DEBUG_ALWAYS, "IP Address = 0x%08x", address);
+  //Debug(DEBUG_ALWAYS, "IP Address = 0x%08x", address);
   
-  DigitalOut_SetValue(4, 0);
-  DigitalOut_SetValue(5, 0);
+  //DigitalOut_SetValue(4, 0);
+  //DigitalOut_SetValue(5, 0);
   
+  //if (isMonitorBoard()) {
+  //  echoData = Malloc(sizeof(unsigned char) * 256);
+  //}
+
+  for (i = 0; i < 0; i++) {
+    DatagramSocketReceive(udplistensocket, 10228, &address, &port, packet, 1000);
+  }
   while(true) {
     unsigned int recv_crc32, calc_crc32;
     size = DatagramSocketReceive(udplistensocket, 10228, &address, &port, packet, 1000);
@@ -254,27 +292,37 @@ void receiveMotorCommandTask(void* p) {
       recv_crc32 = incoming[incomingSize - 1];
       calc_crc32 = crc32(packet, size - 4);
       
-      if (isMotorBoard()) {
-	receiveMotorCommandEcho(packet, size);
-	if (recv_crc32 == calc_crc32 && ((incoming[0] & 0x03000000) != 0) && ((incoming[0] & 0x00200000) != 0)) {
-	  //AppLed_SetState(0, !AppLed_GetState(0));
-	  doMotorCommand(incoming[0], incoming[1]);
-	} else {
-	  tellController(0);
-	}
+      if (isMonitorBoard()) {
+        AppLed_SetState(0, !AppLed_GetState(0));
+        receiveMotorCommandEcho(packet, size);
+      } else if (isMotorBoard()) {
+        if (recv_crc32 == calc_crc32) {
+          if (((incoming[0] & 0x03000000) != 0) && ((incoming[0] & 0x00200000) != 0)) {
+            AppLed_SetState(0, !AppLed_GetState(0));
+            doMotorCommand(incoming[0], incoming[1]);
+            //tellController(1, 0);
+          } else if (((incoming[0] & 0x03000000) != 0) && ((incoming[0] & 0x00100000) != 0)) {
+            //Ignore status messages
+          } else {
+            tellController(0, -1);
+          }
+        } else {
+          tellController(0, -1);
+        }
       } else if (isMaster()) {
-	if (waiting_for_response) {
-	  if (!checkAck(incoming[0])) {
-	    //Something bad happened. Deal with it
-	  }
-	} else {
-	  //Did not expect someone to talk. Deal with it.
-	}
+        if (waiting_for_response) {
+          if (!checkAck(incoming[0])) {
+            //Something bad happened. Deal with it
+          }
+        } else {
+          //Did not expect someone to talk. Deal with it.
+        }
       }
 	
       
       Free(incoming);
     }
+    Free(packet);
     //DatagramSocketClose(socket);
     //Osc_CreateMessage( OSC_CHANNEL_UDP, "/motorboard/movemoterup", ",s",  "blah");
     //Osc_SendPacket( OSC_CHANNEL_UDP );
@@ -282,7 +330,6 @@ void receiveMotorCommandTask(void* p) {
 }
 
 FastTimerEntry echoTimer; // our TimerEntry
-unsigned char* echoData;
 int echoLengthInBytes = 0;
 int echoBitPointer = 0;
 int echoBytePointer = 0;
@@ -292,7 +339,7 @@ void receiveMotorCommandEchoIRQCallback(int id) {
   (void)id;
 
   if (echoBytePointer < echoLengthInBytes) {
-    DigitalOut_SetValue(0, !DigitalOut_GetValue(5));
+    DigitalOut_SetValue(0, !DigitalOut_GetValue(0));
     DigitalOut_SetValue(1, (echoData[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
       
     
@@ -303,8 +350,6 @@ void receiveMotorCommandEchoIRQCallback(int id) {
       echoBitPointer++;
     }
   } else {
-    //DigitalOut_SetValue(4, 0);
-    //DigitalOut_SetValue(5, 0);
     FastTimer_Cancel(&echoTimer);
     echoRunning = 0;
   }
@@ -313,23 +358,39 @@ void receiveMotorCommandEchoIRQCallback(int id) {
 void receiveMotorCommandEcho (char* data, int length) {  
   int i;
   
-  echoData = Malloc(sizeof(unsigned char) * length);
-  for (i = 0; i < length; i++) {
-    echoData[i] = data[i];
-  }
+  //echoData = Malloc(sizeof(unsigned char) * length);
+  //for (i = 0; i < length; i++) {
+  //  echoData[i] = data[i];
+  //}
   echoLengthInBytes = length;
 
   echoRunning = 1;
   echoBitPointer = 0;
   echoBytePointer = 0;
 
-  FastTimer_SetActive(true);
-  FastTimer_InitializeEntry( &echoTimer, receiveMotorCommandEchoIRQCallback, 0, 10 /*us*/, true );
-  FastTimer_Set( &echoTimer ); // start our timer
-  
-  while(echoRunning) {
-    Sleep(1);
+  //FastTimer_SetActive(true);
+  //FastTimer_InitializeEntry( &echoTimer, receiveMotorCommandEchoIRQCallback, 0, 10 /*us*/, true );
+  //FastTimer_Set( &echoTimer ); // start our timer
+ 
+  while (echoBytePointer < echoLengthInBytes) {
+    DigitalOut_SetValue(1, (data[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
+    DigitalOut_SetValue(0, !DigitalOut_GetValue(0));
+    Led_SetState((data[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
+    
+    if (echoBitPointer == 7) {
+      echoBitPointer = 0;
+      echoBytePointer++;
+    } else {
+      echoBitPointer++;
+    }
   }
+  //Sleep(1);
+ 
+  //while(echoRunning) {
+  //  Sleep(1);
+  //}
+
+  //Free(echoData);
 }
 
 
@@ -337,43 +398,43 @@ void crc32_gentab(void);
 unsigned int crc_tab[256];
 int crc_tab_generated = 0;
 unsigned int crc32 (unsigned char *block, unsigned int length) {
-   register unsigned long crc;
-   unsigned long i;
+  register unsigned long crc;
+  unsigned long i;
 
-   if (!crc_tab_generated) {
-     crc32_gentab();
-     crc_tab_generated = 1;
-   }
+  if (!crc_tab_generated) {
+    crc32_gentab();
+    crc_tab_generated = 1;
+  }
    
-   crc = 0xFFFFFFFF;
-   for (i = 0; i < length; i++)
-   {
+  crc = 0xFFFFFFFF;
+  for (i = 0; i < length; i++)
+    {
       crc = ((crc >> 8) & 0x00FFFFFF) ^ crc_tab[(crc ^ *block++) & 0xFF];
-   }
-   return (crc ^ 0xFFFFFFFF);
+    }
+  return (crc ^ 0xFFFFFFFF);
 }
 
 void crc32_gentab () {
-   unsigned long crc, poly;
-   int i, j;
+  unsigned long crc, poly;
+  int i, j;
 
-   poly = 0xEDB88320L;
-   for (i = 0; i < 256; i++)
-   {
+  poly = 0xEDB88320L;
+  for (i = 0; i < 256; i++)
+    {
       crc = i;
       for (j = 8; j > 0; j--)
-      {
-	 if (crc & 1)
-	 {
-	    crc = (crc >> 1) ^ poly;
-	 }
-	 else
-	 {
-	    crc >>= 1;
-	 }
-      }
+        {
+          if (crc & 1)
+            {
+              crc = (crc >> 1) ^ poly;
+            }
+          else
+            {
+              crc >>= 1;
+            }
+        }
       crc_tab[i] = crc;
-   }
+    }
 }
 
 
@@ -382,7 +443,7 @@ void crc32_gentab () {
 
 void tellMotorBoard(unsigned int cmd, unsigned int magnitude) {
   unsigned int data[2];
-  data[0] = 0x0200000 | (isC1Board() << 25) | (isC0Board() << 24) | (cmd << 16);
+  data[0] = 0x00200000 | (isC1Board() << 25) | (isC0Board() << 24) | (cmd << 16);
   data[1] = magnitude;
 
   waiting_for_response = 1;
@@ -390,10 +451,20 @@ void tellMotorBoard(unsigned int cmd, unsigned int magnitude) {
   sendDataMessage(data, 2);
 }
 
-void tellController(int ok) {
+void sendStatus(unsigned int value) {
+  unsigned int data[2];
+  data[0] = 0x00100000 | (isMotorBoard() << 26) | (isC1Board() << 25) | (isC0Board() << 24);
+  data[1] = value;
+
+  waiting_for_response = 0;
+  
+  sendDataMessage(data, 2);
+}
+
+void tellController(int ok, int val) {
   unsigned int data[2];
   data[0] = 0x04100000 | (ok << 22);
-  data[1] = ok;
+  data[1] = val;
 
   sendDataMessage(data, 2);
 }
@@ -405,25 +476,41 @@ int checkAck(unsigned int data) {
 int doMotorCommand(int csr, int val) {
   int cmd;
   
+  
+  if (Stepper_GetPosition(1) != Stepper_GetPositionRequested(1)) {
+    tellController(0, Stepper_GetPosition(1));
+    //Stepper_SetActive(1, 0);
+    //Stepper_SetActive(1, 1);
+    
+    return -1;
+  }
+  
+
   cmd = (csr >> 16) & 0xF;
 
   if (cmd == STATUS) {
-    tellController(1);
+    tellController(1, Stepper_GetPosition(1));
   } else if (cmd == MOVE_FORWARD) {
     //Handle moving forward here
     int currPosition = Stepper_GetPositionRequested(1);
-    Stepper_SetPositionRequested(1, currPosition + val);
-
-    tellController(1);
+    if (AnalogIn_GetValue(2) > 0x0100) {
+      Stepper_SetPositionRequested(1, currPosition + val);
+      tellController(1, Stepper_GetPosition(1));
+    } else {
+      tellController(0, Stepper_GetPosition(1));
+    }
   } else if (cmd == MOVE_BACKWARD) {
     //Handle moving backward here
     int currPosition = Stepper_GetPositionRequested(1);
-    Stepper_SetPositionRequested(1, currPosition - val);
-
-    tellController(1);
+    if ( (motorZeroPoint - 980) < (currPosition - val) ) {
+      Stepper_SetPositionRequested(1, currPosition - val);
+      tellController(1, Stepper_GetPosition(1));
+    } else {
+      tellController(0, Stepper_GetPosition(1));
+    }
   } else {
     //Something is wrong
-    tellController(0);
+    tellController(0, Stepper_GetPosition(1));
   }
 
   return 0;
@@ -471,129 +558,3 @@ int isMotorBoard() {
 int isMonitorBoard() {
   return MonitorBoard;
 }
-
-/*
-void CanSendTask( void* p )
-{
- (void)p;
-
- Frame frame;
-  
-  frame.standard = 1;
-  frame.identifier1 = 0x7FF;
-  frame.rtr = 0;
-  frame.dlc = 8;
-  frame.data[0] = 0x01;
-  frame.data[1] = 0x23;
-  frame.data[2] = 0x45;
-  frame.data[3] = 0x67;
-  frame.data[4] = 0x89;
-  frame.data[5] = 0xab;
-  frame.data[6] = 0xcd;
-  frame.data[7] = 0xef;
-  
-  while(true) {
-    Sleep(2000);
-    Can_SendData(&frame);
-  }
-	       
-}
-
-
-////////////////////////////////////////////////
-*/
-
- ////////////////////////////////////////////////////////
- /*
-#define QUEUE_DEPTH 16
-char** debug_queue;
-#define DEBUG_MAX_MESSAGE 60
-int debug_level_queue[QUEUE_DEPTH];
-int add_pointer;
-int send_pointer;
-void* debugSemaphore;
-int debug_queue_initialized = 0;
-
-unsigned int init_debug_queue() {
-  int i,j;
-  
-  debugSemaphore = SemaphoreCreate();
-  
-  if (SemaphoreTake( debugSemaphore, 1000 )) {
-    add_pointer = 0;
-    send_pointer = 0;
-    debug_queue = (char**) MallocWait(sizeof(char*) * (QUEUE_DEPTH * 2), 1000);
-    for(i = 0; i < QUEUE_DEPTH * 2; i++) {
-      debug_queue[i] = (char*) MallocWait(sizeof(char) * (DEBUG_MAX_MESSAGE + 1), 1000);
-      debug_level_queue[i/2] = 0;
-      for(j = 0; j < DEBUG_MAX_MESSAGE + 1; j++) {
-	debug_queue[i/2][j] = 0;
-      }
-    }
-    Debug(DEBUG_ALWAYS, "Debug queue initialized");
-    debug_queue_initialized = 1;
-    SemaphoreGive( debugSemaphore );
-  }
-
-  return 0;
-  }*/
-/*
-//unsigned int Debug2( int level, char* format, ... ) {
-unsigned int Debug2( int level, char* format) {
-  if (debug_queue_initialized == 0) {
-    return 0;
-  }
-
-  strncpy(debug_queue[add_pointer], format, DEBUG_MAX_MESSAGE); 
-  
-  debug_level_queue[add_pointer] = level;
-    
-  if (add_pointer == QUEUE_DEPTH - 1) {
-    add_pointer = 0;
-  } else {
-    add_pointer++;
-  }
-  
-  return 0;
-}
-
-void DebugQueueTask( void* p ) {
-  (void)p;
-  char* string;
-  int level = 0;
-  int have_message = 0;
-  
-  if (debug_queue_initialized == 0) {
-    return;
-  }
-  string = Malloc(sizeof(char) * DEBUG_MAX_MESSAGE);
-  string[0] = 0;
-  AppLed_SetState(3, 1);
-  
-  while ( true ) {
-    have_message = 0;
-    
-    Sleep(5);
-    Led_SetState(!Led_GetState());
-    
-    if (add_pointer != send_pointer) {
-      strcpy(string, debug_queue[send_pointer]);
-      level = debug_level_queue[send_pointer];
-      have_message = 1;
-      
-      if (send_pointer == QUEUE_DEPTH - 1) {
-	send_pointer = 0;
-      } else {
-	send_pointer++;
-      }
-    }
-    
-    if (have_message) {
-      Debug(level, string);
-    }
-    
-  }
-  
-  
-}
-*/

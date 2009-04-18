@@ -39,7 +39,11 @@ if ($direction =~ /out/) {
 	my @crc = (crc32($out));
 	my $crcout = bin2string(\@crc);
 	$out .= $crcout;
-	print "Out = $out\n";
+
+	my @decoded = string2bin($out);
+	for (my $i = 0; $i <= $#decoded; $i++) {
+	    printf("  - Decoded[$i] = 0x%08x\n", $decoded[$i]);
+	}
 	
 	send(sock, $out, 0, $dest);
 	select(undef, undef, undef, 0.200);
