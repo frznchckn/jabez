@@ -61,7 +61,6 @@ int motorZeroPoint = 0;
 
 void Run( ) // this task gets called as soon as we boot up.
 {
-  
   // Do this right quick after booting up - otherwise we won't be recognised
   Usb_SetActive( 0 );
   AppLed_SetState(0, 1);
@@ -72,7 +71,7 @@ void Run( ) // this task gets called as soon as we boot up.
   setMotorBoard((DipSwitch_GetValue() & 3) == 2);
   setMonitorBoard((DipSwitch_GetValue() & 3) == 3);
 
-  if (!isMonitorBoard) {
+  if (!isMonitorBoard()) {
     TaskCreate( stroke_wdt, "stroke", 400, 0, 1);
     gen_alive(0);
     TaskCreate( error_injector, "errinj", 400, 0, 1);
