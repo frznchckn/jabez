@@ -63,26 +63,31 @@ void Run( ) // this task gets called as soon as we boot up.
 {
   // Do this right quick after booting up - otherwise we won't be recognised
   Usb_SetActive( 0 );
-  AppLed_SetState(0, 1);
+	//  AppLed_SetState(0, 1);
   
   // Setup up which board this is
   setC0Board((DipSwitch_GetValue() & 3) == 0);
   setC1Board((DipSwitch_GetValue() & 3) == 1);
   setMotorBoard((DipSwitch_GetValue() & 3) == 2);
   setMonitorBoard((DipSwitch_GetValue() & 3) == 3);
-
+	
+	AppLed_SetState(0, 0);
+	AppLed_SetState(1, 0);
+	AppLed_SetState(2, 0);
+	AppLed_SetState(3, 0);
+  
   if (!isMonitorBoard()) {
     TaskCreate( stroke_wdt, "stroke", 400, 0, 1);
-    gen_alive(0);
-    TaskCreate( error_injector, "errinj", 400, 0, 1);
+    //gen_alive(0);
+		//    TaskCreate( error_injector, "errinj", 400, 0, 1);
   }
   
 
-  AppLed_SetState(0, isC0Board());
-  AppLed_SetState(1, isC1Board());
-  AppLed_SetState(2, isMotorBoard());
-  AppLed_SetState(3, isMonitorBoard());
-  
+	//  AppLed_SetState(0, isC0Board());
+	//  AppLed_SetState(1, isC1Board());
+	//  AppLed_SetState(2, isMotorBoard());
+	//  AppLed_SetState(3, isMonitorBoard());
+	 
   /*
   if (isMonitorBoard()) {
     int i;
@@ -98,7 +103,7 @@ void Run( ) // this task gets called as soon as we boot up.
   // Starts the network up.  Will not return until a network is found...
   Network_SetDhcpEnabled(1);
   Network_SetActive( true );
-  AppLed_SetState(1, 1);
+	//  AppLed_SetState(1, 1);
 
   // calibrate the shuttle keep moving forward until it trips index sensor
   if (isMotorBoard()) {
@@ -115,12 +120,12 @@ void Run( ) // this task gets called as soon as we boot up.
 
   //UDP Server/Client
   while( udpsendsocket == NULL ) {
-    AppLed_SetState(2, !AppLed_GetState(2));
+		//    AppLed_SetState(2, !AppLed_GetState(2));
     udpsendsocket = DatagramSocket( 0 );
     Sleep( 100 );
   }
   while( udplistensocket == NULL ) {
-    AppLed_SetState(3, !AppLed_GetState(3));
+		//    AppLed_SetState(3, !AppLed_GetState(3));
     udplistensocket = DatagramSocket( 10228 );
     Sleep( 100 );
   }
@@ -207,7 +212,9 @@ int sendDataMessage(unsigned int* message, int length) {
   
   if (isPrime() || isMotorBoard()) {
     sentLength = DatagramSocketSend( udpsendsocket, IP_ADDRESS( 255,255,255,255), 10228, localMessagewithcrc, ((length+1)*4));    
-  }
+  } else {
+		Sleep(5);
+	}
   
   Free(localMessageInt);
   Free(localMessage);
@@ -285,19 +292,19 @@ void receiveMotorCommandTask(void* p) {
       unsigned int incomingSize = ceil(size / 4.0);
       incoming = Malloc(sizeof(unsigned int) * incomingSize);
       char2int(incoming, packet, size);
-      AppLed_SetState(3, !AppLed_GetState(3));
+			//      AppLed_SetState(3, !AppLed_GetState(3));
       
       
       recv_crc32 = incoming[incomingSize - 1];
       calc_crc32 = crc32(packet, size - 4);
       
       if (isMonitorBoard()) {
-        AppLed_SetState(0, !AppLed_GetState(0));
+				//        AppLed_SetState(0, !AppLed_GetState(0));
         receiveMotorCommandEcho(packet, size);
       } else if (isMotorBoard()) {
         if (recv_crc32 == calc_crc32) {
           if (((incoming[0] & 0x03000000) != 0) && ((incoming[0] & 0x00200000) != 0)) {
-            AppLed_SetState(0, !AppLed_GetState(0));
+						//            AppLed_SetState(0, !AppLed_GetState(0));
             doMotorCommand(incoming[0], incoming[1]);
             //tellController(1, 0);
           } else if (((incoming[0] & 0x03000000) != 0) && ((incoming[0] & 0x00100000) != 0)) {

@@ -8,8 +8,16 @@
 #include "fdu.h"
 #include "led.h"
 
-int fdu_mode = 1;
-
+int *fdu_mode = 0;
+void setFduMode(int val) {
+	if  (fdu_mode == 0) {
+		fdu_mode = Malloc(sizeof(int));
+	}
+	*fdu_mode = val;
+}
+int getFduMode() {
+	return *fdu_mode;
+}
 void stroke_wdt( void* p) {
 
   (void)p;
@@ -19,16 +27,17 @@ void stroke_wdt( void* p) {
   wdt_bits[1] = 0;
   wdt_bits[2] = 0;
   unsigned char i = 0;
+	setFduMode(1);
 
   while ( true ) {
     setPrime(DigitalIn_GetValue(0));
     Led_SetState(isPrime());
     
-    if (fdu_mode == 6) {
-      Sleep (200);
+    if (getFduMode() == 6) {
+      Sleep (100);
     } else {
-      Sleep (125);
-    }
+			Sleep (100);
+		}
 
 		
     //DigitalOut_SetValue(3, 1);
@@ -37,12 +46,12 @@ void stroke_wdt( void* p) {
 
     for (i = 0; i < 8; i += 1) {
 
-      if (fdu_mode != 4) {
+			//      if (fdu_mode != 4) {
 		
-	if (fdu_mode == 5) {
+			//	if (fdu_mode == 5) {
 	  //simulate out of order
-	  i = i - 2;
-	}
+			//	  i = i - 2;
+			//	}
 	wdt_bits[0] = (i >> 1 & 0x1) ^ (i & 0x1);
 	wdt_bits[1] = (i >> 2 & 0x1) ^ (i >> 1 & 0x1);
 	wdt_bits[2] = (i >> 3 & 0x1) ^ (i >> 2 & 0x1);
@@ -55,7 +64,7 @@ void stroke_wdt( void* p) {
 	DigitalOut_SetValue(0, wdt_bits[0]);
 	DigitalOut_SetValue(1, wdt_bits[1]);
 	DigitalOut_SetValue(2, wdt_bits[2]);
-      } 
+	//      } 
     }
     
   }
@@ -64,14 +73,17 @@ void stroke_wdt( void* p) {
 
 
 ///////////////////////////////////////////////////////////
-int ISPRIME = 0;
+int* ISPRIME = 0;
 
 int isPrime() {
-  return ISPRIME;
+  return *ISPRIME;
 }
 
 void setPrime(int i) {
-  ISPRIME = i;
+  if (ISPRIME == 0) {
+		ISPRIME = Malloc(sizeof(int));
+	}
+	*ISPRIME = i;
 }
 ///////////////////////////////////////////////////////////
 
@@ -106,6 +118,7 @@ void gen_alive( void* p) {
 ///////////////////////////////////////////////////////////
 
 void error_injector( void* p) {
+	Sleep(1000);
 
   (void)p;
   int err = 0;
@@ -115,13 +128,19 @@ void error_injector( void* p) {
       (DigitalIn_GetValue(5) << 1) |
       (DigitalIn_GetValue(6) << 2) |
       (DigitalIn_GetValue(7) << 3);
-    
-    if (err != prev_err) {
+   
+    if (err != 0) {
+
+			AppLed_SetState(0, (err >> 0) & 0x1);
+			AppLed_SetState(1, (err >> 1) & 0x1);
+			AppLed_SetState(2, (err >> 2) & 0x1);
+			AppLed_SetState(3, (err >> 3) & 0x1);
+
       switch(err) {
 	
       case 0:
-	fdu_mode = 1;
-	break;
+				fdu_mode = 1;
+		break;
 	
       case 1:
 	Debug(DEBUG_ALWAYS, "Got Error Injection Case 1");
