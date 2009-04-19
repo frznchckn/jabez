@@ -28,7 +28,7 @@ if ($output !~ /error/ && $output !~ /Error/) {
     
     print "Programming\n";
 
-    sleep(9);
+    sleep(12);
     
     print "Done programming\n";
     
