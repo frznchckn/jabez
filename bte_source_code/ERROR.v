@@ -32,6 +32,7 @@ module ERROR (
                   CLK               
                 , RESET
                 , SYSTEM_TIME
+                , SYSTEM_CSR
                 
                 // IN <-- TIMERS
                 , PULSE_5MS
@@ -63,6 +64,7 @@ module ERROR (
 input           CLK;
 input           RESET;
 input  [31:0]   SYSTEM_TIME;
+input  [31:0]   SYSTEM_CSR;
 
 // IN <-- TIMERS
 input           PULSE_5MS;
@@ -108,7 +110,7 @@ wire            start_posedge;
 
 reg             start_error;
 
-wire   [31:0]   system_csr;
+// wire   [31:0]   system_csr;
 
 // -----------------------------------------------------------------------------
 // 0003.0 ERROR Injection
@@ -166,13 +168,13 @@ end
 // 0004.0 FIFO
 // -----------------------------------------------------------------------------
 
-assign system_csr = {
-                      16'h1000              //  31:16
-                    , 2'h0                  //  15:14
-                    , ERROR_TARGET_SELECT   //  13:12
-                    , ERROR_TYPE_SELECT     //  11:8
-                    , 8'h00                 //   7:0
-                    };
+// assign system_csr = {
+//                       16'h1000              //  31:16
+//                     , 2'h0                  //  15:14
+//                     , ERROR_TARGET_SELECT   //  13:12
+//                     , ERROR_TYPE_SELECT     //  11:8
+//                     , 8'h00                 //   7:0
+//                     };
 
 FIFO_128IN_128OUT_SMALL FIFO_128IN_128OUT_SMALL_0 (
 
@@ -181,7 +183,7 @@ FIFO_128IN_128OUT_SMALL FIFO_128IN_128OUT_SMALL_0 (
             	, .rst              (RESET)
                 
                 // IN
-            	, .din              ({system_csr, 32'hdead_beef, 32'hdead_beef, SYSTEM_TIME})
+            	, .din              ({4'h1, SYSTEM_CSR[27:0], 32'hdead_beef, 32'hdead_beef, SYSTEM_TIME})
             	, .rd_en            (ERROR_FIFO_READ)
             	, .wr_en            (start_posedge)
             	

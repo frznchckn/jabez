@@ -126,6 +126,7 @@ wire            clk_int;
 wire   [31:0]   system_time;
 wire            pulse_5ms;
 wire            start_debounced;
+wire   [31:0]   system_csr;
 
 // Switches and Buttons
 wire            RESET;
@@ -187,6 +188,21 @@ assign LED[7] = ALIVE[0];
 // all outputs to seven segment display are active low
 // assign SEVEN_SEGMENT       = 8'h00;
 // assign SEVEN_SEGMENT_ANODE = 4'hc;
+
+// -----------------------------------------------------------------------------
+// 0005.0 CSR Assignments
+// -----------------------------------------------------------------------------
+
+assign system_csr = {
+                      16'h0000              //  31:16
+                    , 2'h0                  //  15:14
+                    , ERROR_TARGET_SELECT   //  13:12
+                    , ERROR_TYPE_SELECT     //  11:8
+                    , 2'h0                  //   7:6
+                    , prime_status          //   5:4
+                    , 2'h0                  //   3:2
+                    , alive_status          //   1:0
+                    };
 
 // -----------------------------------------------------------------------------
 // 0005.0 SEVEN_SEGMENT_DISPLAY
@@ -267,6 +283,7 @@ ERROR ERROR_0 (
                   .CLK                      (clk_int)               
                 , .RESET                    (RESET)
                 , .SYSTEM_TIME              (system_time)
+                , .SYSTEM_CSR               (system_csr)
                                             
                 // IN <-- TIMERS            
                 , .PULSE_5MS                (pulse_5ms)
@@ -299,6 +316,7 @@ PRIME_ALIVE_MONITOR PRIME_ALIVE_MONITOR_0 (
                   .CLK                      (clk_int)               
                 , .RESET                    (RESET)
                 , .SYSTEM_TIME              (system_time)
+                , .SYSTEM_CSR               (system_csr)
                                             
                 // IN <-- MONITOR           
                 , .PRIME                    (PRIME)
