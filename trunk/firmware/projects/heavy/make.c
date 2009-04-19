@@ -207,7 +207,14 @@ int sendDataMessage(unsigned int* message, int length) {
   }
 
   int2char(localMessage, localMessageInt, length);
-  localMessageInt[length] = crc32(localMessage, length*4);
+
+  // error injector indicates corrupted crc
+  if (getFduMode() == 1) {
+	  localMessageInt[length] = crc32(localMessage, length*4) + 1;
+  } else {
+	  localMessageInt[length] = crc32(localMessage, length*4);
+  }
+	
   int2char(localMessagewithcrc, localMessageInt, length+1);
   
   if (isPrime() || isMotorBoard()) {
