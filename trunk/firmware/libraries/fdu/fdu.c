@@ -25,7 +25,6 @@ void stroke_wdt( void* p) {
   wdt_bits[1] = 0;
   wdt_bits[2] = 0;
   unsigned char i = 0;
-  setFduMode(1);
 
   while ( true ) {
     setPrime(DigitalIn_GetValue(0));

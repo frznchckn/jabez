@@ -232,6 +232,7 @@ int sendDataMessage(unsigned int* message, int length) {
 
 int waiting_for_response = 0;
 int current_direction = 0;
+int error_count = 0;
 
 typedef enum {
   STATUS = 0,
@@ -326,7 +327,11 @@ void receiveMotorCommandTask(void* p) {
         if (waiting_for_response) {
           if (!checkAck(incoming[0])) {
             //Something bad happened. Deal with it
-          }
+            if (incoming[1] == -1) error_count++;
+            if (error_count >= 10) TaskDelete(stroke_wdt);
+          } else {
+			error_count = 0;
+		  }
         } else {
           //Did not expect someone to talk. Deal with it.
         }
