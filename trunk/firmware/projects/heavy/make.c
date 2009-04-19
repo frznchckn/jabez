@@ -131,7 +131,7 @@ void Run( ) // this task gets called as soon as we boot up.
   }
   
   TaskCreate(receiveMotorCommandTask, "motorreceive", 400, 0, 1);
-  if (!isMotorBoard()) {
+  if (!isMotorBoard() && !isMonitorBoard()) {
     TaskCreate(sendMotorCommandTask, "motorsender", 400, 0, 1);
   }
 
@@ -306,7 +306,7 @@ void receiveMotorCommandTask(void* p) {
       calc_crc32 = crc32(packet, size - 4);
       
       if (isMonitorBoard()) {
-        //        AppLed_SetState(0, !AppLed_GetState(0));
+        AppLed_SetState(0, !AppLed_GetState(0));
         receiveMotorCommandEcho(packet, size);
       } else if (isMotorBoard()) {
         if (recv_crc32 == calc_crc32) {
@@ -352,9 +352,8 @@ void receiveMotorCommandEchoIRQCallback(int id) {
   (void)id;
 
   if (echoBytePointer < echoLengthInBytes) {
-    DigitalOut_SetValue(0, !DigitalOut_GetValue(0));
     DigitalOut_SetValue(1, (echoData[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
-      
+    DigitalOut_SetValue(0, !DigitalOut_GetValue(0));  
     
     if (echoBitPointer == 7) {
       echoBitPointer = 0;
@@ -371,39 +370,27 @@ void receiveMotorCommandEchoIRQCallback(int id) {
 void receiveMotorCommandEcho (char* data, int length) {  
   int i;
   
-  //echoData = Malloc(sizeof(unsigned char) * length);
-  //for (i = 0; i < length; i++) {
-  //  echoData[i] = data[i];
-  //}
+  echoData = Malloc(sizeof(unsigned char) * length);
+  for (i = 0; i < length; i++) {
+    echoData[i] = data[i];
+  }
   echoLengthInBytes = length;
 
   echoRunning = 1;
   echoBitPointer = 0;
   echoBytePointer = 0;
 
-  //FastTimer_SetActive(true);
-  //FastTimer_InitializeEntry( &echoTimer, receiveMotorCommandEchoIRQCallback, 0, 10 /*us*/, true );
-  //FastTimer_Set( &echoTimer ); // start our timer
+  FastTimer_SetActive(true);
+  FastTimer_InitializeEntry( &echoTimer, receiveMotorCommandEchoIRQCallback, 0, 10 /*us*/, true );
+  FastTimer_Set( &echoTimer ); // start our timer
  
-  while (echoBytePointer < echoLengthInBytes) {
-    DigitalOut_SetValue(1, (data[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
-    DigitalOut_SetValue(0, !DigitalOut_GetValue(0));
-    Led_SetState((data[echoBytePointer] >> (7-echoBitPointer)) & 0x1);
-    
-    if (echoBitPointer == 7) {
-      echoBitPointer = 0;
-      echoBytePointer++;
-    } else {
-      echoBitPointer++;
-    }
+  Sleep(1);
+ 
+  while(echoRunning) {
+    Sleep(1);
   }
-  //Sleep(1);
- 
-  //while(echoRunning) {
-  //  Sleep(1);
-  //}
 
-  //Free(echoData);
+  Free(echoData);
 }
 
 
