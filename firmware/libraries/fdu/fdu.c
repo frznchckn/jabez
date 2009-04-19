@@ -8,16 +8,14 @@
 #include "fdu.h"
 #include "led.h"
 
-int *fdu_mode = 0;
+int fdu_mode = 0;
 void setFduMode(int val) {
-	if  (fdu_mode == 0) {
-		fdu_mode = Malloc(sizeof(int));
-	}
-	*fdu_mode = val;
+  fdu_mode = val;
 }
 int getFduMode() {
-	return *fdu_mode;
+  return fdu_mode;
 }
+
 void stroke_wdt( void* p) {
 
   (void)p;
@@ -27,63 +25,59 @@ void stroke_wdt( void* p) {
   wdt_bits[1] = 0;
   wdt_bits[2] = 0;
   unsigned char i = 0;
-	setFduMode(1);
+  setFduMode(1);
 
   while ( true ) {
     setPrime(DigitalIn_GetValue(0));
     Led_SetState(isPrime());
     
     if (getFduMode() == 6) {
-      Sleep (100);
+      Sleep (200);
     } else {
-			Sleep (100);
-		}
-
+      Sleep (100);
+    }
+    
 		
     //DigitalOut_SetValue(3, 1);
     //Sleep (1);
     //DigitalOut_SetValue(3, 0);
 
     for (i = 0; i < 8; i += 1) {
+      
+      if (getFduMode() != 4) {
+        
+        if (getFduMode() == 5) {
+          //simulate out of order
+          i = i - 2;
+        }
+        wdt_bits[0] = (i >> 1 & 0x1) ^ (i & 0x1);
+        wdt_bits[1] = (i >> 2 & 0x1) ^ (i >> 1 & 0x1);
+        wdt_bits[2] = (i >> 3 & 0x1) ^ (i >> 2 & 0x1);
+        
+        //	AppLed_SetState(0, wdt_bits[0]);
+        //	AppLed_SetState(1, wdt_bits[1]);
+        //	AppLed_SetState(2, wdt_bits[2]);
+        //AppLed_SetState(3, 1);
 
-			//      if (fdu_mode != 4) {
-		
-			//	if (fdu_mode == 5) {
-	  //simulate out of order
-			//	  i = i - 2;
-			//	}
-	wdt_bits[0] = (i >> 1 & 0x1) ^ (i & 0x1);
-	wdt_bits[1] = (i >> 2 & 0x1) ^ (i >> 1 & 0x1);
-	wdt_bits[2] = (i >> 3 & 0x1) ^ (i >> 2 & 0x1);
-
-	//	AppLed_SetState(0, wdt_bits[0]);
-	//	AppLed_SetState(1, wdt_bits[1]);
-	//	AppLed_SetState(2, wdt_bits[2]);
-	//AppLed_SetState(3, 1);
-
-	DigitalOut_SetValue(0, wdt_bits[0]);
-	DigitalOut_SetValue(1, wdt_bits[1]);
-	DigitalOut_SetValue(2, wdt_bits[2]);
-	//      } 
+        DigitalOut_SetValue(0, wdt_bits[0]);
+        DigitalOut_SetValue(1, wdt_bits[1]);
+        DigitalOut_SetValue(2, wdt_bits[2]); 
+      }
+      
     }
-    
   }
-
 }
 
 
 ///////////////////////////////////////////////////////////
-int* ISPRIME = 0;
+int ISPRIME = 0;
 
 int isPrime() {
-  return *ISPRIME;
+  return ISPRIME;
 }
 
 void setPrime(int i) {
-  if (ISPRIME == 0) {
-		ISPRIME = Malloc(sizeof(int));
-	}
-	*ISPRIME = i;
+  ISPRIME = i;
 }
 ///////////////////////////////////////////////////////////
 
@@ -118,7 +112,7 @@ void gen_alive( void* p) {
 ///////////////////////////////////////////////////////////
 
 void error_injector( void* p) {
-	Sleep(1000);
+  Sleep(1000);
 
   (void)p;
   int err = 0;
@@ -131,94 +125,79 @@ void error_injector( void* p) {
    
     if (err != 0) {
 
-			AppLed_SetState(0, (err >> 0) & 0x1);
-			AppLed_SetState(1, (err >> 1) & 0x1);
-			AppLed_SetState(2, (err >> 2) & 0x1);
-			AppLed_SetState(3, (err >> 3) & 0x1);
+      AppLed_SetState(0, (err >> 0) & 0x1);
+      AppLed_SetState(1, (err >> 1) & 0x1);
+      AppLed_SetState(2, (err >> 2) & 0x1);
+      AppLed_SetState(3, (err >> 3) & 0x1);
 
       switch(err) {
 	
       case 0:
-				fdu_mode = 1;
+        setFduMode(1);
 		break;
 	
       case 1:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 1");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 2:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 2");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 3:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 3");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 4:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 4");
-	//grey code stuck
-	fdu_mode = 4;
-	break;
+        //grey code stuck
+        setFduMode(4);
+        break;
 	
       case 5:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 5");
-	//grey code out of order
-	fdu_mode = 5;
-	break;
+        //grey code out of order
+        setFduMode(5);
+        break;
 	
       case 6:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 6");
-	//grey code slow
-	fdu_mode = 6;
-	break;
+        //grey code slow
+        setFduMode(6);
+        break;
 	
       case 7:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 7");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 8:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 8");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 9:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 9");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 10:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 10");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 11:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 11");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 12:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 12");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 13:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 13");	
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 14:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 14");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       case 15:
-	Debug(DEBUG_ALWAYS, "Got Error Injection Case 15");
-	fdu_mode = 1;
-	break;
+        setFduMode(1);
+        break;
 	
       }
     }
