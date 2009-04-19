@@ -132,22 +132,11 @@ void error_injector( void* p) {
 
       switch(err) {
 	
-      case 0:
-        setFduMode(1);
-		break;
-	
       case 1:
+        // crc corrupt mode
         setFduMode(1);
         break;
-	
-      case 2:
-        setFduMode(1);
-        break;
-	
-      case 3:
-        setFduMode(1);
-        break;
-	
+			  
       case 4:
         //grey code stuck
         setFduMode(4);
@@ -163,40 +152,9 @@ void error_injector( void* p) {
         setFduMode(6);
         break;
 	
-      case 7:
-        setFduMode(1);
-        break;
-	
-      case 8:
-        setFduMode(1);
-        break;
-	
-      case 9:
-        setFduMode(1);
-        break;
-	
-      case 10:
-        setFduMode(1);
-        break;
-	
-      case 11:
-        setFduMode(1);
-        break;
-	
-      case 12:
-        setFduMode(1);
-        break;
-	
-      case 13:
-        setFduMode(1);
-        break;
-	
-      case 14:
-        setFduMode(1);
-        break;
-	
-      case 15:
-        setFduMode(1);
+      default:
+        // undefined error mode
+        setFduMode(0);
         break;
 	
       }
