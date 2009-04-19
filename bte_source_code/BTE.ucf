@@ -1,0 +1,79 @@
+################################################################################
+# BTE pin list
+################################################################################
+
+##### IN <-- UTILITY
+NET "CLK"                           LOC = "T9"  ;
+# NET "RESET"                         LOC = "L14" ;
+
+##### IN <-- MONITOR
+NET "MONITOR_CLK"                   LOC = "C10"   ;
+NET "MONITOR_DATA"                  LOC = "E10"   ;
+
+##### IN <-- FDU
+NET "PRIME<0>"                      LOC = "C12"  ;
+NET "PRIME<1>"                      LOC = "D12"  ;
+
+##### OUT --> FDU
+NET "ERROR_TYPE_CONT_FDU<0>"        LOC = "C11"  ;
+NET "ERROR_TYPE_CONT_FDU<1>"        LOC = "D11"  ;
+
+##### IN <-- CONTROLLERS
+NET "ALIVE<0>"                      LOC = "D8"   ;
+NET "ALIVE<1>"                      LOC = "C9"   ;
+
+##### OUT --> CONTROLLERS
+NET "ERROR_TYPE_CONT_A<0>"          LOC = "D5"   ;
+NET "ERROR_TYPE_CONT_A<1>"          LOC = "D6"   ;
+NET "ERROR_TYPE_CONT_A<2>"          LOC = "E7"   ;
+NET "ERROR_TYPE_CONT_A<3>"          LOC = "D7"   ;
+
+NET "ERROR_TYPE_CONT_B<0>"          LOC = "C5"   ;
+NET "ERROR_TYPE_CONT_B<1>"          LOC = "C6"   ;
+NET "ERROR_TYPE_CONT_B<2>"          LOC = "C7"   ;
+NET "ERROR_TYPE_CONT_B<3>"          LOC = "C8"   ;
+
+
+##### OUT --> COMPUTER
+NET "SERIAL"                        LOC = "R13"  ;
+
+#### OUT ---> ONBOARD DEBUG
+NET "LED<0>"                        LOC = "K12"   ;
+NET "LED<1>"                        LOC = "P14"   ;
+NET "LED<2>"                        LOC = "L12"   ;
+NET "LED<3>"                        LOC = "N14"   ;
+NET "LED<4>"                        LOC = "P13"   ;
+NET "LED<5>"                        LOC = "N12"   ;
+NET "LED<6>"                        LOC = "P12"   ;
+NET "LED<7>"                        LOC = "P11"   ;
+         
+NET "SEVEN_SEGMENT<0>"              LOC = "E14"   ;
+NET "SEVEN_SEGMENT<1>"              LOC = "G13"   ;
+NET "SEVEN_SEGMENT<2>"              LOC = "N15"   ;
+NET "SEVEN_SEGMENT<3>"              LOC = "P15"   ;
+NET "SEVEN_SEGMENT<4>"              LOC = "R16"   ;
+NET "SEVEN_SEGMENT<5>"              LOC = "F13"   ;
+NET "SEVEN_SEGMENT<6>"              LOC = "N16"   ;
+NET "SEVEN_SEGMENT<7>"              LOC = "P16"   ;
+
+NET "SEVEN_SEGMENT_ANODE<0>"        LOC = "D14"   ;
+NET "SEVEN_SEGMENT_ANODE<1>"        LOC = "G14"   ;
+NET "SEVEN_SEGMENT_ANODE<2>"        LOC = "F14"   ;
+NET "SEVEN_SEGMENT_ANODE<3>"        LOC = "E13"   ;
+
+#### IN <-- ONBOARD DEBUG
+NET "SLIDE_SWITCH<0>"               LOC = "F12"  ;
+NET "SLIDE_SWITCH<1>"               LOC = "G12"  ;
+NET "SLIDE_SWITCH<2>"               LOC = "H14"  ;
+NET "SLIDE_SWITCH<3>"               LOC = "H13"  ;
+NET "SLIDE_SWITCH<4>"               LOC = "J14"  ;
+NET "SLIDE_SWITCH<5>"               LOC = "J13"  ;
+NET "SLIDE_SWITCH<6>"               LOC = "K14"  ;
+NET "SLIDE_SWITCH<7>"               LOC = "K13"  ;
+
+NET "PUSH_SWITCH<0>"                LOC = "M13"  ;
+NET "PUSH_SWITCH<1>"                LOC = "M14"  ;
+NET "PUSH_SWITCH<2>"                LOC = "L13"  ;
+NET "PUSH_SWITCH<3>"                LOC = "L14"  ;
+
+########TIMESPEC "TS_CLK" = PERIOD "CLK" 20 ns HIGH 50 %;
