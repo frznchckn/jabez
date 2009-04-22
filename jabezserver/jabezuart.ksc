@@ -1,7 +1,0 @@
-set line /dev/ttyUSB0
-set flow-control none
-set carrier-watch off
-set parity none
-set speed 230400
-
-connect
