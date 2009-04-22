@@ -110,12 +110,31 @@ void gen_alive( void* p) {
 
 ///////////////////////////////////////////////////////////
 
+FastTimerEntry dietimer; // our TimerEntry
+void run_away_callback(int id) {
+  int i = 0;
+  while(true) {
+    i = i+1;
+  }
+}
+
+void run_away (void *p) {
+  (void)p;
+  unsigned int i = 0;
+
+  FastTimer_SetActive(true);
+  FastTimer_InitializeEntry( &dietimer, run_away_callback, 0, 1 /*us*/, true );
+  FastTimer_Set( &dietimer ); // start our timer
+}
+
+
 void error_injector( void* p) {
   Sleep(1000);
 
   (void)p;
   int err = 0;
   int prev_err = 0;
+
   while(true) {
     err = DigitalIn_GetValue(4) | 
       (DigitalIn_GetValue(5) << 1) |
@@ -151,6 +170,12 @@ void error_injector( void* p) {
         setFduMode(6);
         break;
 	
+      case 7:
+        //runaway proc
+        setFduMode(7);
+        TaskCreate( run_away, "runaway", 400, 0, 7);
+        break;
+          
       default:
         // undefined error mode
         setFduMode(0);
@@ -163,3 +188,5 @@ void error_injector( void* p) {
     Sleep(5);
   }
 }
+
+
