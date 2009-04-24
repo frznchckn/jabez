@@ -112,16 +112,16 @@ void gen_alive( void* p) {
 
 FastTimerEntry dietimer; // our TimerEntry
 void run_away_callback(int id) {
+  (void)id;
   int i = 0;
   while(true) {
     i = i+1;
   }
-}
+} 
 
 void run_away (void *p) {
   (void)p;
-  unsigned int i = 0;
-
+  
   FastTimer_SetActive(true);
   FastTimer_InitializeEntry( &dietimer, run_away_callback, 0, 1 /*us*/, true );
   FastTimer_Set( &dietimer ); // start our timer
