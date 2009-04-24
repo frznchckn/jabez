@@ -40,6 +40,7 @@ int int2char(unsigned char* myChar, unsigned int* myInt, int lengthDWords);
 
 void tellMotorBoard(unsigned int cmd, unsigned int magnitude);
 void sendStatus(unsigned int value);
+void sendNAck(unsigned int value);
 void tellController(int ok, int val);
 int checkAck(unsigned int data);
 int doMotorCommand(int csr, int val);
@@ -233,6 +234,7 @@ int sendDataMessage(unsigned int* message, int length) {
 int waiting_for_response = 0;
 int current_direction = 0;
 int error_count = 0;
+int error_noresponse_count = 0;
 
 typedef enum {
   STATUS = 0,
@@ -268,8 +270,19 @@ void sendMotorCommandTask(void* p) {
     //	sendDataMessage(dataToSend, 2);
     
     //sendStatus(analogIn);
-    tellMotorBoard(current_direction, STEP_SIZE);
+    if (waiting_for_response) {
+      // Didn't get a response the last time we sent a command
+      sendNAck(0xFFFFFFFF);
+      waiting_for_response = 0;
+      error_noresponse_count++;
+      if (error_noresponse_count > 10) TaskDelete(stroke_wdt);
+    } else {
+      error_noresponse_count = 0;
+    }
     
+    tellMotorBoard(current_direction, STEP_SIZE);
+ 
+   
     Sleep(WAIT_TIME);
   }
 }
@@ -291,6 +304,7 @@ void receiveMotorCommandTask(void* p) {
 
   for (i = 0; i < 20; i++) {
     DatagramSocketReceive(udplistensocket, 10228, &address, &port, packet, 1000);
+    waiting_for_response = 0;
   }
   while(true) {
     unsigned int recv_crc32, calc_crc32;
@@ -327,14 +341,15 @@ void receiveMotorCommandTask(void* p) {
         if (waiting_for_response) {
           if (!checkAck(incoming[0])) {
             //Something bad happened. Deal with it
-            if (incoming[1] == -1) error_count++;
+            if (incoming[1] == 0xFFFFFFFF) error_count++;
             if (error_count >= 10) TaskDelete(stroke_wdt);
           } else {
 			error_count = 0;
-		  }
+          }
         } else {
           //Did not expect someone to talk. Deal with it.
         }
+        waiting_for_response = 0;
       }
 	
       
@@ -451,14 +466,25 @@ void tellMotorBoard(unsigned int cmd, unsigned int magnitude) {
   data[0] = 0x00200000 | (isC1Board() << 25) | (isC0Board() << 24) | (cmd << 16);
   data[1] = magnitude;
 
-  waiting_for_response = 1;
-  
+  if (isMaster()) {
+    waiting_for_response = 1;
+  }
   sendDataMessage(data, 2);
 }
 
 void sendStatus(unsigned int value) {
   unsigned int data[2];
   data[0] = 0x00100000 | (isMotorBoard() << 26) | (isC1Board() << 25) | (isC0Board() << 24);
+  data[1] = value;
+
+  waiting_for_response = 0;
+  
+  sendDataMessage(data, 2);
+}
+
+void sendNAck(unsigned int value) {
+  unsigned int data[2];
+  data[0] = 0x00500000 | (isMotorBoard() << 26) | (isC1Board() << 25) | (isC0Board() << 24);
   data[1] = value;
 
   waiting_for_response = 0;
